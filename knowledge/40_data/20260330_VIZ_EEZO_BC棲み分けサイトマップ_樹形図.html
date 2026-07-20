@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EEZO B/C棲み分け サイトマップ</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;padding:24px;background:#fff;color:#1a1a1a}
+@media(prefers-color-scheme:dark){body{background:#1a1a1a;color:#e5e5e5}}
+.tree{max-width:720px;margin:0 auto;padding:12px 0}
+.tree ul{list-style:none;padding-left:0;margin:0}
+.tree li{position:relative;padding-left:28px}
+.tree li::before{content:'';position:absolute;left:8px;top:0;bottom:0;width:1px;background:#d4d4d4}
+.tree li::after{content:'';position:absolute;left:8px;top:18px;width:16px;height:1px;background:#d4d4d4}
+.tree li:last-child::before{height:19px}
+.tree>ul>li::before,.tree>ul>li::after{display:none}
+.tree>ul>li{padding-left:0}
+@media(prefers-color-scheme:dark){
+  .tree li::before,.tree li::after{background:#404040}
+}
+.n{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:8px;margin:3px 0;font-size:13px;font-weight:500;border:1px solid #d4d4d4;background:#fff;line-height:1.4;max-width:100%;flex-wrap:wrap}
+@media(prefers-color-scheme:dark){.n{border-color:#404040;background:#262626}}
+.n .hint{font-weight:400;font-size:11px;color:#737373}
+@media(prefers-color-scheme:dark){.n .hint{color:#a3a3a3}}
+.root{background:#f5f5f5;font-size:14px;font-weight:500}
+@media(prefers-color-scheme:dark){.root{background:#333}}
+.zone-c-label{background:rgba(250,236,231,0.4);border-color:rgba(240,153,123,0.4);color:#993C1D}
+.zone-b-label{background:rgba(225,245,238,0.4);border-color:rgba(93,202,165,0.4);color:#0F6E56}
+.zone-s-label{background:#f5f5f5;color:#737373}
+@media(prefers-color-scheme:dark){
+  .zone-c-label{background:rgba(74,27,12,0.15);border-color:rgba(216,90,48,0.3);color:#F0997B}
+  .zone-b-label{background:rgba(4,52,44,0.15);border-color:rgba(29,158,117,0.3);color:#5DCAA5}
+  .zone-s-label{background:#333;color:#a3a3a3}
+}
+.tag{display:inline-block;font-size:9px;font-weight:500;padding:1px 6px;border-radius:3px;letter-spacing:.02em}
+.tag-cart{background:#FAECE7;color:#993C1D}
+.tag-auth{background:#E1F5EE;color:#0F6E56}
+.tag-o2o{background:#EEEDFE;color:#534AB7}
+.tag-switch{background:#FAEEDA;color:#854F0B}
+@media(prefers-color-scheme:dark){
+  .tag-cart{background:#4A1B0C;color:#F0997B}
+  .tag-auth{background:#04342C;color:#5DCAA5}
+  .tag-o2o{background:#26215C;color:#AFA9EC}
+  .tag-switch{background:#412402;color:#FAC775}
+}
+.legend{display:flex;gap:14px;margin:16px 0 0;padding:10px 0 0;border-top:1px solid #d4d4d4;flex-wrap:wrap}
+@media(prefers-color-scheme:dark){.legend{border-color:#404040}}
+.legend-item{display:flex;align-items:center;gap:5px;font-size:11px;color:#737373}
+@media(prefers-color-scheme:dark){.legend-item{color:#a3a3a3}}
+.legend-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.sec{margin-top:6px}
+.cta-note{font-size:11px;color:#737373;padding:6px 12px;margin:4px 0 0 28px;border-left:2px solid #d4d4d4;line-height:1.5}
+@media(prefers-color-scheme:dark){.cta-note{color:#a3a3a3;border-color:#404040}}
+.doc-title{font-size:11px;color:#737373;text-align:center;margin-bottom:8px}
+@media(prefers-color-scheme:dark){.doc-title{color:#a3a3a3}}
+</style>
+</head>
+<body>
+<div class="tree">
+<div class="doc-title">EEZO B/C棲み分け サイトマップ ─ 2026-03-30</div>
+<ul>
+  <li>
+    <span class="n root">eezo.club <span class="hint">TOPページ（C向け訴求がデフォルト / B向けはナビ誘導）</span></span>
+    <ul>
+      <li class="sec">
+        <span class="n zone-c-label">BtoC zone <span class="hint">購入誘導型</span></span>
+        <ul>
+          <li>
+            <span class="n">エゾシカC LP <span class="hint">ストーリー / 精肉カット / 加工品</span><span class="tag tag-cart">カート購入</span></span>
+            <ul>
+              <li><span class="n">商品詳細（C仕様）<span class="hint">体験・レシピ・レビュー</span></span></li>
+            </ul>
+          </li>
+          <li>
+            <span class="n">ギフトC LP <span class="hint">季節テーマ / 価格帯別セット</span><span class="tag tag-cart">カート購入</span></span>
+            <ul>
+              <li><span class="n">商品詳細（C仕様）<span class="hint">ギフトオプション（熨斗・ラッピング）</span></span></li>
+            </ul>
+          </li>
+          <li>
+            <span class="n">フェリー乗客向けLP <span class="hint">船内体験 → EC購入</span><span class="tag tag-o2o">O2O</span></span>
+            <ul>
+              <li><span class="n">商品詳細（C仕様）</span></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+
+      <li class="sec">
+        <span class="n zone-b-label">BtoB zone <span class="hint">認証ゲート型</span></span>
+        <div class="cta-note">未ログイン → <span class="tag tag-auth">会員登録・認証依頼</span>　ログイン済 → <span class="tag tag-switch">カート購入（B価格）</span></div>
+        <ul>
+          <li>
+            <span class="n">法人認証 / 会員登録 <span class="hint">「プロの世界に入る」入口</span></span>
+          </li>
+          <li>
+            <span class="n">エゾシカB LP <span class="hint">スペック / ISO / 供給体制</span></span>
+            <ul>
+              <li><span class="n">商品詳細（B仕様）<span class="hint">規格・MOQ・認証</span></span></li>
+            </ul>
+          </li>
+          <li>
+            <span class="n">ギフトB LP <span class="hint">法人進物 / 株主優待 / BtoE</span></span>
+            <ul>
+              <li><span class="n">商品詳細（B仕様）<span class="hint">ロット・納期・実績</span></span></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+
+      <li class="sec">
+        <span class="n zone-s-label">共通ページ</span>
+        <ul>
+          <li><span class="n">カート / 決済 <span class="hint">Shopify Payments / ギフト対応</span></span></li>
+          <li><span class="n">マイページ / 注文履歴</span></li>
+          <li><span class="n">問い合わせフォーム <span class="hint">一般問い合わせ（toC / toB共用）</span></span></li>
+          <li><span class="n">会社概要</span></li>
+          <li><span class="n">FAQ</span></li>
+          <li><span class="n">特定商取引法に基づく表記</span></li>
+          <li><span class="n">プライバシーポリシー</span></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<div class="legend">
+  <div class="legend-item"><span class="legend-dot" style="background:#D85A30"></span>C = カート購入</div>
+  <div class="legend-item"><span class="legend-dot" style="background:#1D9E75"></span>B未認証 = 会員登録・認証依頼</div>
+  <div class="legend-item"><span class="legend-dot" style="background:#BA7517"></span>B認証済 = カート購入（B価格）</div>
+  <div class="legend-item"><span class="legend-dot" style="background:#534AB7"></span>O2O</div>
+</div>
+</div>
+</body>
+</html>

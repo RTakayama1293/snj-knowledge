@@ -1,0 +1,126 @@
+# project_manifest — claude.aiプロジェクト配布セット
+
+**最終更新**: 2026-07-20
+
+claude.aiプロジェクト「食材卸の事業計画」に置くファイルの完全な一覧。
+ここに無いファイルはプロジェクトから削除してよい（例外: 25-05-27_snj_concept.pdf は原本保持のため残す）。
+
+配布対象: 117件 ＋ PDF1件 ＋ 運用ドキュメント（KNOWLEDGE_MAP / SYNC_RULES の配布コピー）
+
+- [00_core] 20251227_DOC_年末総括_答えが出た11の問い_v2.md
+- [00_core] VMV
+- [00_core] ミナト内部参照：仮説構築・検証ガイドライン.md
+- [00_core] ミナト（プロジェクトアシスタント）Atlassian運用ルール.md
+- [00_core] ユーザーが求められている役割について
+- [00_core] ユーザーが求められている役割について.md
+- [00_core] ユーザー文体ガイド - ミナト用参照資料.md
+- [00_core] 中長期の行動目標
+- [10_rules] 20250908_DOC_セリングアイデア_フレームワーク定義書.md
+- [10_rules] 20250911_DOC_営業戦略_Sansan名刺登録ガイドライン.md
+- [10_rules] 20250916_DOC_EEZO投稿翻訳ガイド_完全版.md
+- [10_rules] 20250926_DOC_SENDO_派遣スタッフ実務マニュアル.md
+- [10_rules] 20250926_DOC_SENDO_管理部運用マニュアル.md
+- [10_rules] 20251021_DOC_採番ルール_統一体系定義書.md
+- [10_rules] 20251030_DOC_価格表項目定義_完全版ガイドライン.md
+- [10_rules] 20251106_DOC_メタキーワード内容列_入力ガイドライン.md
+- [10_rules] 20251106_DOC_商品登録前処理_Excel構造解説.md
+- [10_rules] 20251110_DOC_Metaショップフィード_EEZO入力ガイド.md
+- [10_rules] 20260106_DOC_常務会向け用語対訳表.md
+- [10_rules] 20260108_DOC_与信管理制度_稟議通過版.md
+- [10_rules] 20260113_DOC_価格設定ルール_事例集.md
+- [10_rules] 20260124_DOC_ペルソナ設計_ガイドライン.md
+- [10_rules] 20260212_SKILL_精度配分ガイドライン_リスクゾーン判定.md
+- [10_rules] 20260619_SPEC_EEZO_URLハンドル命名規則.md
+- [10_rules] 20260625_DOC_EEZO発注メール_ECドロップシップ型フォーマット.md
+- [10_rules] 参照01_用語とお作法_v2.md
+- [10_rules] 参照02_KWタグ辞書とBU_SI一覧_v2.md
+- [10_rules] 参照03_ステージ定義と出力フォーマット_v2.md
+- [10_rules] 参照A_列定義仕様_28列_v2.md
+- [10_rules] 参照B_大分類小分類マスタ.md
+- [10_rules] 参照C_正規化ルール.md
+- [20_specs] 20251007_DOC_証憑管理v3_完全版_説明書.md
+- [20_specs] 20251007_DOC_証憑管理v3_要件定義書.md
+- [20_specs] 20251030_DOC_北海道地名マップ_完全生成ガイド.md
+- [20_specs] 20260115_DOC_案件収支管理_システム設計書_v2.md
+- [20_specs] 20260130_DOC_SENDO_v0.5構造設計書.md
+- [20_specs] 20260204_SPEC_セリングアイデア試算テンプレート様式.md
+- [20_specs] 20260225_DOCS_キャラクター設定資料：ええぞす（EEZOS）.md
+- [20_specs] 20260226_PLAN_EEZOS_引き算プロンプト設計書_v4.md
+- [20_specs] 20260330_PLAN_EEZO_BC棲み分けサイトマップ.md
+- [20_specs] 20260403_DOC_インフォマート商品登録_SENDO連携設計.md
+- [20_specs] 20260403_PLAN_SENDO_v05改修_6課題統合設計.md
+- [20_specs] 20260403_SPEC_SENDO_v05改修_数式仕様書.md
+- [20_specs] 20260511_SPEC_EEZO_PDCA管理フォーマット設計_v2.md
+- [20_specs] 20260513_SPEC_計数管理基盤_全体設計書.md
+- [20_specs] 20260514_MEMO_計数管理基盤_引き継ぎ.md
+- [20_specs] 20260531_SPEC_EEZO商品カタログ_テンプレート仕様書.md
+- [20_specs] 20260630_SPEC_EEZO発送リスト自動化_v0.6.md
+- [20_specs] 20260703_SPEC_ナレフルエージェント_案件整理モック構築ガイド_v2.md
+- [20_specs] 20260707_SPEC_ナレフルエージェント_見積CSV変換構築ガイド_v2.md
+- [30_plans] 20250929_PLAN_ホテル営業_ターゲット検索条件.md
+- [30_plans] 20251006_PLAN_手紙営業_料理長アプローチ戦略.md
+- [30_plans] 20251229_PLAN_EEZO戦略_26年再構築計画.md
+- [30_plans] 20251229_PLAN_営業戦略_信用構築モデル.md
+- [30_plans] 20260121_PLAN_エゾシカペットフード_イオン販路戦略.md
+- [30_plans] 20260122_PLAN_EEZO_UX設計構想.md
+- [30_plans] 20260122_PLAN_EEZO同梱カード_話のネタ戦略.md
+- [30_plans] 20260210_PLAN_三者職務分掌_包括設計書_v4.md
+- [30_plans] 20260217_PLAN_あぷかの森_EEZOドロップシップ設計.md
+- [30_plans] 20260217_PLAN_エゾシカ販路マトリクス_全体整理.md
+- [30_plans] 20260224_DOC_SI-12_DENBAヘルス職域サブスク_包括設計書_v2.md
+- [30_plans] 20260224_PLAN_SI-12_DENBAヘルス職域サブスク_販路ブリーフ_v2.md
+- [30_plans] 20260225_PLAN_SNS運用ワークフロー_方向性_v2.md
+- [30_plans] 20260303_DOC_EEZO収益モデル_現状整理と残タスク.md
+- [30_plans] 20260305_PLAN_EEZO販売戦略_タスクマップ_v4.md
+- [30_plans] 20260326_PLAN_BLING_Beee_EEZO_UGCオペレーション設計.md
+- [30_plans] 20260326_PLAN_EEZO_3ライン役割分担_オペレーション設計.md
+- [30_plans] 20260402_PLAN_EEZOギフト_商品構造設計.md
+- [30_plans] 20260408_PLAN_セリングアイデア_ポートフォリオ_v5.md
+- [30_plans] 20260514_MEMO_食品輸出EXPO2026_方針変更とタスクリスト.md
+- [30_plans] 20260520_DOC_EEZO_ブランドマネジメント定義書_v1.md
+- [30_plans] 20260520_DOC_EEZOとは_ページコピー_仕入先案内用.md
+- [30_plans] 20260526_PLAN_買取催事SI_ターゲット定義_v2.md
+- [30_plans] 20260603_DOC_EEZO_ezoshika_LP_copy.md
+- [30_plans] 20260603_PLAN_EEZO_ezoshika_page_brief.md
+- [30_plans] 20260702_PLAN_エゾシカBtoB_顧客タグ体系_マッチング構想.md
+- [40_data] 20250909_DATA_ICCJ提案_詳細分析.md
+- [40_data] 20250909_DATA_海外展開_CPA試算分析.md
+- [40_data] 20250918_DATA_料理長インタビュー_KJ法カード化.md
+- [40_data] 20250927_DATA_Note発信_文体分析_改訂版.md
+- [40_data] 20251028_日本酒輸出_12品目.csv
+- [40_data] 20251030_DATA_エゾシカ価格表_4社統合.csv
+- [40_data] 20260105_DATA_フェリー会員_可処分所得リプレイス分析.md
+- [40_data] 20260109_DOC_輸出商談_HK_VN案件整理.md
+- [40_data] 20260113_DOC_日新堂_取引関係整理.md
+- [40_data] 20260114_DATA_EEZO投資優先順位_消費者行動メタ分析_v2.md
+- [40_data] 20260121_DATA_まいクラウドファンディング_購入型調査レポート.md
+- [40_data] 20260121_DATA_エゾシカペットフード_市場調査レポート.md
+- [40_data] 20260122_DATA_食品EC無形価値創出_事例集.md
+- [40_data] 20260209_DATA_エゾシカ一頭PL_部位別収支フレームワーク_v3.md
+- [40_data] 20260216_DATA_販路クラスタリング分析_あぷか提案用.md
+- [40_data] 20260330_PLAN_EEZOギフト_仕入先候補総覧.md
+- [40_data] 20260330_VIZ_EEZO_BC_ユーザー動線フロー図.html
+- [40_data] 20260330_VIZ_EEZO_BC棲み分けサイトマップ_樹形図.html
+- [40_data] 20260413_DOC_EEZOギフト_商品名_説明文一覧_v7.md
+- [40_data] 20260522_DATA_うま味成分比較_2x2理論試算.md
+- [40_data] 20260630_DATA_ヤマト運輸法人運賃_割引率分析.md
+- [40_data] [20251028]_DATA_日本酒輸出_展示会商品データベース.md
+- [40_data] エゾシカ一頭まるごと部位別用途・価格ガイド: 全部位出口設計と価値最大化戦略.md
+- [50_skills] 20251020_SKILL_カレンダータスク管理_更新フロー.md
+- [50_skills] 20251224_DOC_仕入交渉_双方利益型フレームワーク.md
+- [50_skills] 20260123_DOC_ClaudeCodeForWeb活用ガイド_v2.md
+- [50_skills] 20260302_SKILL_上申テクニック_蜂巣経由社長決裁.md
+- [60_research] 20250908_PLAN_EU日本酒戦略_対象国精査レポート.md
+- [60_research] 20260120_PLAN_認知心理学データ基盤_視線追跡構想.md
+- [60_research] 20260122_PLAN_EEZO_煽らない購買促進ベストプラクティス.md
+- [60_research] 20260126_DOC_EEZOジョブ理論_学術エビデンス.md
+- [60_research] 20260126_DOC_dancyu分析_キュレーターEC戦略.md
+- [60_research] 20260304_DOC_法人ギフト市場リサーチ_EEZO参入検証.md
+- [60_research] 20260406_DOC_Shopifyノウハウ_エディConfluence_スナップショット.md
+- [60_research] Shopify 2025-2026 New Features: Complete Guide for Hokkaido Food EC Migration.md
+- [60_research] 北海道雪室ビジネス パートナー候補総覧: 新日本海商事の戦略的ロードマップ.md
+- [60_research] 日本人のクイズと大喜利嗜好を支える心理と文化の科学.md
+- [code] build_supplier_map.py
+- [code] eezo_order_split.py
+- [code] generate_hokkaido_maps.py
+- [code] supplier_map.json

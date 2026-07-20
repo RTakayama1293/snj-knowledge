@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EEZO B/C棲み分け ユーザー動線フロー図 — 2026-03-30</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;padding:24px;background:#fff;color:#1a1a1a;font-size:13px}
+@media(prefers-color-scheme:dark){body{background:#1a1a1a;color:#e5e5e5}}
+.flow-wrap{max-width:720px;margin:0 auto}
+.doc-title{font-size:11px;color:#737373;text-align:center;margin-bottom:12px}
+@media(prefers-color-scheme:dark){.doc-title{color:#a3a3a3}}
+.legend{display:flex;gap:14px;flex-wrap:wrap;margin:0 0 16px;padding:0 0 12px;border-bottom:1px solid #d4d4d4}
+@media(prefers-color-scheme:dark){.legend{border-color:#404040}}
+.legend-item{display:flex;align-items:center;gap:5px;font-size:11px;color:#737373}
+@media(prefers-color-scheme:dark){.legend-item{color:#a3a3a3}}
+.legend-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.tabs{display:flex;gap:4px;margin-bottom:16px}
+.tab{padding:6px 14px;border-radius:8px;font-size:13px;font-weight:500;cursor:pointer;border:1px solid #d4d4d4;background:#f5f5f5;color:#737373;transition:all .15s}
+@media(prefers-color-scheme:dark){.tab{border-color:#404040;background:#262626;color:#a3a3a3}}
+.tab:hover{border-color:#a3a3a3}
+@media(prefers-color-scheme:dark){.tab:hover{border-color:#737373}}
+.tab.active-c{background:#FAECE7;border-color:rgba(216,90,48,.4);color:#993C1D}
+.tab.active-b1{background:#E1F5EE;border-color:rgba(93,202,165,.4);color:#0F6E56}
+.tab.active-b2{background:#FAEEDA;border-color:rgba(186,117,23,.4);color:#854F0B}
+.tab.active-all{background:#fff;border-color:#737373;color:#1a1a1a}
+@media(prefers-color-scheme:dark){
+.tab.active-c{background:rgba(74,27,12,.25);border-color:rgba(216,90,48,.3);color:#F0997B}
+.tab.active-b1{background:rgba(4,52,44,.25);border-color:rgba(29,158,117,.3);color:#5DCAA5}
+.tab.active-b2{background:rgba(65,36,2,.25);border-color:rgba(186,117,23,.3);color:#FAC775}
+.tab.active-all{background:#262626;border-color:#a3a3a3;color:#e5e5e5}
+}
+.flow-panel{display:none}
+.flow-panel.show{display:block}
+.step{display:flex;align-items:stretch;gap:0;margin-bottom:0;position:relative}
+.step-connector{width:24px;display:flex;flex-direction:column;align-items:center;flex-shrink:0}
+.step-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;border:2px solid;background:#fff}
+@media(prefers-color-scheme:dark){.step-dot{background:#1a1a1a}}
+.step-line{width:1px;flex:1;min-height:8px}
+.step-card{flex:1;padding:10px 14px;border-radius:8px;border:1px solid #d4d4d4;margin:4px 0;position:relative}
+@media(prefers-color-scheme:dark){.step-card{border-color:#404040}}
+.step-title{font-size:13px;font-weight:500;margin-bottom:2px}
+.step-desc{font-size:12px;color:#737373;line-height:1.5}
+@media(prefers-color-scheme:dark){.step-desc{color:#a3a3a3}}
+.step-tag{display:inline-block;font-size:9px;font-weight:500;padding:1px 6px;border-radius:3px;margin-left:6px;vertical-align:middle}
+.branch-label{font-size:11px;color:#a3a3a3;padding:4px 0 4px 34px;display:flex;align-items:center;gap:6px}
+@media(prefers-color-scheme:dark){.branch-label{color:#737373}}
+.branch-label::before{content:'';width:16px;height:1px;background:#a3a3a3}
+@media(prefers-color-scheme:dark){.branch-label::before{background:#737373}}
+.gate{padding:8px 14px;margin:4px 0 4px 24px;border-radius:8px;border:2px dashed;font-size:12px;font-weight:500;text-align:center}
+.cross-link{font-size:11px;color:#a3a3a3;padding:2px 0 2px 34px;font-style:italic}
+@media(prefers-color-scheme:dark){.cross-link{color:#737373}}
+.c-dot{border-color:#D85A30}.c-line{background:#D85A30;opacity:.3}
+.c-card{border-color:rgba(240,153,123,.4);background:rgba(250,236,231,.15)}
+.b-dot{border-color:#1D9E75}.b-line{background:#1D9E75;opacity:.3}
+.b-card{border-color:rgba(93,202,165,.4);background:rgba(225,245,238,.15)}
+.a-dot{border-color:#BA7517}.a-line{background:#BA7517;opacity:.3}
+.a-card{border-color:rgba(250,199,117,.4);background:rgba(250,238,218,.15)}
+@media(prefers-color-scheme:dark){
+.c-card{background:rgba(74,27,12,.1);border-color:rgba(216,90,48,.25)}
+.b-card{background:rgba(4,52,44,.1);border-color:rgba(29,158,117,.25)}
+.a-card{background:rgba(65,36,2,.1);border-color:rgba(186,117,23,.25)}
+}
+.tag-c{background:#FAECE7;color:#993C1D}
+.tag-b{background:#E1F5EE;color:#0F6E56}
+.tag-a{background:#FAEEDA;color:#854F0B}
+.tag-o2o{background:#EEEDFE;color:#534AB7}
+.tag-common{background:#f5f5f5;color:#737373}
+@media(prefers-color-scheme:dark){
+.tag-c{background:#4A1B0C;color:#F0997B}
+.tag-b{background:#04342C;color:#5DCAA5}
+.tag-a{background:#412402;color:#FAC775}
+.tag-o2o{background:#26215C;color:#AFA9EC}
+.tag-common{background:#333;color:#a3a3a3}
+}
+.gate-b{border-color:#1D9E75;color:#0F6E56;background:rgba(225,245,238,.25)}
+@media(prefers-color-scheme:dark){.gate-b{border-color:#5DCAA5;color:#5DCAA5;background:rgba(4,52,44,.15)}}
+.section-label{font-size:11px;font-weight:500;color:#a3a3a3;text-transform:uppercase;letter-spacing:.05em;padding:10px 0 4px;margin-top:4px}
+@media(prefers-color-scheme:dark){.section-label{color:#737373}}
+.all-flows{display:flex;gap:12px}
+.all-col{flex:1;min-width:0}
+.all-col-header{font-size:12px;font-weight:500;padding:6px 10px;border-radius:8px;margin-bottom:8px;text-align:center}
+.col-c .all-col-header{background:rgba(250,236,231,.4);color:#993C1D;border:1px solid rgba(240,153,123,.3)}
+.col-b .all-col-header{background:rgba(225,245,238,.4);color:#0F6E56;border:1px solid rgba(93,202,165,.3)}
+@media(prefers-color-scheme:dark){
+.col-c .all-col-header{background:rgba(74,27,12,.2);color:#F0997B;border-color:rgba(216,90,48,.25)}
+.col-b .all-col-header{background:rgba(4,52,44,.2);color:#5DCAA5;border-color:rgba(29,158,117,.25)}
+}
+.mini-step{padding:7px 10px;border-radius:6px;font-size:11px;margin-bottom:4px;border:1px solid #d4d4d4;line-height:1.4;color:#1a1a1a}
+@media(prefers-color-scheme:dark){.mini-step{border-color:#404040;color:#e5e5e5}}
+.mini-step b{font-weight:500}
+.shared-bar{padding:6px 10px;border-radius:6px;font-size:11px;background:#f5f5f5;border:1px solid #d4d4d4;text-align:center;margin-top:4px;color:#737373}
+@media(prefers-color-scheme:dark){.shared-bar{background:#262626;border-color:#404040;color:#a3a3a3}}
+.mini-branch{display:flex;gap:6px;margin-bottom:4px}
+.mini-branch>div{flex:1;min-width:0}
+.mini-branch-label{font-size:9px;font-weight:500;text-align:center;padding:2px;border-radius:3px;margin-bottom:3px}
+.lbl-unauth{background:#E1F5EE;color:#0F6E56}
+.lbl-auth{background:#FAEEDA;color:#854F0B}
+@media(prefers-color-scheme:dark){
+.lbl-unauth{background:#04342C;color:#5DCAA5}
+.lbl-auth{background:#412402;color:#FAC775}
+}
+.arrow-down{text-align:center;color:#a3a3a3;font-size:11px;padding:2px 0;line-height:1}
+@media(prefers-color-scheme:dark){.arrow-down{color:#737373}}
+.cross-arrows{display:flex;align-items:center;justify-content:center;gap:4px;padding:4px 0;font-size:10px;color:#a3a3a3}
+@media(prefers-color-scheme:dark){.cross-arrows{color:#737373}}
+.cross-arrows span{border-bottom:1px dashed #d4d4d4;flex:1}
+@media(prefers-color-scheme:dark){.cross-arrows span{border-color:#404040}}
+</style>
+</head>
+<body>
+<div class="flow-wrap">
+<div class="doc-title">EEZO B/C棲み分け ユーザー動線フロー図 ─ 2026-03-30</div>
+<div class="legend">
+<div class="legend-item"><span class="legend-dot" style="background:#D85A30"></span>BtoC 購入フロー</div>
+<div class="legend-item"><span class="legend-dot" style="background:#1D9E75"></span>BtoB 未認証フロー</div>
+<div class="legend-item"><span class="legend-dot" style="background:#BA7517"></span>BtoB 認証済フロー</div>
+<div class="legend-item"><span class="legend-dot" style="background:#534AB7"></span>O2O</div>
+</div>
+<div class="tabs">
+<div class="tab active-all" onclick="show('all',this)" id="tab-all">全体</div>
+<div class="tab" onclick="show('c',this)" id="tab-c">BtoC</div>
+<div class="tab" onclick="show('b1',this)" id="tab-b1">BtoB 未認証</div>
+<div class="tab" onclick="show('b2',this)" id="tab-b2">BtoB 認証済</div>
+</div>
+
+<div class="flow-panel show" id="panel-all">
+<div class="all-flows">
+<div class="all-col col-c">
+<div class="all-col-header">BtoC 購入誘導型</div>
+<div class="mini-step" style="border-color:rgba(240,153,123,.3)"><b>流入</b><br>Meta広告 / Instagram / メルマガ / フェリーO2O</div>
+<div class="arrow-down">↓</div>
+<div class="mini-step" style="border-color:rgba(240,153,123,.3)"><b>LP選択</b><br>エゾシカC / ギフトC / フェリーLP</div>
+<div class="arrow-down">↓</div>
+<div class="mini-step" style="border-color:rgba(240,153,123,.3)"><b>商品詳細（C仕様）</b><br>ストーリー / 体験 / レシピ / レビュー</div>
+<div class="arrow-down">↓</div>
+<div class="mini-step" style="border-color:rgba(240,153,123,.3)"><b>カート</b><br>ギフトオプション（熨斗/ラッピング）</div>
+<div class="arrow-down">↓</div>
+<div class="shared-bar">購入完了 → メール通知 → 同梱カード</div>
+</div>
+<div class="all-col col-b">
+<div class="all-col-header">BtoB 認証ゲート型</div>
+<div class="mini-step" style="border-color:rgba(93,202,165,.3)"><b>流入</b><br>検索 / 紹介 / 展示会名刺 / DM</div>
+<div class="arrow-down">↓</div>
+<div class="mini-step" style="border-color:rgba(93,202,165,.3)"><b>LP選択</b><br>エゾシカB / ギフトB</div>
+<div class="arrow-down">↓</div>
+<div class="mini-step" style="border-color:rgba(93,202,165,.3)"><b>商品詳細（B仕様）</b><br>スペック / 規格 / MOQ / 認証</div>
+<div class="arrow-down">↓ 認証状態で分岐</div>
+<div class="mini-branch">
+<div>
+<div class="mini-branch-label lbl-unauth">未認証</div>
+<div class="mini-step" style="border-color:rgba(93,202,165,.3);font-size:10px"><b>CTA: 会員登録</b></div>
+<div class="arrow-down">↓</div>
+<div class="mini-step" style="border-color:rgba(93,202,165,.3);font-size:10px"><b>法人認証フォーム</b></div>
+<div class="arrow-down">↓</div>
+<div class="mini-step" style="border-color:rgba(93,202,165,.3);font-size:10px"><b>審査→認証完了</b></div>
+</div>
+<div>
+<div class="mini-branch-label lbl-auth">認証済</div>
+<div class="mini-step" style="border-color:rgba(250,199,117,.3);font-size:10px"><b>カート（B価格）</b></div>
+<div class="arrow-down">↓</div>
+<div class="shared-bar" style="font-size:10px">購入完了 → メール通知</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cross-arrows"><span></span>LP間相互リンク（B↔C）<span></span></div>
+<div style="font-size:11px;color:#a3a3a3;text-align:center;line-height:1.6;padding:2px 0">
+エゾシカC↔エゾシカB「法人の方/個人の方」　ギフトC↔ギフトB「法人ギフト/個人ギフト」<br>
+エゾシカC↔ギフトC「ギフトで贈る/自分用」　エゾシカB↔ギフトB「法人ギフト/食材仕入れ」
+</div>
+</div>
+
+<div class="flow-panel" id="panel-c">
+<div class="section-label">流入経路</div>
+<div class="step"><div class="step-connector"><div class="step-dot c-dot"></div><div class="step-line c-line"></div></div><div class="step-card c-card"><div class="step-title">流入<span class="step-tag tag-c">BtoC</span></div><div class="step-desc">Meta広告 / Instagram / メルマガ / フェリー船内体験<span class="step-tag tag-o2o">O2O</span></div></div></div>
+<div class="section-label">LP選択</div>
+<div class="step"><div class="step-connector"><div class="step-dot c-dot"></div><div class="step-line c-line"></div></div><div class="step-card c-card"><div class="step-title">エゾシカC LP / ギフトC LP / フェリーLP</div><div class="step-desc">ストーリー（産地・猟師・一頭まるごと）/ 季節テーマ / 価格帯別セット / O2O起点</div></div></div>
+<div class="cross-link">← → 「法人の方はこちら」でB LPへ遷移可能</div>
+<div class="section-label">商品選択</div>
+<div class="step"><div class="step-connector"><div class="step-dot c-dot"></div><div class="step-line c-line"></div></div><div class="step-card c-card"><div class="step-title">商品詳細ページ（C仕様）</div><div class="step-desc">体験訴求 / レシピ提案 / レビュー・UGC / ストーリーブロック</div></div></div>
+<div class="section-label">購入</div>
+<div class="step"><div class="step-connector"><div class="step-dot c-dot"></div><div class="step-line c-line"></div></div><div class="step-card c-card"><div class="step-title">カート</div><div class="step-desc">ギフトオプション（熨斗 / ラッピング / メッセージカード）/ Shopify Payments</div></div></div>
+<div class="step"><div class="step-connector"><div class="step-dot c-dot"></div><div class="step-line" style="background:transparent"></div></div><div class="step-card c-card"><div class="step-title">購入完了</div><div class="step-desc">注文確認メール → 発送通知メール → 同梱カード体験（話のネタカード）</div></div></div>
+</div>
+
+<div class="flow-panel" id="panel-b1">
+<div class="section-label">流入経路</div>
+<div class="step"><div class="step-connector"><div class="step-dot b-dot"></div><div class="step-line b-line"></div></div><div class="step-card b-card"><div class="step-title">流入<span class="step-tag tag-b">BtoB</span></div><div class="step-desc">Google検索 / 業界紹介 / 展示会名刺フォロー / DM（手紙営業）</div></div></div>
+<div class="section-label">LP閲覧</div>
+<div class="step"><div class="step-connector"><div class="step-dot b-dot"></div><div class="step-line b-line"></div></div><div class="step-card b-card"><div class="step-title">エゾシカB LP / ギフトB LP</div><div class="step-desc">スペック・ISO認証・供給体制 / 法人進物・株主優待・BtoE</div></div></div>
+<div class="cross-link">← → 「個人のお客様はこちら」でC LPへ遷移可能</div>
+<div class="section-label">商品確認</div>
+<div class="step"><div class="step-connector"><div class="step-dot b-dot"></div><div class="step-line b-line"></div></div><div class="step-card b-card"><div class="step-title">商品詳細ページ（B仕様）</div><div class="step-desc">規格・MOQ・業務用ロット / 認証情報 / 取引実績</div></div></div>
+<div class="gate gate-b">認証ゲート: 未ログイン状態</div>
+<div class="section-label">認証プロセス</div>
+<div class="step"><div class="step-connector"><div class="step-dot b-dot"></div><div class="step-line b-line"></div></div><div class="step-card b-card"><div class="step-title">CTA「会員登録・認証依頼」</div><div class="step-desc">「プロの世界に入る」— 法人認証フォームへ誘導</div></div></div>
+<div class="step"><div class="step-connector"><div class="step-dot b-dot"></div><div class="step-line b-line"></div></div><div class="step-card b-card"><div class="step-title">法人認証フォーム送信</div><div class="step-desc">法人情報・業種・取引目的を入力</div></div></div>
+<div class="step"><div class="step-connector"><div class="step-dot b-dot"></div><div class="step-line b-line"></div></div><div class="step-card b-card"><div class="step-title">審査（社内確認）</div><div class="step-desc">与信チェック → 承認 → B会員アカウント有効化</div></div></div>
+<div class="step"><div class="step-connector"><div class="step-dot b-dot"></div><div class="step-line" style="background:transparent"></div></div><div class="step-card b-card"><div class="step-title">認証完了<span class="step-tag tag-a">→ B認証済フローへ</span></div><div class="step-desc">B価格での購入が解放される。次回ログインからB認証済フローに合流</div></div></div>
+</div>
+
+<div class="flow-panel" id="panel-b2">
+<div class="section-label">ログイン</div>
+<div class="step"><div class="step-connector"><div class="step-dot a-dot"></div><div class="step-line a-line"></div></div><div class="step-card a-card"><div class="step-title">ログイン（認証済アカウント）<span class="step-tag tag-a">B認証済</span></div><div class="step-desc">法人認証が完了しているアカウントでログイン</div></div></div>
+<div class="section-label">LP閲覧</div>
+<div class="step"><div class="step-connector"><div class="step-dot a-dot"></div><div class="step-line a-line"></div></div><div class="step-card a-card"><div class="step-title">エゾシカB LP / ギフトB LP</div><div class="step-desc">B価格表示が有効 / MOQ・業務用ロット表示</div></div></div>
+<div class="section-label">商品選択</div>
+<div class="step"><div class="step-connector"><div class="step-dot a-dot"></div><div class="step-line a-line"></div></div><div class="step-card a-card"><div class="step-title">商品詳細ページ（B仕様 + B価格）</div><div class="step-desc">業務用価格・ロット割引・スペック詳細が表示される</div></div></div>
+<div class="section-label">購入</div>
+<div class="step"><div class="step-connector"><div class="step-dot a-dot"></div><div class="step-line a-line"></div></div><div class="step-card a-card"><div class="step-title">カート（B価格）</div><div class="step-desc">法人価格が適用されたカート / Shopify Payments</div></div></div>
+<div class="step"><div class="step-connector"><div class="step-dot a-dot"></div><div class="step-line" style="background:transparent"></div></div><div class="step-card a-card"><div class="step-title">購入完了</div><div class="step-desc">注文確認メール → 発送通知メール</div></div></div>
+</div>
+</div>
+<script>
+function show(id, el) {
+  document.querySelectorAll('.flow-panel').forEach(p => p.classList.remove('show'));
+  document.getElementById('panel-' + id).classList.add('show');
+  document.querySelectorAll('.tab').forEach(t => { t.className = 'tab'; });
+  var cls = {all:'active-all',c:'active-c',b1:'active-b1',b2:'active-b2'};
+  el.classList.add(cls[id]);
+}
+</script>
+</body>
+</html>
