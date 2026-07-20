@@ -117,7 +117,7 @@
 - 20260522_DATA_うま味成分比較_2x2理論試算.md
 - 20260630_DATA_ヤマト運輸法人運賃_割引率分析.md
 - [20251028]_DATA_日本酒輸出_展示会商品データベース.md
-- エゾシカ一頭まるごと部位別用途・価格ガイド: 全部位出口設計と価値最大化戦略.md
+- エゾシカ一頭まるごと部位別用途・価格ガイド：全部位出口設計と価値最大化戦略.md
 
 ## knowledge/50_skills/ — 業務スキル（4件）
 
@@ -135,8 +135,8 @@
 - 20260126_DOC_dancyu分析_キュレーターEC戦略.md
 - 20260304_DOC_法人ギフト市場リサーチ_EEZO参入検証.md
 - 20260406_DOC_Shopifyノウハウ_エディConfluence_スナップショット.md
-- Shopify 2025-2026 New Features: Complete Guide for Hokkaido Food EC Migration.md
-- 北海道雪室ビジネス パートナー候補総覧: 新日本海商事の戦略的ロードマップ.md
+- Shopify 2025-2026 New Features - Complete Guide for Hokkaido Food EC Migration.md
+- 北海道雪室ビジネス パートナー候補総覧：新日本海商事の戦略的ロードマップ.md
 - 日本人のクイズと大喜利嗜好を支える心理と文化の科学.md
 
 ## code/ — スクリプト（4件）

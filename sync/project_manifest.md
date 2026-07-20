@@ -105,7 +105,7 @@ claude.aiプロジェクト「食材卸の事業計画」に置くファイル�
 - [40_data] 20260522_DATA_うま味成分比較_2x2理論試算.md
 - [40_data] 20260630_DATA_ヤマト運輸法人運賃_割引率分析.md
 - [40_data] [20251028]_DATA_日本酒輸出_展示会商品データベース.md
-- [40_data] エゾシカ一頭まるごと部位別用途・価格ガイド: 全部位出口設計と価値最大化戦略.md
+- [40_data] エゾシカ一頭まるごと部位別用途・価格ガイド：全部位出口設計と価値最大化戦略.md
 - [50_skills] 20251020_SKILL_カレンダータスク管理_更新フロー.md
 - [50_skills] 20251224_DOC_仕入交渉_双方利益型フレームワーク.md
 - [50_skills] 20260123_DOC_ClaudeCodeForWeb活用ガイド_v2.md
@@ -117,8 +117,8 @@ claude.aiプロジェクト「食材卸の事業計画」に置くファイル�
 - [60_research] 20260126_DOC_dancyu分析_キュレーターEC戦略.md
 - [60_research] 20260304_DOC_法人ギフト市場リサーチ_EEZO参入検証.md
 - [60_research] 20260406_DOC_Shopifyノウハウ_エディConfluence_スナップショット.md
-- [60_research] Shopify 2025-2026 New Features: Complete Guide for Hokkaido Food EC Migration.md
-- [60_research] 北海道雪室ビジネス パートナー候補総覧: 新日本海商事の戦略的ロードマップ.md
+- [60_research] Shopify 2025-2026 New Features - Complete Guide for Hokkaido Food EC Migration.md
+- [60_research] 北海道雪室ビジネス パートナー候補総覧：新日本海商事の戦略的ロードマップ.md
 - [60_research] 日本人のクイズと大喜利嗜好を支える心理と文化の科学.md
 - [code] build_supplier_map.py
 - [code] eezo_order_split.py
