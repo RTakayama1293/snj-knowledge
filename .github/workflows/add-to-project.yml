@@ -11,6 +11,7 @@ name: Add issues to project
 on:
   issues:
     types: [opened]
+  workflow_dispatch: # デバッグ用の手動実行（Issue #33を対象に動く）
 
 permissions:
   contents: read
@@ -22,7 +23,21 @@ jobs:
   add-to-project:
     runs-on: ubuntu-latest
     steps:
+      - name: Diagnose token (一時的な診断ステップ)
+        env:
+          GH_TOKEN: ${{ secrets.ADD_TO_PROJECT_PAT }}
+        run: |
+          echo "token prefix: ${GH_TOKEN:0:4} (ghp_=classic / gith=fine-grained / 空=未設定)"
+          echo "token length: ${#GH_TOKEN}"
+          echo "--- REST /user のレスポンスヘッダ ---"
+          curl -sS -D - -o /dev/null -H "Authorization: token $GH_TOKEN" https://api.github.com/user | grep -i -E '^(HTTP|x-oauth-scopes|github-authentication-token-type)' || true
+          echo "--- GraphQL user lookup ---"
+          gh api graphql -f query='query($login:String!){user(login:$login){id login}}' -F login=RTakayama1293 || true
       - name: Add issue to user project
         env:
           GH_TOKEN: ${{ secrets.ADD_TO_PROJECT_PAT }}
-        run: gh project item-add "$PROJECT_NUMBER" --owner RTakayama1293 --url "${{ github.event.issue.html_url }}"
+          ISSUE_URL: ${{ github.event.issue.html_url }}
+        run: |
+          # workflow_dispatch時はissueコンテキストが無いのでテストIssueで代用
+          gh project item-add "$PROJECT_NUMBER" --owner RTakayama1293 \
+            --url "${ISSUE_URL:-https://github.com/RTakayama1293/snj-knowledge/issues/33}"
