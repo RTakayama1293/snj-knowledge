@@ -1,0 +1,28 @@
+# 新規Issueを業務タスクProject（ユーザーProject）に自動追加する。
+# FreeプランはProjectのauto-add workflowが1本のみ（eezo-ops側で使用中）のため、
+# snj-knowledge側はActionsで代替する。詳細: knowledge/10_rules/20260802_DOC_タスク管理_運用ルール.md §7
+#
+# 必要な手動セットアップ（1回だけ）:
+#   classic PAT（scope: repo + project）を作成し、
+#   本repoの Settings → Secrets and variables → Actions に
+#   ADD_TO_PROJECT_PAT という名前で登録する
+name: Add issues to project
+
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  contents: read
+
+env:
+  PROJECT_NUMBER: "1" # https://github.com/users/RTakayama1293/projects/1
+
+jobs:
+  add-to-project:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Add issue to user project
+        env:
+          GH_TOKEN: ${{ secrets.ADD_TO_PROJECT_PAT }}
+        run: gh project item-add "$PROJECT_NUMBER" --owner RTakayama1293 --url "${{ github.event.issue.html_url }}"
