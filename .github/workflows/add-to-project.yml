@@ -6,6 +6,11 @@
 #   classic PAT（scope: repo + project）を作成し、
 #   本repoの Settings → Secrets and variables → Actions に
 #   ADD_TO_PROJECT_PAT という名前で登録する
+#
+# 実装メモ: --owner にログイン名を渡すと gh 内部のオーナー種別判定が
+# unknown owner type で失敗することがあるため（scope・トークン種別は正常でも発生）、
+# トークン所有者自身を指す "@me" を使う。それも失敗した場合は
+# GraphQL API (addProjectV2ItemById) で直接追加する。
 name: Add issues to project
 
 on:
@@ -23,21 +28,21 @@ jobs:
   add-to-project:
     runs-on: ubuntu-latest
     steps:
-      - name: Diagnose token (一時的な診断ステップ)
-        env:
-          GH_TOKEN: ${{ secrets.ADD_TO_PROJECT_PAT }}
-        run: |
-          echo "token prefix: ${GH_TOKEN:0:4} (ghp_=classic / gith=fine-grained / 空=未設定)"
-          echo "token length: ${#GH_TOKEN}"
-          echo "--- REST /user のレスポンスヘッダ ---"
-          curl -sS -D - -o /dev/null -H "Authorization: token $GH_TOKEN" https://api.github.com/user | grep -i -E '^(HTTP|x-oauth-scopes|github-authentication-token-type)' || true
-          echo "--- GraphQL user lookup ---"
-          gh api graphql -f query='query($login:String!){user(login:$login){id login}}' -F login=RTakayama1293 || true
       - name: Add issue to user project
         env:
           GH_TOKEN: ${{ secrets.ADD_TO_PROJECT_PAT }}
           ISSUE_URL: ${{ github.event.issue.html_url }}
+          ISSUE_NODE_ID: ${{ github.event.issue.node_id }}
         run: |
-          # workflow_dispatch時はissueコンテキストが無いのでテストIssueで代用
-          gh project item-add "$PROJECT_NUMBER" --owner RTakayama1293 \
-            --url "${ISSUE_URL:-https://github.com/RTakayama1293/snj-knowledge/issues/33}"
+          URL="${ISSUE_URL:-https://github.com/RTakayama1293/snj-knowledge/issues/33}"
+          if gh project item-add "$PROJECT_NUMBER" --owner "@me" --url "$URL"; then
+            exit 0
+          fi
+          echo "gh project item-add が失敗したため、GraphQLで直接追加する"
+          NODE_ID="${ISSUE_NODE_ID:-$(gh api repos/RTakayama1293/snj-knowledge/issues/33 --jq .node_id)}"
+          PROJECT_ID=$(gh api graphql \
+            -f query='query($login:String!,$number:Int!){user(login:$login){projectV2(number:$number){id}}}' \
+            -F login=RTakayama1293 -F number="$PROJECT_NUMBER" --jq '.data.user.projectV2.id')
+          gh api graphql \
+            -f query='mutation($project:ID!,$content:ID!){addProjectV2ItemById(input:{projectId:$project,contentId:$content}){item{id}}}' \
+            -F project="$PROJECT_ID" -F content="$NODE_ID"
