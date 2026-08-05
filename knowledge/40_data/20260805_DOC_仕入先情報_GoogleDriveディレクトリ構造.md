@@ -14,50 +14,49 @@
 
 **重要な注記（範囲の限界）**: このフォルダは想定以上に規模が大きく、特に「●生産者・メーカー別ファイル」（仕入先ごとのフォルダ123件）と「お蔵入りの生産者」（33件）の配下は、1仕入先フォルダあたり数件〜90件超のファイル（見積書・規格書・メール・写真・動画等）を含む。
 
-**フォルダ構造は全階層確定（2026-08-05時点）**。2026-08-05の2ラウンド目のセッションで、第1ラウンドで「未確認」としていた部分の大半にファイル件数・主な種別まで確認を広げた。
+**フォルダ構造は全階層確定（2026-08-05時点）**。2026-08-05の3ラウンド目のセッションで、第1・第2ラウンドで「未確認」としていた孫・曾孫階層のサブフォルダすべてにファイル件数・主な種別の確認を広げ、**未確認は残っていない**。
 
 - **全階層のフォルダ名・ID・URLを列挙完了**（フォルダ構造は全件確定。ページネーション異常も検証済み・後述）
 - **ファイル件数・主な種別まで確認できた範囲**:
-  - ★2026新EEZOフォルダ、★2026船上ニセコメロン、★はまなす催事、★仕入先開拓依頼、★鹿肉サンプル、★ヤマト運輸、雪貯蔵フォルダ（直下のファイルおよび全サブフォルダ）
-  - ●生産者・メーカー別ファイル配下の123フォルダ全件（直下ファイルの件数・種別）
+  - ★2026新EEZOフォルダ、★2026船上ニセコメロン、★はまなす催事、★仕入先開拓依頼、★鹿肉サンプル、★ヤマト運輸、雪貯蔵フォルダ（直下のファイルおよび全サブフォルダ、孫階層まで）
+  - ●生産者・メーカー別ファイル配下の123フォルダ全件（直下ファイルの件数・種別）、および見つかった孫サブフォルダ全件（ナオバンズ2件、梅屋2件、シャルキュトリーアカイシ2件、ニキヒルズ1件、わらく堂1件、三海幸1件、丸市岡田商店1件、うんがぷらす1件、サザエ食品1件、ベターデイズ1件、京樽1件、フジ1件、野菜田1件、北海道美女物語1件、フェリーサービス1件）
   - お蔵入りの生産者配下の33フォルダ全件（直下ファイルの件数・種別）
-  - 上記フォルダ内で見つかったサブフォルダのうち、主要なものは1階層下まで件数・種別を確認済み
+  - 「90社内GRP　オーセントホテル小樽」フォルダの直下ファイル155件を`pageSize=200`で完走・確定（サブフォルダなし。後述）
+  - ★2026新EEZOフォルダ配下EC2606「シャルキュトリーアカイシ」「江戸屋」の孫・曾孫サブフォルダ、EC2607「採用検討中・ボツ」配下10件のEC候補案件フォルダとその内側のサブフォルダまで確認済み
+  - ★2025船上ニセコメロン配下「旧」、★はまなす催事「請求書（納品書）」配下「納品書」を確認済み
 - **個別ファイル名までは記載していない**: 本文書はフォルダ単位の「件数＋主な種別」に集約している（既存の表形式を踏襲）。個別ファイル名の全件記載は行っていない
-- **未確認として残る部分（ごく限られた深い階層）**:
-  - 一部の生産者フォルダ配下でさらに見つかった孫階層のサブフォルダ（例: ナオバンズ配下の「クッキー缶凹み」「旧タリフ」、梅屋配下の画像フォルダ2件、シャルキュトリーアカイシ配下の「画像」「過去見積」等。フォルダ別詳細の各行に「＋サブフォルダN（…／未確認）」と注記した個所がこれに該当）
-  - 「90社内GRP　オーセントホテル小樽」フォルダは直下ファイルが100件を超え、今回のページネーションを完走できていない（後述）
-  - EC2607「採用検討中・ボツ」配下に新たに見つかった10件のEC候補案件フォルダ（サブフォルダのみ確認、直下ファイルは未確認）
+- **未確認として残る部分**: **2026-08-05時点で未確認は残っていない**。フォルダ構造・直下ファイルの件数・種別はすべてのフォルダで確認済み
 
-未確認部分は「未確認」と明記し、ファイル数・ファイル名を推測で埋めていない。追加調査が必要な場合は同じ手順（`search_files` を対象フォルダIDに対して`parentId = '<ID>'`で実行）で再列挙すること。
+追加調査が必要な場合は同じ手順（`search_files` を対象フォルダIDに対して`parentId = '<ID>'`で実行）で再列挙すること。
 
 ## ディレクトリツリー
 
-フォルダ名の横にフォルダ数・ファイル数を付記する。件数は2026-08-05時点で確定。`（未確認）`が残るのは、さらに深い孫階層の一部のみ（詳細は「フォルダ別詳細」参照）。
+フォルダ名の横にフォルダ数・ファイル数を付記する。件数は2026-08-05時点で確定。孫階層まで含め、未確認は残っていない（詳細は「フォルダ別詳細」参照）。
 
 ```
 照合用見積置き場/
 └ ●仕入/
   ├ 1. ●生産者・メーカー別ファイル/ （フォルダ123・ファイル0）
   │   ※ 123フォルダ全件、直下ファイルの件数・種別を確認済み。「フォルダ別詳細」参照
-  │   ※ 一部フォルダ配下にさらに孫階層のサブフォルダあり（個別に注記。ファイル名までは未確認）
+  │   ※ 一部フォルダ配下に孫階層のサブフォルダあり（個別に注記、件数・種別確認済み）
   │
   ├ 2. ★2026新EEZOフォルダ/ （フォルダ19・ファイル11）
-  │   └ 19サブフォルダ（EC26xx案件フォルダ群。件数・種別確認済み。うち2件はさらに孫サブフォルダあり・未確認）
+  │   └ 19サブフォルダ（EC26xx案件フォルダ群。件数・種別確認済み。うち2件はさらに孫サブフォルダあり・確認済み）
   │
   ├ 3. ★2026船上ニセコメロン/ （フォルダ1・ファイル21）
-  │   └ ★2025船上ニセコメロン/ （フォルダ1・ファイル約36、確認済み。配下の「旧」は未確認）
+  │   └ ★2025船上ニセコメロン/ （フォルダ1・ファイル35、確認済み。配下の「旧」も確認済み・7件）
   │
   ├ 4. ★はまなす催事/ （フォルダ4・ファイル6）
   │   ├ 発注書/ （ファイル15、確認済み）
   │   ├ 後で削除/ （ファイル7、確認済み）
-  │   ├ 請求書　（ 納品書）/ （ファイル7、確認済み。配下の「納品書」は未確認）
+  │   ├ 請求書　（ 納品書）/ （ファイル7、確認済み。配下の「納品書」も確認済み・1件）
   │   └ 配置・服装・ポップ/ （ファイル5、確認済み）
   │
   ├ 5. お蔵入りの生産者/ （フォルダ33・ファイル0）
   │   ※ 33フォルダ全件、直下ファイルの件数・種別を確認済み。「フォルダ別詳細」参照
   │
   ├ 6. ★仕入先開拓依頼/ （フォルダ3・ファイル5）
-  │   ├ 回答書/ （ファイル約51、確認済み）
+  │   ├ 回答書/ （ファイル52、確認済み）
   │   ├ 依頼書/ （ファイル18、確認済み）
   │   └ old/ （ファイル1、確認済み）
   │
@@ -77,7 +76,7 @@
 - **URL**: https://drive.google.com/drive/folders/1-GKzk9O3--_nevXy3mbvfBtCotRDZfVZ
 - 直下はフォルダのみ**123件確定**（ファイルなし）。仕入先ごとに1フォルダの構成。フォルダ名の頭の数字は商材カテゴリ番号（01鹿肉／02精肉／03水産／04野菜／06チーズ／20飲料／50菓子／60食品／70精油／71化粧品／75キャビア／90社内GRP）と見られる。第1ラウンドでは「約100件」としていたが、`pageSize=200`で再列挙し123件で確定した（後述の注記参照）。
 
-以下、123フォルダ全件を列挙する（フォルダ名・ID・ファイル件数・種別）。件数はメール(.eml)・PDF・Excel・画像・動画等すべての合計。「＋サブフォルダN（…）」は当該フォルダ配下にさらにサブフォルダがあることを示し、件数・種別を確認済みのものはその旨を、未確認のものは「未確認」と明記した。
+以下、123フォルダ全件を列挙する（フォルダ名・ID・ファイル件数・種別）。件数はメール(.eml)・PDF・Excel・画像・動画等すべての合計。「＋サブフォルダN（…）」は当該フォルダ配下にさらにサブフォルダがあることを示し、件数・主な種別を付記した（2026-08-05時点で全件確認済み）。
 
 | フォルダ名 | ID | ファイル件数 | 主な種別 |
 |---|---|---|---|
@@ -103,7 +102,7 @@
 | 02精肉　エスフーズ | `1TEH9fll5BhCxdresONm_GQwuCGVDdZN4` | 2 | Excel |
 | 02精肉　美瑛ファーム　美瑛放牧酪農場　【美瑛町】 | `1G-_p81wnU6jCeNEzG6WF04zz8zfP8sfA` | 3 | メール、PDF |
 | 02精肉　サカモト食品　　　　　【幕別町】　matsu | `1WDsvBlu0tOkseTbMcaRvyAiuqOglEQan` | 4＋サブフォルダ1（サカモト食品さんからもらった画像EC掲載OK：10件、Thumbs.db・画像(png)多数） | PDF、メール、Word |
-| 02精肉　ファームズ千代田　　　　【美瑛町】　kuro | `1cPYisi3vHqBKuneYVHwJDj9uG6Qu6sBW` | 約43 | 画像多数、PDF、メール |
+| 02精肉　ファームズ千代田　　　　【美瑛町】　kuro | `1cPYisi3vHqBKuneYVHwJDj9uG6Qu6sBW` | 41 | 画像多数、PDF、メール |
 | 02精肉　北一ミート　　　　　　【札幌市】 | `18Tr91cmsVGOn3mXvg9FmxKPg-__q7vwA` | 2 | メール、PDF |
 | 03水産　ヤマニ野口水産　　　　【留萌】 | `1tKL6Sv-VIt6f_dCO_LjiVjT7wGWy4DrO` | 9 | PDF、画像 |
 | 03水産　マルホン小西漁業　　　【寿都町】 | `17722SXVBput3knrw3oe6sG15YTIe11UO` | 3 | メール、PDF |
@@ -114,9 +113,9 @@
 | 03水産　エビコー　　　　　　【札幌市】　EEZO✖ | `1gvvxoYg1VSmJzvMPh6GCwvJZ7B9Iq33a` | 6 | PDF、メール |
 | 03水産　マルトシ吉野商店　　　【寿都町】　matsu | `15RY1FxKqOTp6vLbo7aaIPzTWDOV3p1zP` | 3 | メール、PDF |
 | 03水産　佐藤水産　　　　【札幌市・石狩】　kuro | `1EWzwmZR5XSrjo-qTJb94bxGLfbY56rUr` | 4 | PDF、メール |
-| 03水産　小樽水産加工業協同組合　【小樽市】　matsu | `1StlWFP8BgqTXgZeer3KYFmfOozA3kWxf` | 約35＋サブフォルダ5（【商品写真】かね丁鍛冶13件、かね丁鍛冶見積202507最新4件、ホリ商店（ほっけ）1件、参考資料1件、井原水産hp約20件） | PDF、Excel、画像多数 |
+| 03水産　小樽水産加工業協同組合　【小樽市】　matsu | `1StlWFP8BgqTXgZeer3KYFmfOozA3kWxf` | 48＋サブフォルダ5（【商品写真】かね丁鍛冶13件、かね丁鍛冶見積202507最新4件、ホリ商店（ほっけ）1件、参考資料1件、井原水産hp21件） | PDF、Excel、画像多数 |
 | 03水産　丸恭水産 | `1Z2M3rXSogjiMuB3dNs2pjbga54vBRpH2` | 2 | Excel、メール |
-| 04野菜　ニセコビュープラザ 直売会協同組合　【ニセコ町】　matsu | `1tAD8sOy8cq4W1DDzJ_vRrFArZJgJKRmy` | 7＋サブフォルダ5（メロン18件、干し芋17件、＿削除だが一旦保存2件、野菜セット約24件、恋するじゃが（熟＆新じゃがセット）6件） | Excel、PDF |
+| 04野菜　ニセコビュープラザ 直売会協同組合　【ニセコ町】　matsu | `1tAD8sOy8cq4W1DDzJ_vRrFArZJgJKRmy` | 7＋サブフォルダ5（メロン18件、干し芋17件、＿削除だが一旦保存2件、野菜セット24件、恋するじゃが（熟＆新じゃがセット）6件） | Excel、PDF |
 | 03水産　知床工房吉野　　　【斜里町・知床】 | `1z_b4L2P32IIyE2ebEm4xQpHnJZpStgbz` | 13 | 画像、メール、Excel、PDF |
 | 04野菜　原田産業　原田さん　※見積なし　【倶知安町】 | `1kCrSKA2U3L9WUTGR0gjk-4FUKJVhV8yW` | 20 | 動画、画像、PowerPoint、Word、PDF |
 | 03水産　福島町役場　陸上養殖あわび　【福島町】 | `1RRWtQ9ALNeZzRw3mPntqq-9UcL_Vn7Sv` | 5＋サブフォルダ1（福島町から画像データ（20260106）：5件、Thumbs.db・画像） | メール、Word、Excel、画像 |
@@ -124,7 +123,7 @@
 | 03水産　山下水産　　　　　【寿都町】　kuro | `1FjunPozso4h4qacQzLkDJVhyprnUR0wD` | 7 | PDF、メール、Word |
 | 04野菜　シニック（紫蘇）　　　【蘭越町】 | `1TV5RgNFPpCyCn9XOoTwMyADmsNEboqyk` | 5＋サブフォルダ1（20260706蘭越視察写真門永：16件、画像多数・Thumbs.db） | 動画、Word、メール、Excel |
 | 03水産　王子サーモン | `1Y6CcoNvEgyrTrXuzRZi2Ar0lV2jTZufa` | 3 | PDF |
-| 04野菜　ベジタブルワークス　　　　　　【真狩村】 | `1HtZVodh2dRY3L2vWSLJIlAe8-zm_9gFt` | 約60 | PDF多数、画像多数、Excel |
+| 04野菜　ベジタブルワークス　　　　　　【真狩村】 | `1HtZVodh2dRY3L2vWSLJIlAe8-zm_9gFt` | 65 | PDF多数、画像多数、Excel |
 | 03水産　藤田水産　　　　　　　　　【小平町】 | `1H1VWEUdhC3L1EGU5EsTim0NnuhLZAF85` | 1 | Excel |
 | 03水産　落石漁港協同組合　　　　　　【根室市】 | `1zAHeFxJ2l9AxXCE0zolZr7lSMOcycjyk` | 3 | PDF |
 | 03水産　龍王水産　札幌　　　　　　　【札幌】 | `1V0RhHgzAtCbFxywWOYv8sxvdSuRfFVul` | 4 | PDF、Word、画像 |
@@ -144,42 +143,42 @@
 | キリンビバレッジ【札幌】 | `17roKmYHAOY_piNBR5NJD7EVtYJYN25Hz` | 1 | PDF |
 | トカプコーヒー【中札内村】kuro | `1yXAJw0mcj6rF9KsPxfbkwAIrgnP32RLQ` | 9 | メール、画像、PDF、odt、テキスト |
 | ハリカ桑名園【富良野市】kuro | `1eJKtzdYF7nSNR5K-s3afhnSDnA5dZxV7` | 9 | PDF、Thumbs.db、メール、画像、Excel、Word |
-| ニキヒルズ NIKI HILLS【仁木町】kuro | `1wPdcVjIBWlRhnWtxCm_wbnOI1lQYebZQ` | 12＋サブフォルダ1（20250905ニキヒルズ提供ワイン画像、未確認） | PDF多数、Thumbs.db、Word(doc)、メール、Excel |
+| ニキヒルズ NIKI HILLS【仁木町】kuro | `1wPdcVjIBWlRhnWtxCm_wbnOI1lQYebZQ` | 12＋サブフォルダ1（20250905ニキヒルズ提供ワイン画像：4件、Thumbs.db・ワイン画像jpg3） | PDF多数、Thumbs.db、Word(doc)、メール、Excel |
 | 網走ビール（網走市） | `1wedE1qcuO-sRqYh7K7QyQQlopjIrE9OH` | 5 | PDF多数、Excel |
-| ナオバンズ Nao-buns【倶知安町】matsu | `17BrWOd6FY1JSFp2ya6Hmd9-wBjz-C9oh` | 約82＋サブフォルダ2（クッキー缶凹み、旧タリフ／いずれも未確認） | 画像多数(jpg/png/avif/webp)、PDF、Excel多数、PowerPoint、zip、メール、Thumbs.db |
+| ナオバンズ Nao-buns【倶知安町】matsu | `17BrWOd6FY1JSFp2ya6Hmd9-wBjz-C9oh` | 73＋サブフォルダ2（クッキー缶凹み：7件、Thumbs.db・画像jpg/JPEG6／旧タリフ：4件、送料見積PDF4） | 画像多数(jpg/png/avif/webp)、PDF、Excel多数、PowerPoint、zip、メール、Thumbs.db |
 | 奥尻ワイナリー【奥尻町】 | `1E5J02NIj-O4Zdc8qci5XmgVabpVoVJD0` | 2 | メール、Excel |
 | 北王よいち【余市町】kuro | `1kwQegrAe2lzZyfctFIk6dYXJg13wexBS` | 12 | PDF多数、メール、Thumbs.db、画像、Word |
-| わらく堂【札幌市】matsu | `10F8k3FCitQ4-W6LLw3Id3CwsHqdGu3jP` | 15＋サブフォルダ1（わらく堂からいただいた写真データ（オーケストラデュオ）、未確認） | メール、Word、PDF、Thumbs.db、画像 |
+| わらく堂【札幌市】matsu | `10F8k3FCitQ4-W6LLw3Id3CwsHqdGu3jP` | 15＋サブフォルダ1（わらく堂からいただいた写真データ（オーケストラデュオ）：6件、Thumbs.db・画像jpg/JPG5） | メール、Word、PDF、Thumbs.db、画像 |
 | 積丹スピリット【積丹町】 | `1SYehNxgriHf2l93dUpoh6keE1e61gdg3` | 8 | メール、PDF多数、Word、画像 |
 | ほんま　月寒あんぱん本舗（3600万）【恵庭市】matsu | `1Vm_pTH39GyOZj3n5H2ZycxQ-veetH8eH` | 11 | Excel(xls)多数、zip、メール、PDF |
-| 三海幸【函館市】matsu | `1V_tW3g40y-7vdBt9Ezj6i5Vy_LFv_Hnd` | 21＋サブフォルダ1（2025年2月1日ご納品分よりｇ変更、未確認） | PDF多数、メール、画像、zip |
-| 丸市岡田商店【札幌市】matsu | `1mtPdmNHeFpSV-mNvWot5fJF23Db8FuWp` | 26＋サブフォルダ1（新規見積り　eezo登録未、未確認） | メール、Thumbs.db、Excel、画像(jpg/webp)多数、PDF |
+| 三海幸【函館市】matsu | `1V_tW3g40y-7vdBt9Ezj6i5Vy_LFv_Hnd` | 21＋サブフォルダ1（2025年2月1日ご納品分よりｇ変更：2件、PDF2〔規格変更商品一覧・お知らせ〕） | PDF多数、メール、画像、zip |
+| 丸市岡田商店【札幌市】matsu | `1mtPdmNHeFpSV-mNvWot5fJF23Db8FuWp` | 26＋サブフォルダ1（新規見積り　eezo登録未：3件、PDF1・Excel1・チラシPDF1） | メール、Thumbs.db、Excel、画像(jpg/webp)多数、PDF |
 | 北海道名販【室蘭市】matsu | `1LTys4JNQJY8os2JqDHtnuRwD-egUjBHX` | 4 | メール、テキスト、Word、PDF |
 | 北海道デイリーライス（小樽市）高級おはぎ | `1ETnFxPvDjuufmoDzpJH2vp_U6sT-nqv5` | 10 | Thumbs.db、Word、画像、PDF多数、メール |
 | 厚真観光協会・SNF苫小牧【厚真町】 | `1c_dsatstskEC7Rg6wwHMKzkk9AmlvEZp` | 18 | Thumbs.db、Excel、画像多数、PDF |
-| にんにく種蔵【札幌市】matsu | `1rxMomeVOrN1hUYTDveYD-9uvy_ipSAQa` | 約33 | PDF多数、Thumbs.db、メール、画像多数、テキスト、Word |
+| にんにく種蔵【札幌市】matsu | `1rxMomeVOrN1hUYTDveYD-9uvy_ipSAQa` | 34 | PDF多数、Thumbs.db、メール、画像多数、テキスト、Word |
 | 山栄食品工業　※前精算【函館市】 | `16is2_yGr4mP2TAwuJWpylAnTnfXySjUD` | 5 | Excel、メール、PDF |
 | 昭和製菓　※前精算【函館市】前精算の為EEZO NG | `1of5KQas-JbBrIXt06zvVbS8g2Q6ovO2I` | 6 | Thumbs.db、Excel多数、PDF |
 | 谷田製菓(きびだんご)【夕張市】matsu | `1gajXS1Hm6IMwiGEXoPsd6Xde7A8n7fjx` | 7 | Thumbs.db、Excel多数、PowerPoint |
 | Atta（フリーズドライアスパラ他）【札幌市】 | `1uXt8ofKr5hnYF5LpUMdfXKQZcBQGxoQi` | 3 | メール、PDF |
-| うんがぷらす㈱【小樽市】kuro | `1zWVd_3WcUE8LVX3NDrCou3XklodlHH2l` | 13＋サブフォルダ1（北前吟撰＿パンフレット＿価格表、未確認） | zip、メール、PDF多数 |
-| 梅屋 UMEYA【旭川市】kuro | `1pj-DHtOqabmouRgYkruh4CfLc4OCs86W` | 約40＋サブフォルダ2（20260305最新画像、梅屋さんから画像データ／いずれも未確認） | PDF多数、Excel(xls)多数、画像多数、メール |
+| うんがぷらす㈱【小樽市】kuro | `1zWVd_3WcUE8LVX3NDrCou3XklodlHH2l` | 13＋サブフォルダ1（北前吟撰＿パンフレット＿価格表：2件、パンフレットPDF・価格表PDF） | zip、メール、PDF多数 |
+| 梅屋 UMEYA【旭川市】kuro | `1pj-DHtOqabmouRgYkruh4CfLc4OCs86W` | 35＋サブフォルダ2（20260305最新画像：6件、Thumbs.db・画像jpeg/JPG5／梅屋さんから画像データ：5件、Thumbs.db・画像jpg4） | PDF多数、Excel(xls)多数、画像多数、メール |
 | からくさ Han's Marine（札幌市）※海鮮キムチ | `1JqGEif9CPz4nCO2-VtrsY14s4al-788W` | 6 | メール、PDF |
 | サンマルコ食品　冷凍コロッケ【関西支店が窓口】 | `1GkzSjl3A7RF2nIsQDKda49PaJyQkv7FI` | 7 | Thumbs.db、Excel、画像、PDF、メール |
 | アベファーム ABE FARM【赤井川村】kuro | `1yy_vwVDaqgbNP3eezeLIbf4LzOEHJRdT` | 7 | メール、PDF、Word |
-| サザエ食品【札幌市】matsu | `1GSj7fF05gzuqSIt-GzRJcbXN7zOm-ClB` | 25＋サブフォルダ1（サザエ食品提供画像、未確認） | PowerPoint、PDF多数、Thumbs.db、画像多数、メール、Word |
+| サザエ食品【札幌市】matsu | `1GSj7fF05gzuqSIt-GzRJcbXN7zOm-ClB` | 25＋サブフォルダ1（サザエ食品提供画像：17件、Thumbs.db・画像jpg多数） | PowerPoint、PDF多数、Thumbs.db、画像多数、メール、Word |
 | エーデルワイスファーム（ベーコン節）【北広島市】 | `1rEkgFxyK8m-f3pv3d2MzRI2t2DOUccQW` | 3 | メール、PDF |
-| シャルキュトリーアカイシ【ニセコ町】kuro | `1vAwOyXwcNU8dKpnHcrEOPrEyd1R7jfNa` | 4＋サブフォルダ2（画像、過去見積／いずれも未確認） | PDF、Thumbs.db、メール |
+| シャルキュトリーアカイシ【ニセコ町】kuro | `1vAwOyXwcNU8dKpnHcrEOPrEyd1R7jfNa` | 4＋サブフォルダ2（画像：4件、Thumbs.db・生ハム等商品画像jpg3／過去見積：1件、PDF） | PDF、Thumbs.db、メール |
 | ジョー・エンタープライズ【札幌市】matsu | `1H5Bv4eUc3BbedeHPFgPyvJfZ4jVSBY3L` | 13 | Thumbs.db、画像、メール、PDF多数 |
 | ノベルズ食品【上士幌町】kuro | `1UsTZ6hcJVoH4a4CtJXz72L0mMdw-Md27` | 19 | PDF多数、メール、Word |
-| ベターデイズ（札幌市）※豚まん | `15vw62hThUXdHv283JDpk8CqPKEydVFhb` | 22＋サブフォルダ1（20251028ベターデイズからいただいた画像、未確認） | PDF多数、Thumbs.db、画像多数、メール |
+| ベターデイズ（札幌市）※豚まん | `15vw62hThUXdHv283JDpk8CqPKEydVFhb` | 22＋サブフォルダ1（20251028ベターデイズからいただいた画像：15件、PDF4・Thumbs.db・商品画像jpg10） | PDF多数、Thumbs.db、画像多数、メール |
 | ノースファームストック（ジャムなど）【岩見沢】 | `1MVtC5KLhiF9_DPbx3eQnO3XKpDBxWQTf` | 6 | Thumbs.db、Excel、Word |
 | ノースボート　利尻昆布ラーメン【札幌市】matsu | `1tEodPf192qLLYLXMjOwCeQ9bnspKaVT3` | 24 | PDF多数、Thumbs.db、画像多数、メール |
-| 京樽 | `1uan2lGjicAp4Zq8eXzrJLDIZkxXjLuSO` | 1＋サブフォルダ1（【新日本海商事株式会社様】価格改定見積一式、未確認） | PDF |
+| 京樽 | `1uan2lGjicAp4Zq8eXzrJLDIZkxXjLuSO` | 1＋サブフォルダ1（【新日本海商事株式会社様】価格改定見積一式：2件、価格改定見積PDF2） | PDF |
 | ハンズマリン　海鮮キムチ【札幌】 | `1DXjY5yEdx4iDblOLYnoNLyi0OoxhxE3v` | 6 | Thumbs.db、画像、Excel |
-| リージョナルデザイン Regional Design INC【長沼町】eezo返信なし | `1NRvsPnDLMRoZkkJBF3ysppL-1BuF5O8M` | 約27 | メール、Thumbs.db、PDF、画像多数、Excel |
-| フジ FUJI【札幌市】matsu | `1fs3KfnfaVA6aqXmAalxbCXXVeiYfbc05` | 約31＋サブフォルダ1（2025.7　トウモロコシ予約販売案内、未確認） | PDF多数、Excel多数、Word、画像、Thumbs.db、xlsb |
-| 丸一大西食品【札幌市】kuro | `1V6rxGUn0xoeM3h_uABamR21CT6sVIHan` | 約28 | PDF多数、Excel(xls/xlsm)多数、メール、画像多数、テキスト、PowerPoint |
+| リージョナルデザイン Regional Design INC【長沼町】eezo返信なし | `1NRvsPnDLMRoZkkJBF3ysppL-1BuF5O8M` | 26 | メール、Thumbs.db、PDF、画像多数、Excel |
+| フジ FUJI【札幌市】matsu | `1fs3KfnfaVA6aqXmAalxbCXXVeiYfbc05` | 32＋サブフォルダ1（2025.7　トウモロコシ予約販売案内：3件、Excel1・PDF2〔チラシ表裏〕） | PDF多数、Excel多数、Word、画像、Thumbs.db、xlsb |
+| 丸一大西食品【札幌市】kuro | `1V6rxGUn0xoeM3h_uABamR21CT6sVIHan` | 26 | PDF多数、Excel(xls/xlsm)多数、メール、画像多数、テキスト、PowerPoint |
 | 佃善（札幌）豚じゃが・餃子 | `13YFcDJn11ynxyDpSKT4d-l0rmB2rWwfb` | 5 | メール、PDF多数 |
 | 五洋物産（札幌）　じゃがもっち | `1djcSGy7hFgEChCQcdJg-AdyrEXIvONjR` | 6 | Excel多数、メール、PDF多数 |
 | 北海道バイオインダストリー【札幌】matsu | `11qrTuv7uTuVeICYbRKSfAt0RDB2SxjS9` | 9 | Thumbs.db、PDF多数、メール、画像 |
@@ -192,18 +191,18 @@
 | 道の駅 　みそぎの郷きこない【木古内町】 | `1YpkTA_KBKtD22HxKATW1L224AB7xW002` | 10 | テキスト、画像多数、Excel、Word |
 | 小林食品【興部町・おこっぺ】matsu | `1LKHMJfK9Rla0rlmLWclGsgc_gxYfHupR` | 11 | Thumbs.db、画像多数、メール、PDF、Word |
 | 秀明ナチュラルファーム【久遠郡】 | `12-tAB0VOluDSxUcFQqO3yeX8q4QPZVUi` | 3 | メール、PDF |
-| 野菜田【富良野市】kuro | `1xsZtP14ZVoVnO1s2nxzYf502sAwnG8vV` | 11＋サブフォルダ1（野菜田さんからもらった写真データ、未確認） | Thumbs.db、画像多数、メール、PDF、Word |
+| 野菜田【富良野市】kuro | `1xsZtP14ZVoVnO1s2nxzYf502sAwnG8vV` | 11＋サブフォルダ1（野菜田さんからもらった写真データ：13件、Thumbs.db・商品画像jpg多数） | Thumbs.db、画像多数、メール、PDF、Word |
 | 谷口農場【旭川市】 | `1Zd4DRbcrJUWu8JE8Z7maFU-tz06uZoIk` | 2 | メール、PDF |
 | 旭川食品 | `1KJfM0hJ9TdxNKNtA70TZ0WvJIYvxu_DQ` | 1 | PDF |
 | 郊楽苑【釧路】 | `16P13O_NLv__C4GPT5SmsjsSXfn0VuB-8` | 2 | PDF、Excel |
 | 雪屋媚山商店（雪貯蔵）【美唄市】 | `1668PqH2OM8xvIHLU0Zb-Gv1QXZdsWJb7` | 3 | メール、PDF |
 | 北見ハッカ通商　（1000万）【北見市・札幌】 | `16eFZdMMpEjJEzH02yJzkjbn6bWqQiteU` | 8 | PDF多数、メール、Word |
 | フプの森（エッセンシャルオイル）【下川町】eezo NG | `1B-ziG7hGFVMaRCHP9tXaCbXc7XPpJJ0z` | 4 | メール、Excel、PDF |
-| 北海道美女物語【函館・大阪】matsu | `1ZtT_tXbCPryDiqJk2K_S7i1ANzuTgeRC` | 16＋サブフォルダ1（ソワレさんからもらった写真画像 EC掲載ok、未確認） | PDF多数、Thumbs.db、画像、Excel、メール、Word |
+| 北海道美女物語【函館・大阪】matsu | `1ZtT_tXbCPryDiqJk2K_S7i1ANzuTgeRC` | 16＋サブフォルダ1（ソワレさんからもらった写真画像 EC掲載ok：25件、Thumbs.db・商品画像png/jpg多数） | PDF多数、Thumbs.db、画像、Excel、メール、Word |
 | 75キャビア　鹿追町役場（鹿追町） | `1dsUalDzTQSuLlt-5cmsViJOOOI16Nvk_` | 1 | メール |
 | 90社内GRP　ノーザンデリカ　※見積等なし【小樽市】 | `1m9bl61X8D9ntecOpWg5TAEm0K8iOah31` | 1 | PDF |
-| 90社内GRP　オーセントホテル小樽【小樽市】 | `1qBUrpLMjLXt5ZmmA7_xLw1tG7tQ8uNfA` | 100件以上（今回ページネーションを完走できず未確定。**未確認**） | PDF多数、Thumbs.db、Word、画像多数、zip、Excel、PowerPoint |
-| 90社内GRP　フェリーサービス　※見積等なし【小樽市】 | `1z3it1Ipumg-aUpR2qfgUxeSq6bjBx5Jr` | 15＋サブフォルダ1（小樽パッケージ　商品写真、未確認） | Thumbs.db、画像、Excel多数、PDF |
+| 90社内GRP　オーセントホテル小樽【小樽市】 | `1qBUrpLMjLXt5ZmmA7_xLw1tG7tQ8uNfA` | **155件で確定**（`pageSize=200`で1回のレスポンスで全件取得。`nextPageToken`なし。サブフォルダなし） | 画像133（jpg等）、PDF15、Word(docx)2、Excel(xlsx)1、PowerPoint(pptx)1、zip1、Thumbs.db1、ai1 |
+| 90社内GRP　フェリーサービス　※見積等なし【小樽市】 | `1z3it1Ipumg-aUpR2qfgUxeSq6bjBx5Jr` | 15＋サブフォルダ1（小樽パッケージ　商品写真：66件、Thumbs.db・商品画像jpg/webp/png多数） | Thumbs.db、画像、Excel多数、PDF |
 
 ### 2. ★2026新EEZOフォルダ
 
@@ -239,23 +238,38 @@
 | EC2604 小樽水産加工業組合（6セット） | `1LxRkGxGSGufvV9XM7taQ1iWNORfZkW5Q` | 5 | Excel、PDF多数 |
 | EC2606 ㈱六美 | `1gD-PKmuNkD15etdYh4G3FDzUOXxebiBe` | 11 | 画像、Excel、Word、Thumbs.db、メール |
 | EC2606 トワヴェール・フジタ（清涼・アイスクリーム） | `1Z-Z6p6t-Pi47l-0prmknUPMH3bzeLksU` | 4 | PDF、メール、Word |
-| EC2606 シャルキュトリーアカイシ（清涼・肉ハム） | `1IGO7HYK5iuxuvqa0rN3rfrkFZXeuKjnk` | 2＋サブフォルダ1（シャルキュトリー簡易撮影分、未確認） | メール、PDF |
+| EC2606 シャルキュトリーアカイシ（清涼・肉ハム） | `1IGO7HYK5iuxuvqa0rN3rfrkFZXeuKjnk` | 2＋サブフォルダ1（シャルキュトリー簡易撮影分：16件、Thumbs.db・商品画像JPEG多数） | メール、PDF |
 | EC2606 上川大雪（清涼・日本酒） | `1nfABjvmIE96__JQIcPwyTrVfdXMc_q4W` | 9 | Thumbs.db、画像、メール、Word、PDF |
 | EC2606 みにとまとん（オモシロ焼き菓子） | `1BwQXrujm7s_cesRhhbbsHpyA3kDSwB6l` | 3 | メール、Excel、Word |
 | EC2606 ニキヒルズワイナリー（ノンアルコール NEIRO） | `12Rrdr2Z_AyZ2f6qX0x5SvwwlJfqlAwrX` | 6 | PDF多数、メール |
 | EC2606 北王よいち（ぶどう・林檎・トマトジュース） | `1zJ1Dt-pig2HZXu1ICRPZZZeLPImQJOmp` | 3 | メール、PDF |
 | EC2606 小樽水産加工業協同組合 | `1vYANBGESBOuFEyTKBxyrgN-P8Me9jDsF` | 1 | Excel |
-| EC2606 江戸屋（清涼・アイス・ジェラート） | `1Xy79pL9LkSyW769Bb6QQkCqo3HQJBvXd` | 7＋サブフォルダ2（110501 doyell 夜を愉しむアイス3種10個、江戸屋からもらった画像／いずれも未確認） | メール、Excel、PDF、Word |
-| EC2607 採用検討中・ボツ | `12LS3L-9Ons_mSZa7NankGKQwBYAOeiKe` | 1＋サブフォルダ10（新たに見つかったEC候補案件フォルダ群。シミック(紫蘇)、しもかわ森のブルワリー、Otaru arch、ル・カレン、ユートピア知床、きまぐれ牧場、エゾの杜、ニセコビュープラザ、円甘味、不採用。いずれも未確認） | Word |
+| EC2606 江戸屋（清涼・アイス・ジェラート） | `1Xy79pL9LkSyW769Bb6QQkCqo3HQJBvXd` | 7＋サブフォルダ2（110501 doyell 夜を愉しむアイス3種10個：直下4件〔Thumbs.db・商品画像jpg3〕＋孫サブフォルダ2〔mini4件・rename3件、いずれも画像〕／江戸屋からもらった画像：直下0件＋孫サブフォルダ1「440310 doyellシュシュフラン４種６個」8件〔Thumbs.db・商品画像jpg7〕＋さらに曾孫サブフォルダ2〔mini3件・rename5件、いずれも画像〕） | メール、Excel、PDF、Word |
+| EC2607 採用検討中・ボツ | `12LS3L-9Ons_mSZa7NankGKQwBYAOeiKe` | 1＋サブフォルダ10（EC候補案件フォルダ群。件数・種別を確認済み。詳細は本節末尾の補足表を参照） | Word |
 | EC2606撮影用　請求書＆納品書 | `1suGnn0I5Za6GbrJ0hv5wm1UFfzX5pdLb` | 2 | PDF |
 | EC260X ベターデイズ（まん10個選択可） | `1HPpTRXvRaL7-Bc09ZQxUWk45uxfmWtH6` | 4 | Word、PDF |
+
+**補足: EC2607「採用検討中・ボツ」配下10サブフォルダの詳細**（親ID `12LS3L-9Ons_mSZa7NankGKQwBYAOeiKe`。直下ファイル1件「採用検討中商品について.docx」＋以下10フォルダ）
+
+| フォルダ名 | ID | ファイル件数 | 主な種別 |
+|---|---|---|---|
+| EC　シミック（紫蘇）　※画像・送料依頼中 | `1rWm02Wgo4p9J3gHd6YDaU34MzWNdzYOQ` | 4＋サブフォルダ1（資料：4件、商品ラインナップPDF・パンフPDF・お取引先台帳PDF・包装箱画像jpeg） | xlsx、eml、lnk、pdf |
+| EC　しもかわ森のブルワリー　※set依頼中 | `1QaDzkm62KNDd0C_p5zfJWNd5TPdtwln-` | 3 | ブローシャーPDF、eml、商品詳細PDF |
+| EC　Otaru arch オタルアーチ　※見積依頼中 | `1de8uIpH9nkJVFs4jARL-3k0Bm4rtStWe` | 9 | 報告書docx、eml、商品画像jpeg5、Ginブローシャー/プレスリリースPDF2 |
+| EC　ル・カレン　※WEB出荷が必要 | `14vgA1hVHvQyBFlTBrbjpewZ8zoZd63ho` | 2 | 商品案内PDF、eml |
+| EC　ユートピア知床㈱　※set依頼中 | `1uryJmmNJ_f0yeOAYTcS0y8ltwp1apKDv` | 3 | 商品ガイドPDF、見積書PDF、サンプル送付状PDF |
+| ★EC　きまぐれ牧場　※準備OK | `1U0xCb-KvocdQuxhdzG-Ouw3fQSjKq6aP` | 4＋サブフォルダ2（資料（初期見積等）：4件、見積・提案・宣材PDF／画像　気まぐれ牧場様より：11件、Thumbs.db・商品画像jpg10） | eml、xlsx、pdf |
+| ★EC　エゾの杜　※準備OK | `1FXcd0S3YCUYIuGrc27ubiUxYbsB_Ysyx` | 2＋サブフォルダ2（画像①エゾの杜提供掲載OK　新日本海商事㈱イメージ：12件、Thumbs.db・商品画像JPG/jpg11／画像②同パッケージ：20件、Thumbs.db・商品画像jpg/JPG19） | eml、xlsx |
+| ★EC　ニセコビュープラザ　※準備OK | `1-rzjv5WLXeHQ0lZS8PzW1YABJlLSiD9L` | 3＋サブフォルダ1（画像　びゅーぷら提供分、船上撮影分：14件、Thumbs.db・商品画像JPEG/jpg/png多数） | eml、lnk |
+| ★EC　円甘味(まるあまみ)　※準備OK | `1xUOtI8Fe_HW717Pe_phKTky5AEJfWLkV` | 3＋サブフォルダ2（画像　円甘味提供：5件、Thumbs.db・商品画像jpg/png／資料：3件、商品PDF2・見積xlsx1） | xlsx、eml、Thumbs.db |
+| 不採用 | `1j7jjqUVs45pUWZmugMeOF4QeLqWjV6Qe` | 0＋サブフォルダ1（EC　ココ　㈱COCO　※未着手(EEZO合わない)：2件、eml・見積PDF） | （直下ファイルなし） |
 
 ### 3. ★2026船上ニセコメロン
 
 - **ID**: `1xxF91R1AH1zTpfA-UGxbGykvcAxNO-2V`
 - **URL**: https://drive.google.com/drive/folders/1xxF91R1AH1zTpfA-UGxbGykvcAxNO-2V
 
-サブフォルダ: ★2025船上ニセコメロン (`1DEJYkas3-aqfugCwptJiFVCNHEuqW6gj`) — ファイル約36件、確認済み（Thumbs.db、Word、PDF、PowerPoint、画像多数、動画(MP4)、Excel、png）。配下にさらにサブフォルダ「旧」(`16DyMLL4JDE0bdFZlwACmeqh8UKiA2SKv`) があり、これは未確認
+サブフォルダ: ★2025船上ニセコメロン (`1DEJYkas3-aqfugCwptJiFVCNHEuqW6gj`) — ファイル35件、確認済み（Thumbs.db、Word、PDF、PowerPoint、画像多数、動画(MP4)、Excel、png）。配下にさらにサブフォルダ「旧」(`16DyMLL4JDE0bdFZlwACmeqh8UKiA2SKv`) があり、直下ファイル7件（すべてWord docx。船内イベント「海の上のニセコ野菜直売所」「海の上のニセコメロン試食会」関連の企画書）を確認済み
 
 直下のファイル（21件、内容確認済み）:
 
@@ -288,7 +302,7 @@
 |---|---|---|---|
 | 発注書 | `1zstAF-g9KlzGmuIRUIdDX_btB7ZtKzmT` | 15 | PDF多数、Excel |
 | 後で削除 | `1ugBDNNPuvOjE7FtZR82oMmy4YoIP8r41` | 7 | Excel多数 |
-| 請求書　（ 納品書） | `1U2wRvd5SEqpmCi9k_Y8FMVMaqGgkAfJk` | 7＋サブフォルダ1（納品書、未確認） | PDF多数 |
+| 請求書　（ 納品書） | `1U2wRvd5SEqpmCi9k_Y8FMVMaqGgkAfJk` | 7＋サブフォルダ1（納品書：1件、PDF「納品書 0627はまなす催事　小樽水産加工業組合.pdf」） | PDF多数 |
 | 配置・服装・ポップ | `18vjUG9RCWzNE1iKdeFPR4Egd7WIjmb-b` | 5 | PowerPoint、Excel、Word、PDF |
 
 直下のファイル（6件、内容確認済み）:
@@ -354,7 +368,7 @@
 
 | フォルダ名 | ID | ファイル件数 | 主な種別 |
 |---|---|---|---|
-| 回答書 | `1VR-B28cyQZ410IfjV5uT-ZBAjRC3F_2U` | 約51 | Excel（仕入先開拓の依頼案件別シート）多数 |
+| 回答書 | `1VR-B28cyQZ410IfjV5uT-ZBAjRC3F_2U` | 52 | Excel（仕入先開拓の依頼案件別シート）多数 |
 | 依頼書 | `1JWBrIVAfrtyVsjWhbKVhueS1aJBKPV-Y` | 18 | Excel（依頼案件別シート）多数 |
 | old | `17acqpJxaKz5aotBeMMEmFi3rSHJLCdhV` | 1 | Excel |
 
@@ -427,9 +441,11 @@
 
 **ページネーション異常の検証結果（2026-08-05、2ラウンド目）**: 第1ラウンドでは「●生産者・メーカー別ファイル」で`pageSize=100`のまま`nextPageToken`を辿ると同一の1ページ目が返り続ける挙動が見られ、直下フォルダ数が「約100件」で確定できなかった。2ラウンド目で`pageSize=200`に上げて1回で列挙し直した結果、**123件で確定**した（`nextPageToken`は返却されず、1回のレスポンスで全件取得できた）。第1ラウンドで確認済みだった50フォルダ（文書内では「51フォルダ分」と記載されていたが、実際に表に記載されていたのは50件）との突合でも欠落・重複はなく、123件のうち50件が第1ラウンド確認済み、残り73件が今回新たに確認できたフォルダで、合計がちょうど123件と一致した。同様に「お蔵入りの生産者」も`pageSize=200`で再列挙し、**33件で確定**（第1ラウンドの33件と完全一致、新規発見・消失なし）。以上より、この異常は「直下フォルダ数がpageSizeの初期値100件に近く、100件を境にAPIが正しくページングしない」ことが原因だった可能性が高い。100件超のフォルダを列挙する際は、はじめから`pageSize`を200程度に上げて1回で取得するのが安全である。
 
+**「90社内GRP　オーセントホテル小樽」の完走結果（2026-08-05、3ラウンド目）**: 直下ファイルが100件を超えるため2ラウンド目では完走できなかったが、`pageSize=200`で再実行した結果、**155件で確定**（`nextPageToken`は返却されず、1回のレスポンスで全件取得。サブフォルダなし）。上記の「約100件を境にページングが不安定になる」という仮説と整合する結果であり、100件超のフォルダは`pageSize=200`で一発列挙するのが安全という見立てを補強した。
+
 再列挙の手順:
 
 1. `mcp__Google_Drive__search_files` を `query: "parentId = '<フォルダID>'"`、`pageSize: 200`（直下件数が多い、または不明なフォルダは100ではなく200を推奨）、`excludeContentSnippets: true` で実行する
 2. `nextPageToken` が返る場合はページネーションする
 3. 返却された各フォルダについて同様に再帰する
-4. 本文書に「未確認」マークが残っているフォルダから優先的に着手する（2026-08-05時点で残っているのは、フォルダ別詳細の各行に個別に注記した孫階層のサブフォルダと、「90社内GRP　オーセントホテル小樽」の直下ファイル一覧、EC2607「採用検討中・ボツ」配下の新規10フォルダのみ）
+4. 2026-08-05時点で本文書に「未確認」マークは残っていない。今後Drive側の変更を追う場合は、変更が想定されるフォルダから優先的に再列挙する
