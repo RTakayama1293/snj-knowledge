@@ -67,7 +67,7 @@
 - 20260722_DOC_EEZO営業支援基盤_構築記録と運用ガイド.md
 - 20260730_SPEC_Sansan連携_技術仕様とシークレット管理.md
 
-## knowledge/30_plans/ — 現役の戦略・計画・SI（27件）
+## knowledge/30_plans/ — 現役の戦略・計画・SI（28件）
 
 - 20250929_PLAN_ホテル営業_ターゲット検索条件.md
 - 20251006_PLAN_手紙営業_料理長アプローチ戦略.md
@@ -96,6 +96,7 @@
 - 20260603_PLAN_EEZO_ezoshika_page_brief.md
 - 20260702_PLAN_エゾシカBtoB_顧客タグ体系_マッチング構想.md
 - 20260703_PLAN_情報統合基盤_RAGと構造化の全体設計_v3.md
+- 20260813_PLAN_Sansanコンタクト基盤_GOAL定義_v1.md
 
 ## knowledge/40_data/ — データ・分析・可視化（25件）
 
