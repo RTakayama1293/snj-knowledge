@@ -42,6 +42,12 @@
 
     --sansan-arrow:#C00000;
 
+    --sansan-deep-bg:#0F2E5C;
+    --sansan-deep-fg:#FFFFFF;
+    --sansan-deep-fg-mute:#A9BEDC;
+    --sansan-deep-fg-body:rgba(255,255,255,.82);
+    --sansan-deep-rule:rgba(255,255,255,.2);
+
     --font-display:"Noto Sans JP",sans-serif;
     --font-body:"Noto Sans JP",sans-serif;
     --font-mono:"Roboto Mono","Noto Sans JP",monospace;
@@ -136,7 +142,8 @@
   .band.service .band-head{ color:var(--text); }
   .service-grid{
     display:grid;
-    grid-template-columns:1fr 1fr;
+    grid-template-columns:1.7fr 1fr;
+    align-items:start;
     gap:18px;
   }
   .service-item h3{
@@ -170,6 +177,94 @@
     content:"・";
     position:absolute;
     left:0;
+  }
+
+  /* ---------- Sansan block (cut out of service layer) ---------- */
+  .sansan-card{
+    background:var(--sansan-deep-bg);
+    color:var(--sansan-deep-fg);
+    border-radius:8px;
+    padding:16px 20px 14px;
+    display:flex;
+    flex-direction:column;
+    gap:13px;
+  }
+  .sansan-card h3{
+    font-family:var(--font-display);
+    font-size:14.5px;
+    font-weight:700;
+    margin:0;
+    color:var(--sansan-deep-fg);
+  }
+  .sansan-card h3 .meta{
+    font-weight:400;
+    font-size:11.5px;
+    color:var(--sansan-deep-fg-mute);
+    margin-left:8px;
+  }
+  .sansan-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px 20px;
+  }
+  .sansan-stat{
+    display:flex;
+    flex-direction:column;
+    gap:3px;
+    border-top:1px solid var(--sansan-deep-rule);
+    padding-top:11px;
+  }
+  .sansan-grid > .sansan-stat:nth-child(-n+2){
+    border-top:none;
+    padding-top:0;
+  }
+  .stat-label{
+    font-size:10.5px;
+    font-weight:600;
+    letter-spacing:.02em;
+    color:var(--sansan-deep-fg-mute);
+    margin:0;
+  }
+  .stat-value{
+    font-family:var(--font-mono);
+    font-variant-numeric:tabular-nums;
+    font-weight:700;
+    font-size:23px;
+    line-height:1.2;
+    margin:0;
+    color:var(--sansan-deep-fg);
+  }
+  .stat-value .unit{
+    font-family:var(--font-body);
+    font-weight:500;
+    font-size:12px;
+    margin-left:2px;
+    color:var(--sansan-deep-fg-mute);
+  }
+  .stat-heading{
+    font-family:var(--font-display);
+    font-size:13px;
+    font-weight:700;
+    margin:0 0 1px;
+    color:var(--sansan-deep-fg);
+  }
+  .stat-detail{
+    font-size:11.5px;
+    line-height:1.55;
+    color:var(--sansan-deep-fg-body);
+    margin:0;
+  }
+  .stat-note{
+    font-size:10px;
+    line-height:1.5;
+    color:var(--sansan-deep-fg-mute);
+    margin:3px 0 0;
+  }
+  .sansan-foot{
+    font-size:10.5px;
+    color:var(--sansan-deep-fg-mute);
+    margin:1px 0 0;
+    text-align:right;
   }
 
   /* ---------- flow row: rail + bands ---------- */
@@ -582,6 +677,9 @@
     .page{ padding:30px 16px 60px; }
     .hd-row{ flex-direction:column; align-items:flex-start; }
     .band{ padding:16px 16px 18px; }
+    .sansan-grid{ grid-template-columns:1fr; }
+    .sansan-grid > .sansan-stat:nth-child(-n+2){ border-top:1px solid var(--sansan-deep-rule); padding-top:11px; }
+    .sansan-grid > .sansan-stat:first-child{ border-top:none; padding-top:0; }
   }
 </style>
 
@@ -601,14 +699,34 @@
   <section class="band service">
     <h2 class="band-head"><span class="band-code">サービス層</span><span class="sep">｜</span>外部（自社が保有しない）</h2>
     <div class="service-grid">
-      <div class="service-item">
+      <div class="sansan-card">
         <h3>Sansan<span class="meta">年間利用料 690千円</span></h3>
-        <ul>
-          <li>名刺データ化：1枚あたり平均12.3項目・118.6文字、姓の読み仮名88.9%充足</li>
-          <li>企業識別コードの付与：485件の対応を保持</li>
-          <li>全国企業データベース</li>
-          <li>データ取得の口を提供</li>
-        </ul>
+        <div class="sansan-grid">
+          <div class="sansan-stat">
+            <p class="stat-label">名刺</p>
+            <p class="stat-value">2,480<span class="unit">枚</span></p>
+            <p class="stat-detail">1枚あたり平均12.3項目・118.6文字</p>
+            <p class="stat-detail">姓の読み仮名88.9%／メールアドレス87.4%／電話番号79.2%が充足</p>
+            <p class="stat-note">読み仮名は名刺面に記載がないことが通例であり、データ化の作業が含まれていることを示す</p>
+          </div>
+          <div class="sansan-stat">
+            <p class="stat-label">企業の識別</p>
+            <p class="stat-value">485<span class="unit">件</span></p>
+            <p class="stat-detail">企業識別コードの対応を保持</p>
+            <p class="stat-detail">会社の同一性を判定する根拠となる</p>
+          </div>
+          <div class="sansan-stat">
+            <p class="stat-heading">全国企業データベース</p>
+            <p class="stat-detail">名刺交換していない企業を含む</p>
+            <p class="stat-detail">市場規模の推定に利用できる</p>
+          </div>
+          <div class="sansan-stat">
+            <p class="stat-label">活動記録</p>
+            <p class="stat-value">193<span class="unit">件</span></p>
+            <p class="stat-detail">本文の文字数は中央値680字（要約ではなく原文）</p>
+          </div>
+        </div>
+        <p class="sansan-foot">データ取得の口を提供</p>
       </div>
       <div class="service-item">
         <h3>メール</h3>
@@ -701,7 +819,7 @@
           <div class="chip-legend">
             <span><span class="dot ok"></span>供給可能</span>
             <span><span class="dot partial"></span>一部供給</span>
-            <span><span class="dot future"></span>今後</span>
+            <span><span class="dot future"></span>2年目に開始</span>
           </div>
 
           <div class="tbl-wrap">
@@ -737,26 +855,26 @@
                 <tr>
                   <td class="col">E</td>
                   <td class="item">確度</td>
-                  <td class="source">ランクA〜E（定義は整備済み）</td>
+                  <td class="source">25%〜100%（定義は整備済み）</td>
                   <td><span class="badge badge-future">2年目に付与運用を開始</span></td>
                 </tr>
                 <tr class="na">
                   <td class="col">F</td>
                   <td class="item">受注月</td>
                   <td class="source">保有していない</td>
-                  <td><span class="badge badge-future">今後の課題</span></td>
+                  <td><span class="badge badge-future">2年目に付与運用を開始</span></td>
                 </tr>
                 <tr class="na">
                   <td class="col">G</td>
                   <td class="item">納品月</td>
                   <td class="source">保有していない</td>
-                  <td><span class="badge badge-future">今後の課題</span></td>
+                  <td><span class="badge badge-future">2年目に付与運用を開始</span></td>
                 </tr>
                 <tr class="na">
                   <td class="col">H</td>
                   <td class="item">金額</td>
                   <td class="source">保有していない</td>
-                  <td><span class="badge badge-future">今後の課題</span></td>
+                  <td><span class="badge badge-future">2年目に付与運用を開始</span></td>
                 </tr>
                 <tr>
                   <td class="col">I</td>
