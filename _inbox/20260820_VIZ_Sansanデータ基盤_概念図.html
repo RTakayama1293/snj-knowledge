@@ -681,6 +681,92 @@
     .sansan-grid > .sansan-stat:nth-child(-n+2){ border-top:1px solid var(--sansan-deep-rule); padding-top:11px; }
     .sansan-grid > .sansan-stat:first-child{ border-top:none; padding-top:0; }
   }
+
+  /* ---------- print ---------- */
+  @media print{
+    *,*::before,*::after{
+      print-color-adjust:exact;
+      -webkit-print-color-adjust:exact;
+    }
+    @page{
+      size:A4 landscape;
+      margin:12mm 14mm;
+    }
+    body{
+      background:var(--page-bg);
+    }
+    .page{
+      max-width:none;
+      padding:0;
+    }
+    /* on screen the rail's vertical arrow is stretched (align-items:
+       stretch) to match the combined height of all three stacked
+       bands; that stretch is what breaks under pagination (a flex
+       item cannot span a page boundary and stay one continuous
+       arrow — page 2 of a printout is a physically separate sheet).
+       In print the rail keeps its left/vertical/red arrow exactly as
+       on screen, but at a fixed compact height instead of a stretched
+       one, so it renders once, whole, ahead of the band stack instead
+       of smearing across pages. */
+    .flow{ flex-direction:column; }
+    .rail{
+      width:100%;
+      flex-direction:row;
+      align-items:center;
+      padding:0 0 16px;
+      gap:14px;
+      break-inside:avoid;
+      page-break-inside:avoid;
+    }
+    .rail-line{
+      flex:none;
+      width:34px;
+      height:64px;
+      flex-direction:column;
+      align-items:center;
+    }
+    .rail-line .stem{
+      flex:1 1 auto;
+      width:0;
+      height:auto;
+      border-left:5px solid var(--sansan-arrow);
+      border-top:none;
+    }
+    .rail-line .head{
+      width:0; height:0;
+      border-left:9px solid transparent;
+      border-right:9px solid transparent;
+      border-top:15px solid var(--sansan-arrow);
+      border-bottom:none;
+      margin-top:-1px;
+    }
+    .rail-label{ flex:none; line-height:1.55; }
+    .bands{ padding:0; }
+
+    .tbl-wrap{ overflow-x:visible; }
+
+    /* internally-structured blocks must not split mid-way across a
+       page break; the outer band shells are left free to fragment
+       between these protected pieces so a tall band (DM) doesn't
+       strand its heading alone on an otherwise-blank page */
+    .sansan-card,
+    .dwh-split,
+    .proc-box,
+    .matching-note,
+    table.pipeline,
+    table.pipeline tr,
+    .exit,
+    .position-note,
+    .chips,
+    .info-note{
+      break-inside:avoid;
+      page-break-inside:avoid;
+    }
+    .band-head, .band-note{
+      break-after:avoid;
+      page-break-after:avoid;
+    }
+  }
 </style>
 
 <div class="page">
