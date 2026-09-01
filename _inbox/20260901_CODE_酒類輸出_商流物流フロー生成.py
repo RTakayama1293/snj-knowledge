@@ -4,17 +4,18 @@ import html
 SHU, GRY, AOI = "var(--shu)", "var(--gry)", "var(--aoi)"
 
 # ---- geometry (viewBox 980 x 312) ----
-GUT = 92
-S_K1 = (120, 30, 170, 46)      # 蔵 upper
-S_K2 = (120, 88, 170, 46)      # 蔵 lower
-S_SNJ_HALF = (330, 30, 180, 46)
-S_SNJ_FULL = (330, 30, 180, 104)
-S_AG = (650, 30, 160, 104)
-S_SFC = (850, 30, 110, 104)
-B_KURA = (120, 222, 150, 46)
-B_FW = (310, 222, 180, 46)
-B_CUS = (540, 222, 170, 46)
-B_SFC = (790, 222, 170, 46)
+GUT = 130
+S_K1 = (150, 28, 250, 62)       # 蔵 upper
+S_K2 = (150, 98, 250, 62)       # 蔵 lower
+S_SNJ_HALF = (450, 28, 260, 62)
+S_SNJ_FULL = (450, 28, 260, 132)
+S_AG = (950, 28, 230, 132)
+S_SFC = (1230, 28, 160, 132)
+B_KURA = (150, 196, 220, 86)
+B_FW = (420, 196, 270, 86)
+B_CUS = (750, 196, 250, 86)
+B_SFC = (1080, 196, 310, 86)
+LH, TOFF = 24, 26               # sub line height / title-to-sub gap
 
 def esc(t): return html.escape(t, quote=False)
 
@@ -28,22 +29,22 @@ def box(b, title, subs, tone="plain"):
     else:
         fill, stroke, sw, tc, sc, dash = "var(--surface)", "var(--rule-2)", 1.2, "var(--ink)", "var(--ink-2)", ""
     n = len(subs)
-    ty = cy - (n * 14) / 2 + 5
+    ty = cy - (n * LH) / 2 + 8
     o = [f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="2" fill="{fill}" stroke="{stroke}" stroke-width="{sw}"{dash}/>',
          f'<text x="{cx}" y="{ty:.0f}" text-anchor="middle" class="nt" fill="{tc}">{esc(title)}</text>']
     for i, s in enumerate(subs):
-        o.append(f'<text x="{cx}" y="{ty+16+i*14:.0f}" text-anchor="middle" class="ns" fill="{sc}">{esc(s)}</text>')
+        o.append(f'<text x="{cx}" y="{ty+TOFF+i*LH:.0f}" text-anchor="middle" class="ns" fill="{sc}">{esc(s)}</text>')
     return "\n      ".join(o)
 
 def arrow(x1, x2, y, color, dash=False, faint=False, label=None, ly=None, cross=False):
     op = ' opacity="0.42"' if faint else ""
     da = ' stroke-dasharray="7 5"' if dash else ""
     mid = (x1 + x2) / 2
-    o = [f'<line x1="{x1}" y1="{y}" x2="{x2-9}" y2="{y}" stroke="{color}" stroke-width="2"{da}{op}/>',
-         f'<polygon points="{x2},{y} {x2-10},{y-4.5} {x2-10},{y+4.5}" fill="{color}"{op}/>']
+    o = [f'<line x1="{x1}" y1="{y}" x2="{x2-13}" y2="{y}" stroke="{color}" stroke-width="2.8"{da}{op}/>',
+         f'<polygon points="{x2},{y} {x2-14},{y-6.5} {x2-14},{y+6.5}" fill="{color}"{op}/>']
     if cross:
-        o.append(f'<g stroke="{color}" stroke-width="2.2"><line x1="{mid-6}" y1="{y-6}" x2="{mid+6}" y2="{y+6}"/>'
-                 f'<line x1="{mid-6}" y1="{y+6}" x2="{mid+6}" y2="{y-6}"/></g>')
+        o.append(f'<g stroke="{color}" stroke-width="3"><line x1="{mid-9}" y1="{y-9}" x2="{mid+9}" y2="{y+9}"/>'
+                 f'<line x1="{mid-9}" y1="{y+9}" x2="{mid+9}" y2="{y-9}"/></g>')
     if label:
         o.append(f'<text x="{mid}" y="{ly}" text-anchor="middle" class="al" fill="{color}"{op}>{esc(label)}</text>')
     return "\n      ".join(o)
@@ -51,14 +52,14 @@ def arrow(x1, x2, y, color, dash=False, faint=False, label=None, ly=None, cross=
 def figure(sc):
     p = []
     # lane labels
-    p.append(f'<text x="{GUT}" y="76" text-anchor="end" class="lane">商流</text>'
-             f'<text x="{GUT}" y="92" text-anchor="end" class="lane2">売買・請求</text>')
-    p.append(f'<text x="{GUT}" y="241" text-anchor="end" class="lane">物流</text>'
-             f'<text x="{GUT}" y="257" text-anchor="end" class="lane2">貨物の流れ</text>')
+    p.append(f'<text x="{GUT}" y="88" text-anchor="end" class="lane">商流</text>'
+             f'<text x="{GUT}" y="112" text-anchor="end" class="lane2">売買・請求</text>')
+    p.append(f'<text x="{GUT}" y="232" text-anchor="end" class="lane">物流</text>'
+             f'<text x="{GUT}" y="256" text-anchor="end" class="lane2">貨物の流れ</text>')
     # tie: declaration count follows the commercial flow
-    p.append('<line x1="625" y1="140" x2="625" y2="216" stroke="var(--ink-3)" stroke-width="1.2" stroke-dasharray="3 4"/>'
-             '<polygon points="625,222 621,213 629,213" fill="var(--ink-3)"/>'
-             '<text x="634" y="182" class="tie" fill="var(--ink-3)">申告の本数は商流に従属</text>')
+    p.append('<line x1="875" y1="166" x2="875" y2="188" stroke="var(--ink-3)" stroke-width="1.6" stroke-dasharray="4 5"/>'
+             '<polygon points="875,196 869,185 881,185" fill="var(--ink-3)"/>'
+             '<text x="892" y="184" class="tie" fill="var(--ink-3)">申告の本数は商流に従属</text>')
     # commercial lane
     snj = S_SNJ_FULL if sc["snj_full"] else S_SNJ_HALF
     p.append(box(S_K1, "大和川・天鏡", ["当社取扱"]))
@@ -67,29 +68,29 @@ def figure(sc):
     p.append(box(S_AG, "輸入代理店", ["theSFCグループ"]))
     p.append(box(S_SFC, "theSFC", ["シンガポール"]))
     if sc["snj_full"]:
-        p.append(arrow(290, 330, 53, SHU, label="仕入", ly=20))
-        p.append(arrow(290, 330, 111, SHU, label="仕入", ly=101))
-        p.append(arrow(510, 650, 82, SHU, label=sc["shu_label"], ly=72))
+        p.append(arrow(400, 450, 59, SHU, label="仕入", ly=16))
+        p.append(arrow(400, 450, 129, SHU, label="仕入", ly=116))
+        p.append(arrow(710, 950, 94, SHU, label=sc["shu_label"], ly=78))
     else:
-        p.append(arrow(290, 330, 53, SHU, label="仕入", ly=20))
-        p.append(arrow(510, 650, 53, SHU, label=sc["shu_label"], ly=20))
-        p.append(arrow(290, 650, 111, GRY, label=sc["gry_label"], ly=101,
+        p.append(arrow(400, 450, 59, SHU, label="仕入", ly=16))
+        p.append(arrow(710, 950, 59, SHU, label=sc["shu_label"], ly=16))
+        p.append(arrow(400, 950, 129, GRY, label=sc["gry_label"], ly=116,
                        faint=sc.get("gry_faint", False), cross=sc.get("gry_cross", False)))
-    p.append(arrow(810, 850, 82, GRY))
+    p.append(arrow(1180, 1230, 94, GRY))
     # physical lane
     p.append(box(B_KURA, "各蔵", ["4〜5社"]))
     p.append(box(B_FW, "フォワーダー", sc["fw"], sc.get("fw_tone", "plain")))
     p.append(box(B_CUS, "輸出通関", sc["cus"], sc.get("cus_tone", "plain")))
     p.append(box(B_SFC, "シンガポール着", ["輸入代理店が引取"]))
     f = sc.get("but_faint", False)
-    p.append(arrow(270, 310, 245, AOI, dash=True, faint=f, label="集荷", ly=290))
-    p.append(arrow(490, 540, 245, AOI, dash=True, faint=f, label=sc["but_label"], ly=290))
-    p.append(arrow(710, 790, 245, AOI, dash=True, faint=f, label="海上輸送", ly=290))
+    p.append(arrow(370, 420, 239, AOI, dash=True, faint=f, label="集荷", ly=306))
+    p.append(arrow(690, 750, 239, AOI, dash=True, faint=f, label=sc["but_label"], ly=306))
+    p.append(arrow(1000, 1080, 239, AOI, dash=True, faint=f, label="海上輸送", ly=306))
     return "\n      ".join(p)
 
 SC = {
 "a_asis": dict(snj_full=False, k2sub="当社取扱なし",
-  snj=["輸出者（大和川・天鏡分）"], shu_label="当社が輸出者・1本",
+  snj=["輸出者（大和川・天鏡）"], shu_label="当社が輸出者・1本",
   gry_label="輸出者が未定", gry_faint=True, gry_cross=True,
   fw=["未定", "混載を仕立てる事業者なし"], fw_tone="faint",
   cus=["申告 当社1本", "＋ 他社蔵は未定"], but_label="混載が組めていない", but_faint=True),
@@ -98,12 +99,12 @@ SC = {
   fw=["当社指定", "1コンテナ"], cus=["申告 1本"], cus_tone="solid",
   but_label="混載 1コンテナ"),
 "b_asis": dict(snj_full=False, k2sub="当社取扱なし",
-  snj=["輸出者（大和川・天鏡分）"], shu_label="当社が輸出者・1本",
+  snj=["輸出者（大和川・天鏡）"], shu_label="当社が輸出者・1本",
   gry_label="他社蔵は直・2〜3本",
   fw=["定温リーファー定期便", "1社のみ・運賃高"],
   cus=["申告 当社1本", "＋ 各蔵2〜3本"], but_label="混載は可能"),
 "b_tobe": dict(snj_full=False, k2sub="当社取扱なし",
-  snj=["輸出者（大和川・天鏡分）"], shu_label="当社が輸出者・1本",
+  snj=["輸出者（大和川・天鏡）"], shu_label="当社が輸出者・1本",
   gry_label="他社蔵は直・2〜3本",
   fw=["相見積で再選定", "1コンテナ"], fw_tone="solid",
   cus=["申告 当社1本", "＋ 各蔵2〜3本（不変）"], but_label="混載 1コンテナ"),
@@ -112,7 +113,7 @@ SC = {
 def fig(key, tag, title, caption, aria):
     return f'''<figure class="fig">
     <div class="fh"><span class="tag">{esc(tag)}</span><h3>{esc(title)}</h3></div>
-    <div class="svgwrap"><svg viewBox="0 0 980 312" role="img" aria-label="{esc(aria)}">
+    <div class="svgwrap"><svg viewBox="0 0 1400 322" role="img" aria-label="{esc(aria)}">
       {figure(SC[key])}
     </svg></div>
     <figcaption>{caption}</figcaption>
@@ -147,7 +148,7 @@ PAGE = f'''<title>日本酒混載輸出の商流と物流</title>
 body{{background:var(--paper);color:var(--ink);
   font-family:"Meiryo UI","Meiryo","BIZ UDPGothic","Hiragino Kaku Gothic ProN",sans-serif;
   font-size:15px;line-height:1.75;-webkit-font-smoothing:antialiased}}
-.wrap{{max-width:1120px;margin:0 auto;padding:38px 26px 72px;display:flex;flex-direction:column;gap:30px}}
+.wrap{{max-width:1840px;margin:0 auto;padding:38px 26px 72px;display:flex;flex-direction:column;gap:30px}}
 h1{{font-family:"Meiryo","Meiryo UI","BIZ UDPGothic","Hiragino Kaku Gothic ProN",sans-serif;font-weight:700;
   font-size:clamp(25px,3.4vw,34px);line-height:1.25;margin:0 0 8px;text-wrap:balance}}
 .sub{{margin:0;color:var(--ink-2);font-size:13.5px}}
@@ -167,21 +168,21 @@ section{{display:flex;flex-direction:column;gap:16px}}
 .sh p{{margin:0;color:var(--ink-2);font-size:13px}}
 
 .fig{{margin:0;background:var(--surface);border:1px solid var(--rule);border-radius:3px;
-  padding:16px 18px 14px;display:flex;flex-direction:column;gap:10px}}
+  padding:22px 26px 20px;display:flex;flex-direction:column;gap:10px}}
 .fh{{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}}
-.tag{{font-size:11px;font-weight:700;letter-spacing:.06em;
-  color:var(--ink-2);border:1px solid var(--rule-2);border-radius:2px;padding:2px 7px;white-space:nowrap}}
+.tag{{font-size:15px;font-weight:700;letter-spacing:.06em;
+  color:var(--ink-2);border:1px solid var(--rule-2);border-radius:2px;padding:3px 10px;white-space:nowrap}}
 .fh h3{{font-family:"Meiryo","Meiryo UI","BIZ UDPGothic",sans-serif;font-weight:700;
-  font-size:17px;margin:0;line-height:1.4}}
+  font-size:24px;margin:0;line-height:1.4}}
 .svgwrap{{overflow-x:auto}}
-svg{{display:block;width:100%;min-width:760px;height:auto}}
-.nt{{font:700 13.5px "Meiryo","Meiryo UI","BIZ UDPGothic",sans-serif}}
-.ns{{font:400 10.5px "Meiryo UI","Meiryo","BIZ UDPGothic",sans-serif}}
-.al{{font:700 11.5px "Meiryo UI","Meiryo","BIZ UDPGothic",sans-serif}}
-.lane{{font:700 12.5px "Meiryo","Meiryo UI","BIZ UDPGothic",sans-serif;fill:var(--ink)}}
-.lane2{{font:400 10px "Meiryo UI","Meiryo","BIZ UDPGothic",sans-serif;fill:var(--ink-3)}}
-.tie{{font:400 10.5px "Meiryo UI","Meiryo","BIZ UDPGothic",sans-serif}}
-figcaption{{font-size:12.5px;color:var(--ink-2);border-top:1px solid var(--rule);padding-top:10px;margin:0}}
+svg{{display:block;width:100%;min-width:1100px;height:auto}}
+.nt{{font:700 24px "Meiryo","Meiryo UI","BIZ UDPGothic",sans-serif}}
+.ns{{font:400 17px "Meiryo UI","Meiryo","BIZ UDPGothic",sans-serif}}
+.al{{font:700 19px "Meiryo UI","Meiryo","BIZ UDPGothic",sans-serif}}
+.lane{{font:700 21px "Meiryo","Meiryo UI","BIZ UDPGothic",sans-serif;fill:var(--ink)}}
+.lane2{{font:400 15px "Meiryo UI","Meiryo","BIZ UDPGothic",sans-serif;fill:var(--ink-3)}}
+.tie{{font:400 16px "Meiryo UI","Meiryo","BIZ UDPGothic",sans-serif}}
+figcaption{{font-size:17px;color:var(--ink-2);border-top:1px solid var(--rule);padding-top:10px;margin:0}}
 figcaption b{{color:var(--ink);font-weight:700}}
 .close{{background:var(--paper-2);border-radius:3px;padding:16px 20px;font-size:13.5px;line-height:1.8}}
 .close b{{font-weight:700}}
