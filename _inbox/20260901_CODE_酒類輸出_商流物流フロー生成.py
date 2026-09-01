@@ -54,14 +54,14 @@ def figure(sc):
     p.append(f'<text x="{GUT}" y="76" text-anchor="end" class="lane">商流</text>'
              f'<text x="{GUT}" y="92" text-anchor="end" class="lane2">売買・請求</text>')
     p.append(f'<text x="{GUT}" y="241" text-anchor="end" class="lane">物流</text>'
-             f'<text x="{GUT}" y="257" text-anchor="end" class="lane2">モノの流れ</text>')
+             f'<text x="{GUT}" y="257" text-anchor="end" class="lane2">貨物の流れ</text>')
     # tie: declaration count follows the commercial flow
     p.append('<line x1="625" y1="140" x2="625" y2="216" stroke="var(--ink-3)" stroke-width="1.2" stroke-dasharray="3 4"/>'
              '<polygon points="625,222 621,213 629,213" fill="var(--ink-3)"/>'
-             '<text x="634" y="182" class="tie" fill="var(--ink-3)">申告の本数は商流で決まる</text>')
+             '<text x="634" y="182" class="tie" fill="var(--ink-3)">申告の本数は商流に従属</text>')
     # commercial lane
     snj = S_SNJ_FULL if sc["snj_full"] else S_SNJ_HALF
-    p.append(box(S_K1, "大和川・天鏡", ["当社が販売"]))
+    p.append(box(S_K1, "大和川・天鏡", ["当社取扱"]))
     p.append(box(S_K2, "他社蔵 2〜3社", [sc["k2sub"]]))
     p.append(box(snj, "新日本海商事", sc["snj"], sc.get("snj_tone", "plain")))
     p.append(box(S_AG, "輸入代理店", ["theSFCグループ"]))
@@ -80,7 +80,7 @@ def figure(sc):
     p.append(box(B_KURA, "各蔵", ["4〜5社"]))
     p.append(box(B_FW, "フォワーダー", sc["fw"], sc.get("fw_tone", "plain")))
     p.append(box(B_CUS, "輸出通関", sc["cus"], sc.get("cus_tone", "plain")))
-    p.append(box(B_SFC, "シンガポール着", ["輸入代理店が引き取り"]))
+    p.append(box(B_SFC, "シンガポール着", ["輸入代理店が引取"]))
     f = sc.get("but_faint", False)
     p.append(arrow(270, 310, 245, AOI, dash=True, faint=f, label="集荷", ly=290))
     p.append(arrow(490, 540, 245, AOI, dash=True, faint=f, label=sc["but_label"], ly=290))
@@ -88,25 +88,25 @@ def figure(sc):
     return "\n      ".join(p)
 
 SC = {
-"a_asis": dict(snj_full=False, k2sub="当社は絡まない",
+"a_asis": dict(snj_full=False, k2sub="当社取扱なし",
   snj=["輸出者（大和川・天鏡分）"], shu_label="当社が輸出者・1本",
-  gry_label="輸出者が決まらない", gry_faint=True, gry_cross=True,
-  fw=["未定", "束ねる業者が決まらない"], fw_tone="faint",
-  cus=["申告 当社1本", "＋ 他社蔵は未定"], but_label="混載できていない", but_faint=True),
-"a_tobe": dict(snj_full=True, k2sub="当社が買い取る",
-  snj=["輸出者・売主", "4〜5蔵すべて"], snj_tone="solid", shu_label="1本にまとまる",
+  gry_label="輸出者が未定", gry_faint=True, gry_cross=True,
+  fw=["未定", "混載を仕立てる事業者なし"], fw_tone="faint",
+  cus=["申告 当社1本", "＋ 他社蔵は未定"], but_label="混載が組めていない", but_faint=True),
+"a_tobe": dict(snj_full=True, k2sub="当社が仕入れる",
+  snj=["輸出者・売主", "4〜5蔵すべて"], snj_tone="solid", shu_label="商流1本に集約",
   fw=["当社指定", "1コンテナ"], cus=["申告 1本"], cus_tone="solid",
   but_label="混載 1コンテナ"),
-"b_asis": dict(snj_full=False, k2sub="当社は絡まない",
+"b_asis": dict(snj_full=False, k2sub="当社取扱なし",
   snj=["輸出者（大和川・天鏡分）"], shu_label="当社が輸出者・1本",
   gry_label="他社蔵は直・2〜3本",
-  fw=["定温リーファー定期便", "1社のみ・高い"],
-  cus=["申告 当社1本", "＋ 各蔵2〜3本"], but_label="混載はできる"),
-"b_tobe": dict(snj_full=False, k2sub="当社は絡まない",
+  fw=["定温リーファー定期便", "1社のみ・運賃高"],
+  cus=["申告 当社1本", "＋ 各蔵2〜3本"], but_label="混載は可能"),
+"b_tobe": dict(snj_full=False, k2sub="当社取扱なし",
   snj=["輸出者（大和川・天鏡分）"], shu_label="当社が輸出者・1本",
   gry_label="他社蔵は直・2〜3本",
-  fw=["相見積で選び直す", "1コンテナ"], fw_tone="solid",
-  cus=["申告 当社1本", "＋ 各蔵2〜3本（変わらず）"], but_label="混載 1コンテナ"),
+  fw=["相見積で再選定", "1コンテナ"], fw_tone="solid",
+  cus=["申告 当社1本", "＋ 各蔵2〜3本（不変）"], but_label="混載 1コンテナ"),
 }
 
 def fig(key, tag, title, caption, aria):
@@ -197,40 +197,40 @@ figcaption b{{color:var(--ink);font-weight:700}}
   </header>
 
   <div class="legend">
-    <span class="li"><svg class="sw" width="34" height="12" aria-hidden="true"><line x1="0" y1="6" x2="24" y2="6" stroke="var(--shu)" stroke-width="2"/><polygon points="34,6 24,1.5 24,10.5" fill="var(--shu)"/></svg><b>商流：当社が入る</b></span>
-    <span class="li"><svg class="sw" width="34" height="12" aria-hidden="true"><line x1="0" y1="6" x2="24" y2="6" stroke="var(--gry)" stroke-width="2"/><polygon points="34,6 24,1.5 24,10.5" fill="var(--gry)"/></svg><b>商流：当社が入らない</b></span>
+    <span class="li"><svg class="sw" width="34" height="12" aria-hidden="true"><line x1="0" y1="6" x2="24" y2="6" stroke="var(--shu)" stroke-width="2"/><polygon points="34,6 24,1.5 24,10.5" fill="var(--shu)"/></svg><b>商流：当社が介在</b></span>
+    <span class="li"><svg class="sw" width="34" height="12" aria-hidden="true"><line x1="0" y1="6" x2="24" y2="6" stroke="var(--gry)" stroke-width="2"/><polygon points="34,6 24,1.5 24,10.5" fill="var(--gry)"/></svg><b>商流：当社が介在しない</b></span>
     <span class="li"><svg class="sw" width="34" height="12" aria-hidden="true"><line x1="0" y1="6" x2="24" y2="6" stroke="var(--aoi)" stroke-width="2" stroke-dasharray="6 4"/><polygon points="34,6 24,1.5 24,10.5" fill="var(--aoi)"/></svg><b>物流</b></span>
-    <span class="li"><svg class="sw" width="24" height="14" aria-hidden="true"><rect x="1" y="1" width="22" height="12" fill="var(--surface)" stroke="var(--rule)" stroke-dasharray="4 3"/></svg>薄い枠と薄い矢印＝まだ決まっていない</span>
-    <span class="li"><svg class="sw" width="24" height="14" aria-hidden="true"><rect x="1" y="1" width="22" height="12" fill="var(--ink)"/></svg>塗り＝その案で変わるところ</span>
+    <span class="li"><svg class="sw" width="24" height="14" aria-hidden="true"><rect x="1" y="1" width="22" height="12" fill="var(--surface)" stroke="var(--rule)" stroke-dasharray="4 3"/></svg>淡色の枠と矢印＝未確定</span>
+    <span class="li"><svg class="sw" width="24" height="14" aria-hidden="true"><rect x="1" y="1" width="22" height="12" fill="var(--ink)"/></svg>塗り＝その案で変わる箇所</span>
   </div>
 
   <section>
     <div class="sh">
-      <h2>読みA　shipper ＝ 荷主（輸出者）</h2>
-      <p>先方が求めているのは「4〜5蔵を束ねて自ら売り、輸出者になる会社」という読み</p>
+      <h2>解釈A　shipper ＝ 荷主（輸出者）</h2>
+      <p>先方が求めているのは「4〜5蔵の商流を集約し、自ら売主・輸出者となる事業者」という解釈</p>
     </div>
-    {fig("a_asis","AS-IS　現状","当社分は立つが、他社蔵が立たない",
-      "大和川・天鏡は当社が売るので、商流も輸出者も決まっている。決まっていないのは<b>他社蔵2〜3社の分</b>で、各蔵が自ら輸出者を務めることになるが引き受け手がいない。商流が決まらないので、束ねるフォワーダーも決まらない。",
-      "商流は当社経由の1本だけが成立し、他社蔵からの商流は輸出者が決まらず未成立。物流も未確定")}
-    {fig("a_tobe","TO-BE　読みAへの答え","当社が4〜5蔵すべてを束ねる",
-      "他社蔵の分も当社が仕入れて売る。<b>商流が1本になり、輸出申告も1本になる。</b>先方が求める「束ねる輸出者」を当社が務める形。当社は他社蔵の仕入口座と与信を持つことになる。",
-      "全ての蔵が新日本海商事を経由し、商流1本・輸出申告1本にまとまる")}
+    {fig("a_asis","AS-IS　現状","当社分は成立、他社蔵が未成立",
+      "大和川・天鏡は当社が売主なので、商流も輸出者も確定している。未確定なのは<b>他社蔵2〜3社の分</b>で、各蔵が自ら輸出者を務めることになるが、引き受ける蔵がない。商流が確定しないため、混載を仕立てるフォワーダーも決まらない。",
+      "商流は当社経由の1本のみ成立し、他社蔵からの商流は輸出者が未定で未成立。物流も未確定")}
+    {fig("a_tobe","TO-BE　解釈Aへの対応","当社が4〜5蔵の商流を集約する",
+      "他社蔵の分も当社が仕入れて売る。<b>商流が1本に集約され、輸出申告も1本になる。</b>先方が求める「商流を集約する輸出者」を当社が務める形。当社は他社蔵との仕入口座の開設と与信を負う。",
+      "全ての蔵が新日本海商事を経由し、商流1本・輸出申告1本に集約される")}
   </section>
 
   <section>
     <div class="sh">
-      <h2>読みB　shipper ＝ フォワーダー（物流手配者）</h2>
-      <p>先方が求めているのは「4〜5蔵から集荷して混載し、輸出通関を代行する物流会社」という読み</p>
+      <h2>解釈B　shipper ＝ フォワーダー（物流手配者）</h2>
+      <p>先方が求めているのは「4〜5蔵から集荷して混載を仕立て、輸出通関を代行する物流事業者」という解釈</p>
     </div>
-    {fig("b_asis","AS-IS　現状","商流は立つが、運賃が高い",
-      "大和川・天鏡は当社経由、他社蔵はtheSFCへ直。<b>商流はどちらも成立しうる。</b>詰まっているのは物流で、手が挙がるのが定温リーファー定期便を持つ1社だけ。その見積が高い。",
-      "商流は当社経由と他社蔵直の2系統が成立。物流は高い1社しか選択肢がない")}
-    {fig("b_tobe","TO-BE　読みBへの答え","物流だけ束ね直す",
-      "商流はAS-ISのまま動かさず、相見積で選び直したフォワーダーが集荷・混載する。運賃は下がるが、<b>商流が分かれている以上、輸出申告は当社1本＋各蔵2〜3本のまま残る。</b>",
-      "商流はAS-ISと同じまま、フォワーダーだけが入れ替わる。輸出申告の本数は変わらない")}
+    {fig("b_asis","AS-IS　現状","商流は成立、運賃が高止まり",
+      "大和川・天鏡は当社経由、他社蔵はtheSFCへ直。<b>商流はいずれも成立しうる。</b>停滞しているのは物流で、応じる事業者が定温リーファー定期便を持つ1社のみ。提示された運賃が高い。",
+      "商流は当社経由と他社蔵直の2系統が成立。物流は高値の1社しか選択肢がない")}
+    {fig("b_tobe","TO-BE　解釈Bへの対応","物流のみ再編する",
+      "商流はAS-ISのまま維持し、相見積で再選定したフォワーダーが集荷・混載を担う。運賃は下がるが、<b>商流が分かれている以上、輸出申告は当社1本＋各蔵2〜3本のまま残る。</b>",
+      "商流はAS-ISと同一のまま、フォワーダーのみが交代する。輸出申告の本数は不変")}
   </section>
 
-  <p class="close"><b>2つの読みの違いは、当社が何を背負うか。</b>　読みAなら、当社が大和川・天鏡で既にやっていることを他社蔵まで広げる話になり、仕入口座と与信を新たに持つ。読みBなら当社が新たに背負うものはないが、蔵側の輸出者負担は残ったままになる。<b>どちらの読みかは「各蔵への商品代金を誰が払う想定か」を聞けば1問で確定する。</b></p>
+  <p class="close"><b>2つの解釈の差は、当社が何を負うかにある。</b>　解釈Aなら、当社が大和川・天鏡で既に担っている役割を他社蔵まで拡張することになり、仕入口座の開設と与信を新たに負う。解釈Bなら当社が新たに負うものはないが、蔵側の輸出者負担は残る。<b>どちらの解釈かは「各蔵への商品代金を誰が支払う想定か」の1問で確定する。</b></p>
 </div>
 '''
 
