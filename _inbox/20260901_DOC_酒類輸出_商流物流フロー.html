@@ -1,0 +1,335 @@
+<title>日本酒混載輸出の商流と物流</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&display=swap">
+<style>
+:root{
+  --paper:#FBFAF8; --paper-2:#EFEAE6; --surface:#FFFFFF;
+  --ink:#232020; --ink-2:#6A625E; --ink-3:#9C948E;
+  --rule:#E2DCD6; --rule-2:#CFC7C0;
+  --shu:#B23A2E; --gry:#8E8681; --aoi:#2F5D73;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#171513; --paper-2:#2A2521; --surface:#211D1A;
+    --ink:#F0EAE4; --ink-2:#B3A9A1; --ink-3:#8A807A;
+    --rule:#332C27; --rule-2:#463D37;
+    --shu:#E88B79; --gry:#A79E97; --aoi:#8CBBD3;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#171513; --paper-2:#2A2521; --surface:#211D1A;
+  --ink:#F0EAE4; --ink-2:#B3A9A1; --ink-3:#8A807A;
+  --rule:#332C27; --rule-2:#463D37;
+  --shu:#E88B79; --gry:#A79E97; --aoi:#8CBBD3;
+}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);
+  font-family:"Meiryo UI","Meiryo","BIZ UDPGothic","Hiragino Kaku Gothic ProN",sans-serif;
+  font-size:15px;line-height:1.75;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1840px;margin:0 auto;padding:38px 26px 72px;display:flex;flex-direction:column;gap:30px}
+h1{font-family:"Meiryo","Meiryo UI","BIZ UDPGothic","Hiragino Kaku Gothic ProN",sans-serif;font-weight:700;
+  font-size:clamp(25px,3.4vw,34px);line-height:1.25;margin:0 0 8px;text-wrap:balance}
+.sub{margin:0;color:var(--ink-2);font-size:13.5px}
+.date{font-size:12px;color:var(--ink-3);letter-spacing:.06em}
+.head{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;flex-wrap:wrap}
+
+.legend{display:flex;flex-wrap:wrap;gap:10px 26px;padding:14px 18px;
+  background:var(--surface);border:1px solid var(--rule);border-radius:3px}
+.li{display:flex;align-items:center;gap:9px;font-size:12.5px;color:var(--ink-2)}
+.li b{color:var(--ink);font-weight:700}
+.sw{flex:none}
+
+section{display:flex;flex-direction:column;gap:16px}
+.sh{border-top:2px solid var(--ink);padding-top:12px}
+.sh h2{font-family:"Meiryo","Meiryo UI","BIZ UDPGothic",sans-serif;font-weight:700;
+  font-size:21px;margin:0 0 4px;letter-spacing:.01em}
+.sh p{margin:0;color:var(--ink-2);font-size:13px}
+
+.fig{margin:0;background:var(--surface);border:1px solid var(--rule);border-radius:3px;
+  padding:22px 26px 20px;display:flex;flex-direction:column;gap:10px}
+.fh{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.tag{font-size:15px;font-weight:700;letter-spacing:.06em;
+  color:var(--ink-2);border:1px solid var(--rule-2);border-radius:2px;padding:3px 10px;white-space:nowrap}
+.fh h3{font-family:"Meiryo","Meiryo UI","BIZ UDPGothic",sans-serif;font-weight:700;
+  font-size:24px;margin:0;line-height:1.4}
+.svgwrap{overflow-x:auto}
+svg{display:block;width:100%;min-width:1100px;height:auto}
+.nt{font:700 24px "Meiryo","Meiryo UI","BIZ UDPGothic",sans-serif}
+.ns{font:400 17px "Meiryo UI","Meiryo","BIZ UDPGothic",sans-serif}
+.al{font:700 19px "Meiryo UI","Meiryo","BIZ UDPGothic",sans-serif}
+.lane{font:700 21px "Meiryo","Meiryo UI","BIZ UDPGothic",sans-serif;fill:var(--ink)}
+.lane2{font:400 15px "Meiryo UI","Meiryo","BIZ UDPGothic",sans-serif;fill:var(--ink-3)}
+.tie{font:400 16px "Meiryo UI","Meiryo","BIZ UDPGothic",sans-serif}
+figcaption{font-size:17px;color:var(--ink-2);border-top:1px solid var(--rule);padding-top:10px;margin:0}
+figcaption b{color:var(--ink);font-weight:700}
+.close{background:var(--paper-2);border-radius:3px;padding:16px 20px;font-size:13.5px;line-height:1.8}
+.close b{font-weight:700}
+</style>
+
+<div class="wrap">
+  <header class="head">
+    <div>
+      <h1>日本酒混載輸出の商流と物流</h1>
+      <p class="sub">シンガポール向け 4〜5蔵の混載輸出／theSFC案件　　前提：当社は大和川・天鏡をtheSFCへ販売する</p>
+    </div>
+    <span class="date">26-09-01</span>
+  </header>
+
+  <div class="legend">
+    <span class="li"><svg class="sw" width="34" height="12" aria-hidden="true"><line x1="0" y1="6" x2="24" y2="6" stroke="var(--shu)" stroke-width="2"/><polygon points="34,6 24,1.5 24,10.5" fill="var(--shu)"/></svg><b>商流：当社が介在</b></span>
+    <span class="li"><svg class="sw" width="34" height="12" aria-hidden="true"><line x1="0" y1="6" x2="24" y2="6" stroke="var(--gry)" stroke-width="2"/><polygon points="34,6 24,1.5 24,10.5" fill="var(--gry)"/></svg><b>商流：当社が介在しない</b></span>
+    <span class="li"><svg class="sw" width="34" height="12" aria-hidden="true"><line x1="0" y1="6" x2="24" y2="6" stroke="var(--aoi)" stroke-width="2" stroke-dasharray="6 4"/><polygon points="34,6 24,1.5 24,10.5" fill="var(--aoi)"/></svg><b>物流</b></span>
+    <span class="li"><svg class="sw" width="24" height="14" aria-hidden="true"><rect x="1" y="1" width="22" height="12" fill="var(--surface)" stroke="var(--rule)" stroke-dasharray="4 3"/></svg>淡色の枠と矢印＝未確定</span>
+    <span class="li"><svg class="sw" width="24" height="14" aria-hidden="true"><rect x="1" y="1" width="22" height="12" fill="var(--ink)"/></svg>塗り＝その案で変わる箇所</span>
+  </div>
+
+  <section>
+    <div class="sh">
+      <h2>解釈A　shipper ＝ 荷主（輸出者）</h2>
+      <p>先方が求めているのは「4〜5蔵の商流を集約し、自ら売主・輸出者となる事業者」という解釈</p>
+    </div>
+    <figure class="fig">
+    <div class="fh"><span class="tag">AS-IS　現状</span><h3>当社分は成立、他社蔵が未成立</h3></div>
+    <div class="svgwrap"><svg viewBox="0 0 1400 322" role="img" aria-label="商流は当社経由の1本のみ成立し、他社蔵からの商流は輸出者が未定で未成立。物流も未確定">
+      <text x="130" y="88" text-anchor="end" class="lane">商流</text><text x="130" y="112" text-anchor="end" class="lane2">売買・請求</text>
+      <text x="130" y="232" text-anchor="end" class="lane">物流</text><text x="130" y="256" text-anchor="end" class="lane2">貨物の流れ</text>
+      <line x1="875" y1="166" x2="875" y2="188" stroke="var(--ink-3)" stroke-width="1.6" stroke-dasharray="4 5"/><polygon points="875,196 869,185 881,185" fill="var(--ink-3)"/><text x="892" y="184" class="tie" fill="var(--ink-3)">申告の本数は商流に従属</text>
+      <rect x="150" y="28" width="250" height="62" rx="2" fill="var(--surface)" stroke="var(--rule-2)" stroke-width="1.2"/>
+      <text x="275.0" y="55" text-anchor="middle" class="nt" fill="var(--ink)">大和川・天鏡</text>
+      <text x="275.0" y="81" text-anchor="middle" class="ns" fill="var(--ink-2)">当社取扱</text>
+      <rect x="150" y="98" width="250" height="62" rx="2" fill="var(--surface)" stroke="var(--rule-2)" stroke-width="1.2"/>
+      <text x="275.0" y="125" text-anchor="middle" class="nt" fill="var(--ink)">他社蔵 2〜3社</text>
+      <text x="275.0" y="151" text-anchor="middle" class="ns" fill="var(--ink-2)">当社取扱なし</text>
+      <rect x="450" y="28" width="260" height="62" rx="2" fill="var(--surface)" stroke="var(--rule-2)" stroke-width="1.2"/>
+      <text x="580.0" y="55" text-anchor="middle" class="nt" fill="var(--ink)">新日本海商事</text>
+      <text x="580.0" y="81" text-anchor="middle" class="ns" fill="var(--ink-2)">輸出者（大和川・天鏡）</text>
+      <rect x="950" y="28" width="230" height="132" rx="2" fill="var(--surface)" stroke="var(--rule-2)" stroke-width="1.2"/>
+      <text x="1065.0" y="90" text-anchor="middle" class="nt" fill="var(--ink)">輸入代理店</text>
+      <text x="1065.0" y="116" text-anchor="middle" class="ns" fill="var(--ink-2)">theSFCグループ</text>
+      <rect x="1230" y="28" width="160" height="132" rx="2" fill="var(--surface)" stroke="var(--rule-2)" stroke-width="1.2"/>
+      <text x="1310.0" y="90" text-anchor="middle" class="nt" fill="var(--ink)">theSFC</text>
+      <text x="1310.0" y="116" text-anchor="middle" class="ns" fill="var(--ink-2)">シンガポール</text>
+      <line x1="400" y1="59" x2="437" y2="59" stroke="var(--shu)" stroke-width="2.8"/>
+      <polygon points="450,59 436,52.5 436,65.5" fill="var(--shu)"/>
+      <text x="425.0" y="16" text-anchor="middle" class="al" fill="var(--shu)">仕入</text>
+      <line x1="710" y1="59" x2="937" y2="59" stroke="var(--shu)" stroke-width="2.8"/>
+      <polygon points="950,59 936,52.5 936,65.5" fill="var(--shu)"/>
+      <text x="830.0" y="16" text-anchor="middle" class="al" fill="var(--shu)">当社が輸出者・1本</text>
+      <line x1="400" y1="129" x2="937" y2="129" stroke="var(--gry)" stroke-width="2.8" opacity="0.42"/>
+      <polygon points="950,129 936,122.5 936,135.5" fill="var(--gry)" opacity="0.42"/>
+      <g stroke="var(--gry)" stroke-width="3"><line x1="666.0" y1="120" x2="684.0" y2="138"/><line x1="666.0" y1="138" x2="684.0" y2="120"/></g>
+      <text x="675.0" y="116" text-anchor="middle" class="al" fill="var(--gry)" opacity="0.42">輸出者が未定</text>
+      <line x1="1180" y1="94" x2="1217" y2="94" stroke="var(--gry)" stroke-width="2.8"/>
+      <polygon points="1230,94 1216,87.5 1216,100.5" fill="var(--gry)"/>
+      <rect x="150" y="196" width="220" height="86" rx="2" fill="var(--surface)" stroke="var(--rule-2)" stroke-width="1.2"/>
+      <text x="260.0" y="235" text-anchor="middle" class="nt" fill="var(--ink)">各蔵</text>
+      <text x="260.0" y="261" text-anchor="middle" class="ns" fill="var(--ink-2)">4〜5社</text>
+      <rect x="420" y="196" width="270" height="86" rx="2" fill="var(--surface)" stroke="var(--rule)" stroke-width="1" stroke-dasharray="4 3"/>
+      <text x="555.0" y="223" text-anchor="middle" class="nt" fill="var(--ink-3)">フォワーダー</text>
+      <text x="555.0" y="249" text-anchor="middle" class="ns" fill="var(--ink-3)">未定</text>
+      <text x="555.0" y="273" text-anchor="middle" class="ns" fill="var(--ink-3)">混載を仕立てる事業者なし</text>
+      <rect x="750" y="196" width="250" height="86" rx="2" fill="var(--surface)" stroke="var(--rule-2)" stroke-width="1.2"/>
+      <text x="875.0" y="223" text-anchor="middle" class="nt" fill="var(--ink)">輸出通関</text>
+      <text x="875.0" y="249" text-anchor="middle" class="ns" fill="var(--ink-2)">申告 当社1本</text>
+      <text x="875.0" y="273" text-anchor="middle" class="ns" fill="var(--ink-2)">＋ 他社蔵は未定</text>
+      <rect x="1080" y="196" width="310" height="86" rx="2" fill="var(--surface)" stroke="var(--rule-2)" stroke-width="1.2"/>
+      <text x="1235.0" y="235" text-anchor="middle" class="nt" fill="var(--ink)">シンガポール着</text>
+      <text x="1235.0" y="261" text-anchor="middle" class="ns" fill="var(--ink-2)">輸入代理店が引取</text>
+      <line x1="370" y1="239" x2="407" y2="239" stroke="var(--aoi)" stroke-width="2.8" stroke-dasharray="7 5" opacity="0.42"/>
+      <polygon points="420,239 406,232.5 406,245.5" fill="var(--aoi)" opacity="0.42"/>
+      <text x="395.0" y="306" text-anchor="middle" class="al" fill="var(--aoi)" opacity="0.42">集荷</text>
+      <line x1="690" y1="239" x2="737" y2="239" stroke="var(--aoi)" stroke-width="2.8" stroke-dasharray="7 5" opacity="0.42"/>
+      <polygon points="750,239 736,232.5 736,245.5" fill="var(--aoi)" opacity="0.42"/>
+      <text x="720.0" y="306" text-anchor="middle" class="al" fill="var(--aoi)" opacity="0.42">混載が組めていない</text>
+      <line x1="1000" y1="239" x2="1067" y2="239" stroke="var(--aoi)" stroke-width="2.8" stroke-dasharray="7 5" opacity="0.42"/>
+      <polygon points="1080,239 1066,232.5 1066,245.5" fill="var(--aoi)" opacity="0.42"/>
+      <text x="1040.0" y="306" text-anchor="middle" class="al" fill="var(--aoi)" opacity="0.42">海上輸送</text>
+    </svg></div>
+    <figcaption>大和川・天鏡は当社が売主なので、商流も輸出者も確定している。未確定なのは<b>他社蔵2〜3社の分</b>で、各蔵が自ら輸出者を務めることになるが、引き受ける蔵がない。商流が確定しないため、混載を仕立てるフォワーダーも決まらない。</figcaption>
+  </figure>
+    <figure class="fig">
+    <div class="fh"><span class="tag">TO-BE　解釈Aへの対応</span><h3>当社が4〜5蔵の商流を集約する</h3></div>
+    <div class="svgwrap"><svg viewBox="0 0 1400 322" role="img" aria-label="全ての蔵が新日本海商事を経由し、商流1本・輸出申告1本に集約される">
+      <text x="130" y="88" text-anchor="end" class="lane">商流</text><text x="130" y="112" text-anchor="end" class="lane2">売買・請求</text>
+      <text x="130" y="232" text-anchor="end" class="lane">物流</text><text x="130" y="256" text-anchor="end" class="lane2">貨物の流れ</text>
+      <line x1="875" y1="166" x2="875" y2="188" stroke="var(--ink-3)" stroke-width="1.6" stroke-dasharray="4 5"/><polygon points="875,196 869,185 881,185" fill="var(--ink-3)"/><text x="892" y="184" class="tie" fill="var(--ink-3)">申告の本数は商流に従属</text>
+      <rect x="150" y="28" width="250" height="62" rx="2" fill="var(--surface)" stroke="var(--rule-2)" stroke-width="1.2"/>
+      <text x="275.0" y="55" text-anchor="middle" class="nt" fill="var(--ink)">大和川・天鏡</text>
+      <text x="275.0" y="81" text-anchor="middle" class="ns" fill="var(--ink-2)">当社取扱</text>
+      <rect x="150" y="98" width="250" height="62" rx="2" fill="var(--surface)" stroke="var(--rule-2)" stroke-width="1.2"/>
+      <text x="275.0" y="125" text-anchor="middle" class="nt" fill="var(--ink)">他社蔵 2〜3社</text>
+      <text x="275.0" y="151" text-anchor="middle" class="ns" fill="var(--ink-2)">当社が仕入れる</text>
+      <rect x="450" y="28" width="260" height="132" rx="2" fill="var(--ink)" stroke="var(--ink)" stroke-width="1"/>
+      <text x="580.0" y="78" text-anchor="middle" class="nt" fill="var(--paper)">新日本海商事</text>
+      <text x="580.0" y="104" text-anchor="middle" class="ns" fill="var(--paper-2)">輸出者・売主</text>
+      <text x="580.0" y="128" text-anchor="middle" class="ns" fill="var(--paper-2)">4〜5蔵すべて</text>
+      <rect x="950" y="28" width="230" height="132" rx="2" fill="var(--surface)" stroke="var(--rule-2)" stroke-width="1.2"/>
+      <text x="1065.0" y="90" text-anchor="middle" class="nt" fill="var(--ink)">輸入代理店</text>
+      <text x="1065.0" y="116" text-anchor="middle" class="ns" fill="var(--ink-2)">theSFCグループ</text>
+      <rect x="1230" y="28" width="160" height="132" rx="2" fill="var(--surface)" stroke="var(--rule-2)" stroke-width="1.2"/>
+      <text x="1310.0" y="90" text-anchor="middle" class="nt" fill="var(--ink)">theSFC</text>
+      <text x="1310.0" y="116" text-anchor="middle" class="ns" fill="var(--ink-2)">シンガポール</text>
+      <line x1="400" y1="59" x2="437" y2="59" stroke="var(--shu)" stroke-width="2.8"/>
+      <polygon points="450,59 436,52.5 436,65.5" fill="var(--shu)"/>
+      <text x="425.0" y="16" text-anchor="middle" class="al" fill="var(--shu)">仕入</text>
+      <line x1="400" y1="129" x2="437" y2="129" stroke="var(--shu)" stroke-width="2.8"/>
+      <polygon points="450,129 436,122.5 436,135.5" fill="var(--shu)"/>
+      <text x="425.0" y="116" text-anchor="middle" class="al" fill="var(--shu)">仕入</text>
+      <line x1="710" y1="94" x2="937" y2="94" stroke="var(--shu)" stroke-width="2.8"/>
+      <polygon points="950,94 936,87.5 936,100.5" fill="var(--shu)"/>
+      <text x="830.0" y="78" text-anchor="middle" class="al" fill="var(--shu)">商流1本に集約</text>
+      <line x1="1180" y1="94" x2="1217" y2="94" stroke="var(--gry)" stroke-width="2.8"/>
+      <polygon points="1230,94 1216,87.5 1216,100.5" fill="var(--gry)"/>
+      <rect x="150" y="196" width="220" height="86" rx="2" fill="var(--surface)" stroke="var(--rule-2)" stroke-width="1.2"/>
+      <text x="260.0" y="235" text-anchor="middle" class="nt" fill="var(--ink)">各蔵</text>
+      <text x="260.0" y="261" text-anchor="middle" class="ns" fill="var(--ink-2)">4〜5社</text>
+      <rect x="420" y="196" width="270" height="86" rx="2" fill="var(--surface)" stroke="var(--rule-2)" stroke-width="1.2"/>
+      <text x="555.0" y="223" text-anchor="middle" class="nt" fill="var(--ink)">フォワーダー</text>
+      <text x="555.0" y="249" text-anchor="middle" class="ns" fill="var(--ink-2)">当社指定</text>
+      <text x="555.0" y="273" text-anchor="middle" class="ns" fill="var(--ink-2)">1コンテナ</text>
+      <rect x="750" y="196" width="250" height="86" rx="2" fill="var(--ink)" stroke="var(--ink)" stroke-width="1"/>
+      <text x="875.0" y="235" text-anchor="middle" class="nt" fill="var(--paper)">輸出通関</text>
+      <text x="875.0" y="261" text-anchor="middle" class="ns" fill="var(--paper-2)">申告 1本</text>
+      <rect x="1080" y="196" width="310" height="86" rx="2" fill="var(--surface)" stroke="var(--rule-2)" stroke-width="1.2"/>
+      <text x="1235.0" y="235" text-anchor="middle" class="nt" fill="var(--ink)">シンガポール着</text>
+      <text x="1235.0" y="261" text-anchor="middle" class="ns" fill="var(--ink-2)">輸入代理店が引取</text>
+      <line x1="370" y1="239" x2="407" y2="239" stroke="var(--aoi)" stroke-width="2.8" stroke-dasharray="7 5"/>
+      <polygon points="420,239 406,232.5 406,245.5" fill="var(--aoi)"/>
+      <text x="395.0" y="306" text-anchor="middle" class="al" fill="var(--aoi)">集荷</text>
+      <line x1="690" y1="239" x2="737" y2="239" stroke="var(--aoi)" stroke-width="2.8" stroke-dasharray="7 5"/>
+      <polygon points="750,239 736,232.5 736,245.5" fill="var(--aoi)"/>
+      <text x="720.0" y="306" text-anchor="middle" class="al" fill="var(--aoi)">混載 1コンテナ</text>
+      <line x1="1000" y1="239" x2="1067" y2="239" stroke="var(--aoi)" stroke-width="2.8" stroke-dasharray="7 5"/>
+      <polygon points="1080,239 1066,232.5 1066,245.5" fill="var(--aoi)"/>
+      <text x="1040.0" y="306" text-anchor="middle" class="al" fill="var(--aoi)">海上輸送</text>
+    </svg></div>
+    <figcaption>他社蔵の分も当社が仕入れて売る。<b>商流が1本に集約され、輸出申告も1本になる。</b>先方が求める「商流を集約する輸出者」を当社が務める形。当社は他社蔵との仕入口座の開設と与信を負う。</figcaption>
+  </figure>
+  </section>
+
+  <section>
+    <div class="sh">
+      <h2>解釈B　shipper ＝ フォワーダー（物流手配者）</h2>
+      <p>先方が求めているのは「4〜5蔵から集荷して混載を仕立て、輸出通関を代行する物流事業者」という解釈</p>
+    </div>
+    <figure class="fig">
+    <div class="fh"><span class="tag">AS-IS　現状</span><h3>商流は成立、運賃が高止まり</h3></div>
+    <div class="svgwrap"><svg viewBox="0 0 1400 322" role="img" aria-label="商流は当社経由と他社蔵直の2系統が成立。物流は高値の1社しか選択肢がない">
+      <text x="130" y="88" text-anchor="end" class="lane">商流</text><text x="130" y="112" text-anchor="end" class="lane2">売買・請求</text>
+      <text x="130" y="232" text-anchor="end" class="lane">物流</text><text x="130" y="256" text-anchor="end" class="lane2">貨物の流れ</text>
+      <line x1="875" y1="166" x2="875" y2="188" stroke="var(--ink-3)" stroke-width="1.6" stroke-dasharray="4 5"/><polygon points="875,196 869,185 881,185" fill="var(--ink-3)"/><text x="892" y="184" class="tie" fill="var(--ink-3)">申告の本数は商流に従属</text>
+      <rect x="150" y="28" width="250" height="62" rx="2" fill="var(--surface)" stroke="var(--rule-2)" stroke-width="1.2"/>
+      <text x="275.0" y="55" text-anchor="middle" class="nt" fill="var(--ink)">大和川・天鏡</text>
+      <text x="275.0" y="81" text-anchor="middle" class="ns" fill="var(--ink-2)">当社取扱</text>
+      <rect x="150" y="98" width="250" height="62" rx="2" fill="var(--surface)" stroke="var(--rule-2)" stroke-width="1.2"/>
+      <text x="275.0" y="125" text-anchor="middle" class="nt" fill="var(--ink)">他社蔵 2〜3社</text>
+      <text x="275.0" y="151" text-anchor="middle" class="ns" fill="var(--ink-2)">当社取扱なし</text>
+      <rect x="450" y="28" width="260" height="62" rx="2" fill="var(--surface)" stroke="var(--rule-2)" stroke-width="1.2"/>
+      <text x="580.0" y="55" text-anchor="middle" class="nt" fill="var(--ink)">新日本海商事</text>
+      <text x="580.0" y="81" text-anchor="middle" class="ns" fill="var(--ink-2)">輸出者（大和川・天鏡）</text>
+      <rect x="950" y="28" width="230" height="132" rx="2" fill="var(--surface)" stroke="var(--rule-2)" stroke-width="1.2"/>
+      <text x="1065.0" y="90" text-anchor="middle" class="nt" fill="var(--ink)">輸入代理店</text>
+      <text x="1065.0" y="116" text-anchor="middle" class="ns" fill="var(--ink-2)">theSFCグループ</text>
+      <rect x="1230" y="28" width="160" height="132" rx="2" fill="var(--surface)" stroke="var(--rule-2)" stroke-width="1.2"/>
+      <text x="1310.0" y="90" text-anchor="middle" class="nt" fill="var(--ink)">theSFC</text>
+      <text x="1310.0" y="116" text-anchor="middle" class="ns" fill="var(--ink-2)">シンガポール</text>
+      <line x1="400" y1="59" x2="437" y2="59" stroke="var(--shu)" stroke-width="2.8"/>
+      <polygon points="450,59 436,52.5 436,65.5" fill="var(--shu)"/>
+      <text x="425.0" y="16" text-anchor="middle" class="al" fill="var(--shu)">仕入</text>
+      <line x1="710" y1="59" x2="937" y2="59" stroke="var(--shu)" stroke-width="2.8"/>
+      <polygon points="950,59 936,52.5 936,65.5" fill="var(--shu)"/>
+      <text x="830.0" y="16" text-anchor="middle" class="al" fill="var(--shu)">当社が輸出者・1本</text>
+      <line x1="400" y1="129" x2="937" y2="129" stroke="var(--gry)" stroke-width="2.8"/>
+      <polygon points="950,129 936,122.5 936,135.5" fill="var(--gry)"/>
+      <text x="675.0" y="116" text-anchor="middle" class="al" fill="var(--gry)">他社蔵は直・2〜3本</text>
+      <line x1="1180" y1="94" x2="1217" y2="94" stroke="var(--gry)" stroke-width="2.8"/>
+      <polygon points="1230,94 1216,87.5 1216,100.5" fill="var(--gry)"/>
+      <rect x="150" y="196" width="220" height="86" rx="2" fill="var(--surface)" stroke="var(--rule-2)" stroke-width="1.2"/>
+      <text x="260.0" y="235" text-anchor="middle" class="nt" fill="var(--ink)">各蔵</text>
+      <text x="260.0" y="261" text-anchor="middle" class="ns" fill="var(--ink-2)">4〜5社</text>
+      <rect x="420" y="196" width="270" height="86" rx="2" fill="var(--surface)" stroke="var(--rule-2)" stroke-width="1.2"/>
+      <text x="555.0" y="223" text-anchor="middle" class="nt" fill="var(--ink)">フォワーダー</text>
+      <text x="555.0" y="249" text-anchor="middle" class="ns" fill="var(--ink-2)">定温リーファー定期便</text>
+      <text x="555.0" y="273" text-anchor="middle" class="ns" fill="var(--ink-2)">1社のみ・運賃高</text>
+      <rect x="750" y="196" width="250" height="86" rx="2" fill="var(--surface)" stroke="var(--rule-2)" stroke-width="1.2"/>
+      <text x="875.0" y="223" text-anchor="middle" class="nt" fill="var(--ink)">輸出通関</text>
+      <text x="875.0" y="249" text-anchor="middle" class="ns" fill="var(--ink-2)">申告 当社1本</text>
+      <text x="875.0" y="273" text-anchor="middle" class="ns" fill="var(--ink-2)">＋ 各蔵2〜3本</text>
+      <rect x="1080" y="196" width="310" height="86" rx="2" fill="var(--surface)" stroke="var(--rule-2)" stroke-width="1.2"/>
+      <text x="1235.0" y="235" text-anchor="middle" class="nt" fill="var(--ink)">シンガポール着</text>
+      <text x="1235.0" y="261" text-anchor="middle" class="ns" fill="var(--ink-2)">輸入代理店が引取</text>
+      <line x1="370" y1="239" x2="407" y2="239" stroke="var(--aoi)" stroke-width="2.8" stroke-dasharray="7 5"/>
+      <polygon points="420,239 406,232.5 406,245.5" fill="var(--aoi)"/>
+      <text x="395.0" y="306" text-anchor="middle" class="al" fill="var(--aoi)">集荷</text>
+      <line x1="690" y1="239" x2="737" y2="239" stroke="var(--aoi)" stroke-width="2.8" stroke-dasharray="7 5"/>
+      <polygon points="750,239 736,232.5 736,245.5" fill="var(--aoi)"/>
+      <text x="720.0" y="306" text-anchor="middle" class="al" fill="var(--aoi)">混載は可能</text>
+      <line x1="1000" y1="239" x2="1067" y2="239" stroke="var(--aoi)" stroke-width="2.8" stroke-dasharray="7 5"/>
+      <polygon points="1080,239 1066,232.5 1066,245.5" fill="var(--aoi)"/>
+      <text x="1040.0" y="306" text-anchor="middle" class="al" fill="var(--aoi)">海上輸送</text>
+    </svg></div>
+    <figcaption>大和川・天鏡は当社経由、他社蔵はtheSFCへ直。<b>商流はいずれも成立しうる。</b>停滞しているのは物流で、応じる事業者が定温リーファー定期便を持つ1社のみ。提示された運賃が高い。</figcaption>
+  </figure>
+    <figure class="fig">
+    <div class="fh"><span class="tag">TO-BE　解釈Bへの対応</span><h3>物流のみ再編する</h3></div>
+    <div class="svgwrap"><svg viewBox="0 0 1400 322" role="img" aria-label="商流はAS-ISと同一のまま、フォワーダーのみが交代する。輸出申告の本数は不変">
+      <text x="130" y="88" text-anchor="end" class="lane">商流</text><text x="130" y="112" text-anchor="end" class="lane2">売買・請求</text>
+      <text x="130" y="232" text-anchor="end" class="lane">物流</text><text x="130" y="256" text-anchor="end" class="lane2">貨物の流れ</text>
+      <line x1="875" y1="166" x2="875" y2="188" stroke="var(--ink-3)" stroke-width="1.6" stroke-dasharray="4 5"/><polygon points="875,196 869,185 881,185" fill="var(--ink-3)"/><text x="892" y="184" class="tie" fill="var(--ink-3)">申告の本数は商流に従属</text>
+      <rect x="150" y="28" width="250" height="62" rx="2" fill="var(--surface)" stroke="var(--rule-2)" stroke-width="1.2"/>
+      <text x="275.0" y="55" text-anchor="middle" class="nt" fill="var(--ink)">大和川・天鏡</text>
+      <text x="275.0" y="81" text-anchor="middle" class="ns" fill="var(--ink-2)">当社取扱</text>
+      <rect x="150" y="98" width="250" height="62" rx="2" fill="var(--surface)" stroke="var(--rule-2)" stroke-width="1.2"/>
+      <text x="275.0" y="125" text-anchor="middle" class="nt" fill="var(--ink)">他社蔵 2〜3社</text>
+      <text x="275.0" y="151" text-anchor="middle" class="ns" fill="var(--ink-2)">当社取扱なし</text>
+      <rect x="450" y="28" width="260" height="62" rx="2" fill="var(--surface)" stroke="var(--rule-2)" stroke-width="1.2"/>
+      <text x="580.0" y="55" text-anchor="middle" class="nt" fill="var(--ink)">新日本海商事</text>
+      <text x="580.0" y="81" text-anchor="middle" class="ns" fill="var(--ink-2)">輸出者（大和川・天鏡）</text>
+      <rect x="950" y="28" width="230" height="132" rx="2" fill="var(--surface)" stroke="var(--rule-2)" stroke-width="1.2"/>
+      <text x="1065.0" y="90" text-anchor="middle" class="nt" fill="var(--ink)">輸入代理店</text>
+      <text x="1065.0" y="116" text-anchor="middle" class="ns" fill="var(--ink-2)">theSFCグループ</text>
+      <rect x="1230" y="28" width="160" height="132" rx="2" fill="var(--surface)" stroke="var(--rule-2)" stroke-width="1.2"/>
+      <text x="1310.0" y="90" text-anchor="middle" class="nt" fill="var(--ink)">theSFC</text>
+      <text x="1310.0" y="116" text-anchor="middle" class="ns" fill="var(--ink-2)">シンガポール</text>
+      <line x1="400" y1="59" x2="437" y2="59" stroke="var(--shu)" stroke-width="2.8"/>
+      <polygon points="450,59 436,52.5 436,65.5" fill="var(--shu)"/>
+      <text x="425.0" y="16" text-anchor="middle" class="al" fill="var(--shu)">仕入</text>
+      <line x1="710" y1="59" x2="937" y2="59" stroke="var(--shu)" stroke-width="2.8"/>
+      <polygon points="950,59 936,52.5 936,65.5" fill="var(--shu)"/>
+      <text x="830.0" y="16" text-anchor="middle" class="al" fill="var(--shu)">当社が輸出者・1本</text>
+      <line x1="400" y1="129" x2="937" y2="129" stroke="var(--gry)" stroke-width="2.8"/>
+      <polygon points="950,129 936,122.5 936,135.5" fill="var(--gry)"/>
+      <text x="675.0" y="116" text-anchor="middle" class="al" fill="var(--gry)">他社蔵は直・2〜3本</text>
+      <line x1="1180" y1="94" x2="1217" y2="94" stroke="var(--gry)" stroke-width="2.8"/>
+      <polygon points="1230,94 1216,87.5 1216,100.5" fill="var(--gry)"/>
+      <rect x="150" y="196" width="220" height="86" rx="2" fill="var(--surface)" stroke="var(--rule-2)" stroke-width="1.2"/>
+      <text x="260.0" y="235" text-anchor="middle" class="nt" fill="var(--ink)">各蔵</text>
+      <text x="260.0" y="261" text-anchor="middle" class="ns" fill="var(--ink-2)">4〜5社</text>
+      <rect x="420" y="196" width="270" height="86" rx="2" fill="var(--ink)" stroke="var(--ink)" stroke-width="1"/>
+      <text x="555.0" y="223" text-anchor="middle" class="nt" fill="var(--paper)">フォワーダー</text>
+      <text x="555.0" y="249" text-anchor="middle" class="ns" fill="var(--paper-2)">相見積で再選定</text>
+      <text x="555.0" y="273" text-anchor="middle" class="ns" fill="var(--paper-2)">1コンテナ</text>
+      <rect x="750" y="196" width="250" height="86" rx="2" fill="var(--surface)" stroke="var(--rule-2)" stroke-width="1.2"/>
+      <text x="875.0" y="223" text-anchor="middle" class="nt" fill="var(--ink)">輸出通関</text>
+      <text x="875.0" y="249" text-anchor="middle" class="ns" fill="var(--ink-2)">申告 当社1本</text>
+      <text x="875.0" y="273" text-anchor="middle" class="ns" fill="var(--ink-2)">＋ 各蔵2〜3本（不変）</text>
+      <rect x="1080" y="196" width="310" height="86" rx="2" fill="var(--surface)" stroke="var(--rule-2)" stroke-width="1.2"/>
+      <text x="1235.0" y="235" text-anchor="middle" class="nt" fill="var(--ink)">シンガポール着</text>
+      <text x="1235.0" y="261" text-anchor="middle" class="ns" fill="var(--ink-2)">輸入代理店が引取</text>
+      <line x1="370" y1="239" x2="407" y2="239" stroke="var(--aoi)" stroke-width="2.8" stroke-dasharray="7 5"/>
+      <polygon points="420,239 406,232.5 406,245.5" fill="var(--aoi)"/>
+      <text x="395.0" y="306" text-anchor="middle" class="al" fill="var(--aoi)">集荷</text>
+      <line x1="690" y1="239" x2="737" y2="239" stroke="var(--aoi)" stroke-width="2.8" stroke-dasharray="7 5"/>
+      <polygon points="750,239 736,232.5 736,245.5" fill="var(--aoi)"/>
+      <text x="720.0" y="306" text-anchor="middle" class="al" fill="var(--aoi)">混載 1コンテナ</text>
+      <line x1="1000" y1="239" x2="1067" y2="239" stroke="var(--aoi)" stroke-width="2.8" stroke-dasharray="7 5"/>
+      <polygon points="1080,239 1066,232.5 1066,245.5" fill="var(--aoi)"/>
+      <text x="1040.0" y="306" text-anchor="middle" class="al" fill="var(--aoi)">海上輸送</text>
+    </svg></div>
+    <figcaption>商流はAS-ISのまま維持し、相見積で再選定したフォワーダーが集荷・混載を担う。運賃は下がるが、<b>商流が分かれている以上、輸出申告は当社1本＋各蔵2〜3本のまま残る。</b></figcaption>
+  </figure>
+  </section>
+
+  <p class="close"><b>2つの解釈の差は、当社が何を負うかにある。</b>　解釈Aなら、当社が大和川・天鏡で既に担っている役割を他社蔵まで拡張することになり、仕入口座の開設と与信を新たに負う。解釈Bなら当社が新たに負うものはないが、蔵側の輸出者負担は残る。<b>どちらの解釈かは「各蔵への商品代金を誰が支払う想定か」の1問で確定する。</b></p>
+</div>
