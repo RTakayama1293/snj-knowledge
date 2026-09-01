@@ -1,0 +1,1023 @@
+<title>Sansanデータ基盤マップ</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Roboto+Mono:wght@500;600&display=swap">
+
+<style>
+  :root{
+    --page-bg:#FFFFFF;
+    --text:#20263A;
+    --text-mute:#4B5568;
+    --text-faint:#7C8494;
+
+    --title:#1F3864;
+
+    --service-bg:#F2F2F2;
+    --service-border:#999999;
+
+    --dl-bg:#EAF2F9;
+    --dl-border:#4A90C2;
+    --dl-head:#1F6FA8;
+
+    --dwh-bg:#E6F2EF;
+    --dwh-border:#4A9E96;
+    --dwh-head:#1F6FA8;
+
+    --dm-bg:#EEECF6;
+    --dm-border:#6B5FA8;
+    --dm-head:#2D2A6E;
+
+    --primary-box:#A9C7D8;
+    --primary-box-border:#7FA3BC;
+    --secondary-box:#EFEDF7;
+    --secondary-box-border:#CFC9E6;
+
+    --card-bg:#FFFFFF;
+    --card-border:#C9D2DE;
+
+    --chip-ok-bg:#1F2E63;
+    --chip-ok-fg:#FFFFFF;
+    --chip-partial-bg:#3D8496;
+    --chip-partial-fg:#FFFFFF;
+    --chip-future-bg:#DCDCDC;
+    --chip-future-fg:#20263A;
+
+    --sansan-arrow:#C00000;
+
+    --sansan-deep-bg:#0F2E5C;
+    --sansan-deep-fg:#FFFFFF;
+    --sansan-deep-fg-mute:#A9BEDC;
+    --sansan-deep-fg-body:rgba(255,255,255,.82);
+    --sansan-deep-rule:rgba(255,255,255,.2);
+
+    --font-display:"Noto Sans JP",sans-serif;
+    --font-body:"Noto Sans JP",sans-serif;
+    --font-mono:"Roboto Mono","Noto Sans JP",monospace;
+  }
+
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--page-bg);
+    color:var(--text);
+    font-family:var(--font-body);
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+  .page{
+    max-width:1120px;
+    margin:0 auto;
+    padding:44px 28px 80px;
+  }
+
+  /* ---------- header ---------- */
+  header.hd{ margin-bottom:26px; }
+  .hd-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    gap:20px;
+    flex-wrap:wrap;
+  }
+  .eyebrow{
+    font-size:12px;
+    letter-spacing:.08em;
+    color:var(--text-faint);
+    margin:0 0 8px;
+  }
+  h1{
+    font-family:var(--font-display);
+    font-weight:900;
+    font-size:clamp(24px,3.6vw,34px);
+    color:var(--title);
+    margin:0;
+    text-wrap:balance;
+    letter-spacing:.01em;
+  }
+  .flow-note{
+    font-style:italic;
+    font-size:14px;
+    color:var(--text-faint);
+    margin:0;
+    white-space:nowrap;
+  }
+  .lede{
+    font-size:14.5px;
+    color:var(--text-mute);
+    margin:14px 0 0;
+    max-width:74ch;
+  }
+
+  /* ---------- generic band shell ---------- */
+  .band{
+    border-radius:12px;
+    padding:20px 24px 24px;
+  }
+  .band-head{
+    font-family:var(--font-display);
+    font-size:16px;
+    font-weight:700;
+    margin:0 0 12px;
+    color:var(--text);
+  }
+  .band-head .band-code{ font-weight:900; }
+  .band-head .sep{ margin:0 8px; color:var(--text-faint); font-weight:400; }
+  .band-note{
+    font-size:12.5px;
+    color:var(--text-mute);
+    margin:0 0 14px;
+  }
+  .band-takeaway{
+    font-size:13.5px;
+    font-weight:700;
+    margin:16px 0 0;
+    color:var(--text);
+  }
+  .band-takeaway b{ font-family:var(--font-mono); font-variant-numeric:tabular-nums; font-weight:600; }
+
+  /* ---------- service layer ---------- */
+  .band.service{
+    background:var(--service-bg);
+    border:2px dashed var(--service-border);
+    margin-bottom:0;
+  }
+  .band.service .band-head{ color:var(--text); }
+  .service-grid{
+    display:grid;
+    grid-template-columns:1.7fr 1fr;
+    align-items:start;
+    gap:18px;
+  }
+  .service-item h3{
+    font-family:var(--font-display);
+    font-size:14px;
+    font-weight:700;
+    margin:0 0 6px;
+    color:var(--text);
+  }
+  .service-item .meta{
+    font-weight:400;
+    font-size:11.5px;
+    color:var(--text-faint);
+    margin-left:6px;
+  }
+  .service-item ul{
+    margin:0;
+    padding:0;
+    list-style:none;
+    display:flex;
+    flex-direction:column;
+    gap:5px;
+  }
+  .service-item li{
+    font-size:12.5px;
+    color:var(--text-mute);
+    padding-left:14px;
+    position:relative;
+  }
+  .service-item li::before{
+    content:"・";
+    position:absolute;
+    left:0;
+  }
+
+  /* ---------- Sansan block (cut out of service layer) ---------- */
+  .sansan-card{
+    background:var(--sansan-deep-bg);
+    color:var(--sansan-deep-fg);
+    border-radius:8px;
+    padding:16px 20px 14px;
+    display:flex;
+    flex-direction:column;
+    gap:13px;
+  }
+  .sansan-card h3{
+    font-family:var(--font-display);
+    font-size:14.5px;
+    font-weight:700;
+    margin:0;
+    color:var(--sansan-deep-fg);
+  }
+  .sansan-card h3 .meta{
+    font-weight:400;
+    font-size:11.5px;
+    color:var(--sansan-deep-fg-mute);
+    margin-left:8px;
+  }
+  .sansan-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px 20px;
+  }
+  .sansan-stat{
+    display:flex;
+    flex-direction:column;
+    gap:3px;
+    border-top:1px solid var(--sansan-deep-rule);
+    padding-top:11px;
+  }
+  .sansan-grid > .sansan-stat:nth-child(-n+2){
+    border-top:none;
+    padding-top:0;
+  }
+  .stat-label{
+    font-size:10.5px;
+    font-weight:600;
+    letter-spacing:.02em;
+    color:var(--sansan-deep-fg-mute);
+    margin:0;
+  }
+  .stat-value{
+    font-family:var(--font-mono);
+    font-variant-numeric:tabular-nums;
+    font-weight:700;
+    font-size:23px;
+    line-height:1.2;
+    margin:0;
+    color:var(--sansan-deep-fg);
+  }
+  .stat-value .unit{
+    font-family:var(--font-body);
+    font-weight:500;
+    font-size:12px;
+    margin-left:2px;
+    color:var(--sansan-deep-fg-mute);
+  }
+  .stat-heading{
+    font-family:var(--font-display);
+    font-size:13px;
+    font-weight:700;
+    margin:0 0 1px;
+    color:var(--sansan-deep-fg);
+  }
+  .stat-detail{
+    font-size:11.5px;
+    line-height:1.55;
+    color:var(--sansan-deep-fg-body);
+    margin:0;
+  }
+  .stat-note{
+    font-size:10px;
+    line-height:1.5;
+    color:var(--sansan-deep-fg-mute);
+    margin:3px 0 0;
+  }
+  .sansan-foot{
+    font-size:10.5px;
+    color:var(--sansan-deep-fg-mute);
+    margin:1px 0 0;
+    text-align:right;
+  }
+
+  /* ---------- flow row: rail + bands ---------- */
+  .flow{
+    display:flex;
+    align-items:stretch;
+    gap:0;
+    margin-top:0;
+  }
+  .rail{
+    flex:none;
+    width:250px;
+    display:flex;
+    align-items:stretch;
+    gap:10px;
+    padding:18px 0;
+  }
+  .rail-line{
+    flex:none;
+    width:34px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+  }
+  .rail-line .stem{
+    flex:1 1 auto;
+    width:0;
+    border-left:5px solid var(--sansan-arrow);
+  }
+  .rail-line .head{
+    width:0;
+    height:0;
+    border-left:9px solid transparent;
+    border-right:9px solid transparent;
+    border-top:15px solid var(--sansan-arrow);
+    margin-top:-1px;
+  }
+  .rail-label{
+    flex:1;
+    display:flex;
+    align-items:center;
+    font-size:13px;
+    font-weight:700;
+    color:var(--sansan-arrow);
+    line-height:1.55;
+  }
+  .bands{
+    flex:1 1 auto;
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+    min-width:0;
+    padding:18px 0;
+  }
+
+  /* ---------- DL band ---------- */
+  .band.dl{
+    background:var(--dl-bg);
+    border:1.5px solid var(--dl-border);
+  }
+  .band.dl .band-head{ color:var(--dl-head); }
+  .dl-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px;
+  }
+  .dl-card{
+    background:var(--card-bg);
+    border:1px solid var(--card-border);
+    border-radius:8px;
+    padding:14px 16px;
+  }
+  .dl-card h3{
+    font-family:var(--font-display);
+    font-size:13px;
+    font-weight:700;
+    margin:0 0 8px;
+    color:var(--text);
+  }
+  .dl-card .figure{
+    margin:0 0 4px;
+    font-size:13px;
+    color:var(--text-mute);
+  }
+  .dl-card .figure:last-child{ margin-bottom:0; }
+  .dl-card .figure b{
+    font-family:var(--font-mono);
+    font-variant-numeric:tabular-nums;
+    font-weight:600;
+    color:var(--text);
+  }
+
+  /* ---------- DWH band ---------- */
+  .band.dwh{
+    background:var(--dwh-bg);
+    border:1.5px solid var(--dwh-border);
+  }
+  .band.dwh .band-head{ color:var(--dwh-head); }
+  .dwh-split{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:0;
+    border-radius:8px;
+    overflow:hidden;
+    border:1px solid var(--card-border);
+    margin-bottom:14px;
+  }
+  .proc-box{ padding:14px 18px 16px; }
+  .proc-box.primary{
+    background:var(--primary-box);
+    border-right:1px solid var(--primary-box-border);
+  }
+  .proc-box.secondary{ background:var(--secondary-box); }
+  .proc-box h3{
+    font-family:var(--font-display);
+    font-size:13.5px;
+    font-weight:700;
+    margin:0 0 4px;
+    color:var(--text);
+  }
+  .proc-box .proc-tag{
+    display:block;
+    font-weight:400;
+    font-size:11px;
+    color:var(--text-mute);
+    margin-top:2px;
+  }
+  .proc-box ul{
+    margin:10px 0 0;
+    padding:0;
+    list-style:none;
+    display:flex;
+    flex-direction:column;
+    gap:5px;
+  }
+  .proc-box li{
+    font-size:12.5px;
+    color:var(--text);
+    padding-left:14px;
+    position:relative;
+  }
+  .proc-box li::before{
+    content:"・";
+    position:absolute;
+    left:0;
+  }
+  .dwh-diff{
+    font-size:12.5px;
+    color:var(--text-mute);
+    margin:0 0 14px;
+  }
+  .matching-note{
+    background:var(--card-bg);
+    border:1px solid var(--card-border);
+    border-radius:8px;
+    padding:14px 16px;
+    margin-bottom:4px;
+  }
+  .matching-note h3{
+    font-family:var(--font-display);
+    font-size:13px;
+    font-weight:700;
+    margin:0 0 6px;
+    color:var(--text);
+  }
+  .matching-note p{
+    margin:0;
+    font-size:12.5px;
+    color:var(--text-mute);
+  }
+  .matching-note .mono{
+    display:inline-block;
+    margin-top:6px;
+    font-family:var(--font-mono);
+    font-size:12px;
+    font-weight:600;
+    color:var(--dwh-head);
+    font-variant-numeric:tabular-nums;
+  }
+
+  /* ---------- DM band ---------- */
+  .band.dm{
+    background:var(--dm-bg);
+    border:1.5px solid var(--dm-border);
+  }
+  .band.dm .band-head{ color:var(--dm-head); }
+  .exit + .exit{
+    margin-top:20px;
+    padding-top:18px;
+    border-top:1px solid var(--dm-border);
+  }
+  .exit h3{
+    font-family:var(--font-display);
+    font-size:14px;
+    font-weight:700;
+    margin:0 0 8px;
+    color:var(--text);
+  }
+  .exit > p{
+    font-size:12.5px;
+    color:var(--text-mute);
+    margin:0 0 14px;
+    max-width:80ch;
+  }
+
+  .chips{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-bottom:8px;
+  }
+  .chip{
+    flex:1 1 90px;
+    min-width:80px;
+    text-align:center;
+    border-radius:6px;
+    padding:8px 4px 9px;
+  }
+  .chip .letter{
+    display:block;
+    font-family:var(--font-mono);
+    font-weight:700;
+    font-size:15px;
+    line-height:1.3;
+  }
+  .chip .label{
+    display:block;
+    font-size:11px;
+    margin-top:2px;
+  }
+  .chip.ok{ background:var(--chip-ok-bg); color:var(--chip-ok-fg); }
+  .chip.partial{ background:var(--chip-partial-bg); color:var(--chip-partial-fg); }
+  .chip.future{ background:var(--chip-future-bg); color:var(--chip-future-fg); }
+
+  .chip-legend{
+    display:flex;
+    flex-wrap:wrap;
+    gap:14px 22px;
+    font-size:11.5px;
+    color:var(--text-mute);
+    margin-bottom:16px;
+  }
+  .chip-legend .dot{
+    display:inline-block;
+    width:10px;
+    height:10px;
+    border-radius:2px;
+    margin-right:6px;
+    vertical-align:-1px;
+  }
+  .dot.ok{ background:var(--chip-ok-bg); }
+  .dot.partial{ background:var(--chip-partial-bg); }
+  .dot.future{ background:var(--chip-future-bg); border:1px solid var(--card-border); }
+
+  .tbl-wrap{ overflow-x:auto; margin-bottom:14px; }
+  table.pipeline{
+    width:100%;
+    min-width:640px;
+    border-collapse:collapse;
+    font-size:12.5px;
+    background:var(--card-bg);
+    border:1px solid var(--card-border);
+    border-radius:8px;
+    overflow:hidden;
+  }
+  table.pipeline caption{ display:none; }
+  table.pipeline th, table.pipeline td{
+    text-align:left;
+    padding:9px 12px;
+    border-bottom:1px solid var(--card-border);
+    vertical-align:middle;
+  }
+  table.pipeline thead th{
+    font-size:11px;
+    color:var(--text-faint);
+    letter-spacing:.03em;
+    font-weight:700;
+    background:var(--dm-bg);
+  }
+  table.pipeline tbody tr:last-child td{ border-bottom:none; }
+  table.pipeline td.col{
+    font-family:var(--font-mono);
+    font-weight:700;
+    color:var(--text-mute);
+    width:32px;
+  }
+  table.pipeline td.item{ font-weight:600; white-space:nowrap; color:var(--text); }
+  table.pipeline td.source{ color:var(--text-mute); }
+  tr.na td{ color:var(--text-faint); }
+  tr.na td.item{ color:var(--text-faint); font-weight:500; }
+
+  .badge{
+    display:inline-block;
+    font-size:11px;
+    font-weight:600;
+    padding:3px 10px;
+    border-radius:20px;
+    white-space:nowrap;
+  }
+  .badge-ok{ background:var(--chip-ok-bg); color:var(--chip-ok-fg); }
+  .badge-partial{ background:var(--chip-partial-bg); color:var(--chip-partial-fg); }
+  .badge-future{ background:var(--chip-future-bg); color:var(--chip-future-fg); }
+
+  .position-note{
+    background:var(--card-bg);
+    border:1px solid var(--card-border);
+    border-left:4px solid var(--dm-border);
+    border-radius:0 8px 8px 0;
+    padding:12px 16px;
+    font-size:12.5px;
+    color:var(--text-mute);
+    margin:0;
+  }
+  .position-note b{ color:var(--text); font-weight:700; }
+
+  .footnote{
+    font-size:11.5px;
+    color:var(--text-faint);
+    margin:10px 0 0;
+  }
+
+  /* ---------- info note ---------- */
+  .info-note{
+    margin-top:30px;
+    padding:22px 24px 24px;
+    background:var(--service-bg);
+    border:1.5px dashed var(--service-border);
+    border-radius:12px;
+  }
+  .info-note .eyebrow{ margin-bottom:6px; }
+  .info-note h2{
+    font-family:var(--font-display);
+    font-size:15px;
+    font-weight:700;
+    margin:0 0 16px;
+    color:var(--title);
+  }
+  .info-note .note-fig{
+    display:block;
+    width:100%;
+    max-width:640px;
+    height:auto;
+    margin:0 auto 18px;
+  }
+  .info-note ul{
+    margin:0;
+    padding:0;
+    list-style:none;
+    display:flex;
+    flex-direction:column;
+    gap:11px;
+    max-width:78ch;
+  }
+  .info-note li{
+    position:relative;
+    padding-left:18px;
+    font-size:13px;
+    color:var(--text-mute);
+    line-height:1.65;
+  }
+  .info-note li::before{
+    content:"";
+    position:absolute;
+    left:0; top:8px;
+    width:6px; height:6px;
+    border-radius:50%;
+    background:var(--service-border);
+  }
+  .info-note li b{ color:var(--text); font-weight:700; }
+
+  svg text{ font-family:var(--font-body); }
+  svg .f-display{ font-family:var(--font-display); }
+  svg .f-mono{ font-family:var(--font-mono); }
+
+  @media (max-width:760px){
+    .flow{ flex-direction:column; }
+    .rail{
+      width:100%;
+      flex-direction:row;
+      align-items:center;
+      padding:10px 0 16px;
+      gap:12px;
+    }
+    .rail-line{
+      flex-direction:row;
+      width:auto;
+      flex:1;
+    }
+    .rail-line .stem{
+      flex:1 1 auto;
+      width:auto;
+      height:0;
+      border-left:none;
+      border-top:5px solid var(--sansan-arrow);
+    }
+    .rail-line .head{
+      border-left:15px solid var(--sansan-arrow);
+      border-top:9px solid transparent;
+      border-bottom:9px solid transparent;
+      border-right:none;
+      margin-top:0;
+      margin-left:-1px;
+    }
+    .rail-label{ flex:none; }
+    .bands{ padding:0; }
+    .service-grid,.dl-grid,.dwh-split{ grid-template-columns:1fr; }
+    .proc-box.primary{ border-right:none; border-bottom:1px solid var(--primary-box-border); }
+  }
+  @media (max-width:520px){
+    .page{ padding:30px 16px 60px; }
+    .hd-row{ flex-direction:column; align-items:flex-start; }
+    .band{ padding:16px 16px 18px; }
+    .sansan-grid{ grid-template-columns:1fr; }
+    .sansan-grid > .sansan-stat:nth-child(-n+2){ border-top:1px solid var(--sansan-deep-rule); padding-top:11px; }
+    .sansan-grid > .sansan-stat:first-child{ border-top:none; padding-top:0; }
+  }
+
+  /* ---------- print ---------- */
+  @media print{
+    *,*::before,*::after{
+      print-color-adjust:exact;
+      -webkit-print-color-adjust:exact;
+    }
+    @page{
+      size:A4 landscape;
+      margin:12mm 14mm;
+    }
+    body{
+      background:var(--page-bg);
+    }
+    .page{
+      max-width:none;
+      padding:0;
+    }
+    /* on screen the rail's vertical arrow is stretched (align-items:
+       stretch) to match the combined height of all three stacked
+       bands; that stretch is what breaks under pagination (a flex
+       item cannot span a page boundary and stay one continuous
+       arrow — page 2 of a printout is a physically separate sheet).
+       In print the rail keeps its left/vertical/red arrow exactly as
+       on screen, but at a fixed compact height instead of a stretched
+       one, so it renders once, whole, ahead of the band stack instead
+       of smearing across pages. */
+    .flow{ flex-direction:column; }
+    .rail{
+      width:100%;
+      flex-direction:row;
+      align-items:center;
+      padding:0 0 16px;
+      gap:14px;
+      break-inside:avoid;
+      page-break-inside:avoid;
+    }
+    .rail-line{
+      flex:none;
+      width:34px;
+      height:64px;
+      flex-direction:column;
+      align-items:center;
+    }
+    .rail-line .stem{
+      flex:1 1 auto;
+      width:0;
+      height:auto;
+      border-left:5px solid var(--sansan-arrow);
+      border-top:none;
+    }
+    .rail-line .head{
+      width:0; height:0;
+      border-left:9px solid transparent;
+      border-right:9px solid transparent;
+      border-top:15px solid var(--sansan-arrow);
+      border-bottom:none;
+      margin-top:-1px;
+    }
+    .rail-label{ flex:none; line-height:1.55; }
+    .bands{ padding:0; }
+
+    .tbl-wrap{ overflow-x:visible; }
+
+    /* internally-structured blocks must not split mid-way across a
+       page break; the outer band shells are left free to fragment
+       between these protected pieces so a tall band (DM) doesn't
+       strand its heading alone on an otherwise-blank page */
+    .sansan-card,
+    .dwh-split,
+    .proc-box,
+    .matching-note,
+    table.pipeline,
+    table.pipeline tr,
+    .exit,
+    .position-note,
+    .chips,
+    .info-note{
+      break-inside:avoid;
+      page-break-inside:avoid;
+    }
+    .band-head, .band-note{
+      break-after:avoid;
+      page-break-after:avoid;
+    }
+  }
+</style>
+
+<div class="page">
+
+  <header class="hd">
+    <div class="hd-row">
+      <div>
+        <p class="eyebrow">snj-contacts ／ 全体構造</p>
+        <h1>営業データ基盤の全体像</h1>
+      </div>
+      <p class="flow-note">Sansan・メール&nbsp;&nbsp;→&nbsp;&nbsp;DL&nbsp;&nbsp;→&nbsp;&nbsp;DWH&nbsp;&nbsp;→&nbsp;&nbsp;DM</p>
+    </div>
+    <p class="lede">Sansanコンタクトと営業メール由来の接点情報を、データレイク（DL）→データウェアハウス（DWH）→データマート（DM）の3層に整理し、正本として1か所で管理する構造を示す。</p>
+  </header>
+
+  <section class="band service">
+    <h2 class="band-head"><span class="band-code">サービス層</span><span class="sep">｜</span>外部（自社が保有しない）</h2>
+    <div class="service-grid">
+      <div class="sansan-card">
+        <h3>Sansan<span class="meta">年間利用料 690千円</span></h3>
+        <div class="sansan-grid">
+          <div class="sansan-stat">
+            <p class="stat-label">名刺</p>
+            <p class="stat-value">2,480<span class="unit">枚</span></p>
+            <p class="stat-detail">1枚あたり平均12.3項目・118.6文字</p>
+            <p class="stat-detail">姓の読み仮名88.9%／メールアドレス87.4%／電話番号79.2%が充足</p>
+            <p class="stat-note">読み仮名は名刺面に記載がないことが通例であり、データ化の作業が含まれていることを示す</p>
+          </div>
+          <div class="sansan-stat">
+            <p class="stat-label">企業の識別</p>
+            <p class="stat-value">485<span class="unit">件</span></p>
+            <p class="stat-detail">企業識別コードの対応を保持</p>
+            <p class="stat-detail">会社の同一性を判定する根拠となる</p>
+          </div>
+          <div class="sansan-stat">
+            <p class="stat-heading">全国企業データベース</p>
+            <p class="stat-detail">名刺交換していない企業を含む</p>
+            <p class="stat-detail">市場規模の推定に利用できる</p>
+          </div>
+          <div class="sansan-stat">
+            <p class="stat-label">活動記録</p>
+            <p class="stat-value">193<span class="unit">件</span></p>
+            <p class="stat-detail">本文の文字数は中央値680字（要約ではなく原文）</p>
+          </div>
+        </div>
+        <p class="sansan-foot">データ取得の口を提供</p>
+      </div>
+      <div class="service-item">
+        <h3>メール</h3>
+        <ul>
+          <li>営業メールの集約先</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="flow">
+    <div class="rail" aria-hidden="true">
+      <div class="rail-line">
+        <div class="stem"></div>
+        <div class="head"></div>
+      </div>
+      <p class="rail-label">Sansanが止まると<br>DL・DWH・DMが<br>全部止まる</p>
+    </div>
+
+    <div class="bands">
+
+      <section class="band dl">
+        <h2 class="band-head"><span class="band-code">DL</span><span class="sep">｜</span>データレイク（自社リポジトリ）</h2>
+        <p class="band-note">注記: 現在はクラウド上のリポジトリ。将来はローカルで処理が完結する構成も想定する。</p>
+        <div class="dl-grid">
+          <div class="dl-card">
+            <h3>Sansanから</h3>
+            <p class="figure">名刺 <b>2,480枚</b></p>
+            <p class="figure">営業活動記録 <b>193件</b>（本文の文字数中央値 <b>680字</b>）</p>
+          </div>
+          <div class="dl-card">
+            <h3>メールから</h3>
+            <p class="figure"><b>237件</b></p>
+          </div>
+        </div>
+        <p class="band-takeaway">原形のまま保持し、省略・要約をしない</p>
+      </section>
+
+      <section class="band dwh">
+        <h2 class="band-head"><span class="band-code">DWH</span><span class="sep">｜</span>データウェアハウス</h2>
+
+        <div class="dwh-split">
+          <div class="proc-box primary">
+            <h3>一次処理<span class="proc-tag">分析者の意向が介在しない・機械的に決まる</span></h3>
+            <ul>
+              <li>定型部の除去</li>
+              <li>形態素解析による語の切り出し</li>
+              <li>表記の正規化</li>
+              <li>重複の削除</li>
+              <li>名寄せ</li>
+            </ul>
+          </div>
+          <div class="proc-box secondary">
+            <h3>二次処理<span class="proc-tag">分析者の意向が介在する</span></h3>
+            <ul>
+              <li>KWタグ辞書の設計とタグの付与</li>
+              <li>語彙クラスタリングの意味づけ</li>
+              <li>ランク定義</li>
+            </ul>
+          </div>
+        </div>
+        <p class="dwh-diff">一次処理は同じ入力から常に同じ結果が得られ、誰が実行しても変わらない。二次処理は何を重要とみなすかという判断が入る。</p>
+
+        <div class="matching-note">
+          <h3>名寄せの2段階</h3>
+          <p>1段目はSansan側で名刺を企業に紐づけ、識別コードを付与する。2段目は自社側で、識別コードが事業所（支社・支店・部門）単位であるため会社単位に統合し、あわせて表記ゆれ・別名を統合する。</p>
+          <span class="mono">485件の識別コード対応 → 企業マスタ478社</span>
+        </div>
+
+        <p class="band-takeaway">出力: 企業マスタ<b>478社</b>・人物<b>704人</b>・接点<b>1,245件</b>／KWタグ辞書<b>83種</b>／語彙クラスタリング<b>15群</b></p>
+      </section>
+
+      <section class="band dm">
+        <h2 class="band-head"><span class="band-code">DM</span><span class="sep">｜</span>データマート</h2>
+
+        <div class="exit">
+          <h3>出口1　パイプライン管理</h3>
+          <p>週次進捗報告「売上進捗状況.xlsx」で運用する。パイプラインシートの列（B〜I）は 和文社名／商品／種別／確度／受注月／納品月／金額／確度と金額の根拠。確度は100／90／75／50／25の5段階。サマリシートが確度5段階×12か月で集計している。</p>
+
+          <div class="chips">
+            <div class="chip ok"><span class="letter">B</span><span class="label">和文社名</span></div>
+            <div class="chip partial"><span class="letter">C</span><span class="label">商品</span></div>
+            <div class="chip partial"><span class="letter">D</span><span class="label">種別</span></div>
+            <div class="chip future"><span class="letter">E</span><span class="label">確度</span></div>
+            <div class="chip future"><span class="letter">F</span><span class="label">受注月</span></div>
+            <div class="chip future"><span class="letter">G</span><span class="label">納品月</span></div>
+            <div class="chip future"><span class="letter">H</span><span class="label">金額</span></div>
+            <div class="chip ok"><span class="letter">I</span><span class="label">根拠</span></div>
+          </div>
+          <div class="chip-legend">
+            <span><span class="dot ok"></span>供給可能</span>
+            <span><span class="dot partial"></span>一部供給</span>
+            <span><span class="dot future"></span>2年目に開始</span>
+          </div>
+
+          <div class="tbl-wrap">
+            <table class="pipeline">
+              <caption>パイプライン8列と本基盤データの対応</caption>
+              <thead>
+                <tr>
+                  <th scope="col">列</th>
+                  <th scope="col">項目</th>
+                  <th scope="col">対応するもの</th>
+                  <th scope="col">区分</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="col">B</td>
+                  <td class="item">和文社名</td>
+                  <td class="source">名寄せ済み企業マスタ 478社</td>
+                  <td><span class="badge badge-ok">供給可能</span></td>
+                </tr>
+                <tr>
+                  <td class="col">C</td>
+                  <td class="item">商品</td>
+                  <td class="source">KWタグ辞書 83種</td>
+                  <td><span class="badge badge-partial">一部供給可能</span></td>
+                </tr>
+                <tr>
+                  <td class="col">D</td>
+                  <td class="item">種別</td>
+                  <td class="source">KWタグ辞書 83種</td>
+                  <td><span class="badge badge-partial">一部供給可能</span></td>
+                </tr>
+                <tr>
+                  <td class="col">E</td>
+                  <td class="item">確度</td>
+                  <td class="source">25%〜100%（定義は整備済み）</td>
+                  <td><span class="badge badge-future">2年目に付与運用を開始</span></td>
+                </tr>
+                <tr class="na">
+                  <td class="col">F</td>
+                  <td class="item">受注月</td>
+                  <td class="source">保有していない</td>
+                  <td><span class="badge badge-future">2年目に付与運用を開始</span></td>
+                </tr>
+                <tr class="na">
+                  <td class="col">G</td>
+                  <td class="item">納品月</td>
+                  <td class="source">保有していない</td>
+                  <td><span class="badge badge-future">2年目に付与運用を開始</span></td>
+                </tr>
+                <tr class="na">
+                  <td class="col">H</td>
+                  <td class="item">金額</td>
+                  <td class="source">保有していない</td>
+                  <td><span class="badge badge-future">2年目に付与運用を開始</span></td>
+                </tr>
+                <tr>
+                  <td class="col">I</td>
+                  <td class="item">確度と金額の根拠</td>
+                  <td class="source">営業活動記録 193件</td>
+                  <td><span class="badge badge-ok">供給可能</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p class="position-note"><b>位置づけ:</b> Excelを直接書き換えるのではなく、営業がそのまま入力できる形でデータを提供する。社名・商品・種別・根拠があらかじめ埋まった状態で渡し、営業は受注月・納品月・金額・確度を判断して入れる。</p>
+          <p class="footnote">補足: サマリシートはこの8列を確度5段階（100／90／75／50／25）×12か月で集計している。</p>
+        </div>
+
+        <div class="exit">
+          <h3>出口2　セリングアイデア管理</h3>
+          <p>週次進捗報告には国内・海外・EEZOそれぞれにセリングアイデアのシートがある。KWタグ辞書はもともとセリングアイデアの語彙体系として設計されたものであり、同じ体系に立っている。</p>
+        </div>
+
+      </section>
+
+    </div>
+  </div>
+
+  <aside class="info-note">
+    <p class="eyebrow">NOTE</p>
+    <h2>情報の取り扱い</h2>
+
+    <svg class="note-fig" viewBox="0 0 900 215" role="img" aria-label="情報の流れを示す図。左からSansanの取得とメールの取得の2本の矢印が内部の処理ボックスへ入り、内部からは外側へ向かう矢印がない。処理ボックスの中では定型部の除去・形態素解析・正規化・重複削除・名寄せ・タグ付与・クラスタリングが行われ、クラスタリングは統計処理で候補を出し意味づけは人が行うと注記されている。ボックスの右には外部への送信経路なしと記載されている。">
+      <defs>
+        <marker id="arrow2" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M0,0 L10,5 L0,10 z" fill="context-stroke"></path>
+        </marker>
+      </defs>
+
+      <text x="40" y="48" font-size="12" style="fill:#4B5568;">Sansanからのデータ取得</text>
+      <line x1="40" y1="60" x2="455" y2="60" style="stroke:#7C8494;stroke-width:2.5;" marker-end="url(#arrow2)"></line>
+
+      <text x="40" y="128" font-size="12" style="fill:#4B5568;">メールの取得</text>
+      <line x1="40" y1="140" x2="455" y2="140" style="stroke:#7C8494;stroke-width:2.5;" marker-end="url(#arrow2)"></line>
+
+      <rect x="460" y="25" width="400" height="150" rx="8" style="fill:#FFFFFF;stroke:#7C8494;stroke-width:1.5;"></rect>
+      <text x="480" y="52" class="f-display" font-size="12.5" font-weight="700" style="fill:#20263A;">内部で完結する処理</text>
+      <text x="480" y="76" class="f-mono" font-size="10.5" style="fill:#4B5568;">定型部の除去 → 形態素解析 → 正規化</text>
+      <text x="480" y="92" class="f-mono" font-size="10.5" style="fill:#4B5568;">→ 重複削除 → 名寄せ → タグ付与 → クラスタリング</text>
+      <text x="480" y="122" font-size="10.5" style="fill:#4B5568;">クラスタリングは統計処理で候補を出し、</text>
+      <text x="480" y="138" font-size="10.5" style="fill:#4B5568;">意味づけは人が行う</text>
+
+      <text x="660" y="200" text-anchor="middle" font-size="11" style="fill:#7C8494;">外部への送信経路なし</text>
+    </svg>
+
+    <ul>
+      <li><b>外部との通信は、Sansanからのデータ取得とメールの取得の2系統のみ。</b>いずれもデータの取得先へ取りに行くものであり、外部へ送信する経路を持たない。</li>
+      <li><b>テキスト処理はすべて内部で完結する。</b>定型部の除去・形態素解析・正規化・重複削除・名寄せ・タグ付与・クラスタリング。</li>
+      <li><b>語彙のクラスタリングは、統計処理のみで候補を出し、意味づけは人が行う</b>設計。</li>
+    </ul>
+  </aside>
+
+</div>
