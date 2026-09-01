@@ -121,7 +121,7 @@ def fig(key, tag, title, caption, aria):
 PAGE = f'''<title>日本酒混載輸出の商流と物流</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&display=swap">
 <style>
 :root{{
   --paper:#FBFAF8; --paper-2:#EFEAE6; --surface:#FFFFFF;
@@ -145,13 +145,13 @@ PAGE = f'''<title>日本酒混載輸出の商流と物流</title>
 }}
 *{{box-sizing:border-box}}
 body{{background:var(--paper);color:var(--ink);
-  font-family:"Noto Sans JP","Hiragino Kaku Gothic ProN",system-ui,sans-serif;
+  font-family:"Meiryo UI","Meiryo","BIZ UDPGothic","Hiragino Kaku Gothic ProN",sans-serif;
   font-size:15px;line-height:1.75;-webkit-font-smoothing:antialiased}}
 .wrap{{max-width:1120px;margin:0 auto;padding:38px 26px 72px;display:flex;flex-direction:column;gap:30px}}
-h1{{font-family:"Zen Kaku Gothic New","Noto Sans JP",sans-serif;font-weight:900;
+h1{{font-family:"Meiryo","Meiryo UI","BIZ UDPGothic","Hiragino Kaku Gothic ProN",sans-serif;font-weight:700;
   font-size:clamp(25px,3.4vw,34px);line-height:1.25;margin:0 0 8px;text-wrap:balance}}
 .sub{{margin:0;color:var(--ink-2);font-size:13.5px}}
-.date{{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-3);letter-spacing:.06em}}
+.date{{font-size:12px;color:var(--ink-3);letter-spacing:.06em}}
 .head{{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;flex-wrap:wrap}}
 
 .legend{{display:flex;flex-wrap:wrap;gap:10px 26px;padding:14px 18px;
@@ -162,25 +162,25 @@ h1{{font-family:"Zen Kaku Gothic New","Noto Sans JP",sans-serif;font-weight:900;
 
 section{{display:flex;flex-direction:column;gap:16px}}
 .sh{{border-top:2px solid var(--ink);padding-top:12px}}
-.sh h2{{font-family:"Zen Kaku Gothic New","Noto Sans JP",sans-serif;font-weight:700;
+.sh h2{{font-family:"Meiryo","Meiryo UI","BIZ UDPGothic",sans-serif;font-weight:700;
   font-size:21px;margin:0 0 4px;letter-spacing:.01em}}
 .sh p{{margin:0;color:var(--ink-2);font-size:13px}}
 
 .fig{{margin:0;background:var(--surface);border:1px solid var(--rule);border-radius:3px;
   padding:16px 18px 14px;display:flex;flex-direction:column;gap:10px}}
 .fh{{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}}
-.tag{{font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:500;letter-spacing:.08em;
+.tag{{font-size:11px;font-weight:700;letter-spacing:.06em;
   color:var(--ink-2);border:1px solid var(--rule-2);border-radius:2px;padding:2px 7px;white-space:nowrap}}
-.fh h3{{font-family:"Zen Kaku Gothic New","Noto Sans JP",sans-serif;font-weight:700;
+.fh h3{{font-family:"Meiryo","Meiryo UI","BIZ UDPGothic",sans-serif;font-weight:700;
   font-size:17px;margin:0;line-height:1.4}}
 .svgwrap{{overflow-x:auto}}
 svg{{display:block;width:100%;min-width:760px;height:auto}}
-.nt{{font:700 13.5px "Zen Kaku Gothic New","Noto Sans JP",sans-serif}}
-.ns{{font:400 10.5px "Noto Sans JP",sans-serif}}
-.al{{font:700 11.5px "Noto Sans JP",sans-serif}}
-.lane{{font:700 12.5px "Zen Kaku Gothic New","Noto Sans JP",sans-serif;fill:var(--ink)}}
-.lane2{{font:400 10px "Noto Sans JP",sans-serif;fill:var(--ink-3)}}
-.tie{{font:400 10.5px "Noto Sans JP",sans-serif}}
+.nt{{font:700 13.5px "Meiryo","Meiryo UI","BIZ UDPGothic",sans-serif}}
+.ns{{font:400 10.5px "Meiryo UI","Meiryo","BIZ UDPGothic",sans-serif}}
+.al{{font:700 11.5px "Meiryo UI","Meiryo","BIZ UDPGothic",sans-serif}}
+.lane{{font:700 12.5px "Meiryo","Meiryo UI","BIZ UDPGothic",sans-serif;fill:var(--ink)}}
+.lane2{{font:400 10px "Meiryo UI","Meiryo","BIZ UDPGothic",sans-serif;fill:var(--ink-3)}}
+.tie{{font:400 10.5px "Meiryo UI","Meiryo","BIZ UDPGothic",sans-serif}}
 figcaption{{font-size:12.5px;color:var(--ink-2);border-top:1px solid var(--rule);padding-top:10px;margin:0}}
 figcaption b{{color:var(--ink);font-weight:700}}
 .close{{background:var(--paper-2);border-radius:3px;padding:16px 20px;font-size:13.5px;line-height:1.8}}
